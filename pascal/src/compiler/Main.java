@@ -1,5 +1,8 @@
 package compiler;
 
+import java.io.File;
+import java.io.IOException;
+
 import compiler.report.*;
 
 public class Main {
@@ -25,7 +28,6 @@ public class Main {
 			Report.error("Source file is not specified.", 1);
 		} else
 			prgName = args[0];
-
 		/* Dolocimo zadnjo fazo prevajanja. */
 		String phase = args.length < 2 ? "" : args[1];
 		/* Opravimo izbrano fazo prevajanja (in vse predhodne). */

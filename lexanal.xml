@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<?xml-stylesheet type="text/xsl" href="pascal/xsl/lexanal.xsl"?>
-<lexanal>
-<terminal token="CHAR" line="10" column="2"/>
-</lexanal>

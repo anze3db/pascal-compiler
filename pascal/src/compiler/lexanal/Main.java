@@ -14,7 +14,7 @@ public class Main {
 		/* Pripravimo imena vrst koncnih simbolov.  */
 		PascalTok pascalTok = new PascalTok();
 		Field[] pascalToks = pascalTok.getClass().getDeclaredFields();
-		pascalTermNames = new String[pascalToks.length + 5];
+		pascalTermNames = new String[pascalToks.length];
 		for (int f = 0; f < pascalToks.length; f++) {
 			try {
 				int tok = pascalToks[f].getInt(pascalTok);

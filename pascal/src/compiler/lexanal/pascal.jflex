@@ -7,6 +7,7 @@ import compiler.synanal.*;
 
 %%
 
+
 %class      PascalLex
 %public
 
@@ -98,21 +99,24 @@ import compiler.synanal.*;
 	"array"							{ return sym(PascalTok.ARRAY); }
 	"and"							{ return sym(PascalTok.AND); }
 	
+	"integer"						{ return sym(PascalTok.INT); }
+	"boolean"						{ return sym(PascalTok.BOOL); }
+	"char"							{ return sym(PascalTok.CHAR); }
 	
 	// konstante atomarnih podatkovnih tipov:
-	"true"|"false"					{ return sym(PascalTok.BOOL_CONST); }
-	\'([^\']|\'\')\'				{ return sym(PascalTok.CHAR); } //System.out.println(yytext());  
-	[+-]?[0-9]+					{ return sym(PascalTok.INT); }  
+	"true"|"false"						{ return sym(PascalTok.BOOL_CONST); }
+	\'([^\']|\'\')\'					{ return sym(PascalTok.CHAR_CONST); } //System.out.println(yytext());  
+	[0-9]+							{ return sym(PascalTok.INT_CONST); }  
 	
 	// imena programov, konstant, tipov, spremenljivk in podprogramov:
 	
-	[A-Za-z_][A-Za-z_0-9]*		{ return sym(PascalTok.IDENTIFIER); }
+	[A-Za-z_][A-Za-z_0-9]*					{ return sym(PascalTok.IDENTIFIER); }
 	
-	.								{ Report.warning("Unknown character: "+yytext(), yyline + 1, yycolumn + 1); }
+	.							{ Report.warning("Unknown character: "+yytext(), yyline + 1, yycolumn + 1); }
 }
 
 <COMMENT> {
-	"{"								{ nesting++; }
-	"}"								{ nesting--; if (nesting == 0) yybegin(YYINITIAL); }
-	.|\n								{}
+	"{"							{ nesting++; }
+	"}"							{ nesting--; if (nesting == 0) yybegin(YYINITIAL); }
+	.|\n							{}
 }

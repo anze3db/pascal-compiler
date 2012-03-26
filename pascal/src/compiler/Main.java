@@ -1,8 +1,5 @@
 package compiler;
 
-import java.io.File;
-import java.io.IOException;
-
 import compiler.report.*;
 
 public class Main {
@@ -28,13 +25,16 @@ public class Main {
 			Report.error("Source file is not specified.", 1);
 		} else
 			prgName = args[0];
+
 		/* Dolocimo zadnjo fazo prevajanja. */
 		String phase = args.length < 2 ? "" : args[1];
-		/* Opravimo izbrano fazo prevajanja (in vse predhodne). */
+		/* Opravimo izbrano fazo prevajanja (in vse predhodne faze). */
 		if (phase.equals("lexanal"))
 			compiler.lexanal.Main.exec();
+		else if (phase.equals("synanal"))
+			compiler.synanal.Main.exec();
 		else
-			compiler.lexanal.Main.exec();
+			compiler.synanal.Main.exec();
 
 		System.out.print(":-) Done.\n");
 		System.exit(0);

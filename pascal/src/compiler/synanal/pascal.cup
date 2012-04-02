@@ -26,8 +26,153 @@ terminal COLON, COMMA, DOT, DOTS, LBRACKET, LPARENTHESIS, RBRACKET, RPARENTHESIS
 terminal ADD, AND, DIV, EQU, GEQ, GTH, LEQ, LTH, MEM, MUL, NEQ, NOT, OR, PTR, SUB, UADD, USUB, VAL;
 terminal ARRAY, ASSIGN, BEGIN, CONST, DO, ELSE, END, FOR, FUNCTION, IF, OF, PROCEDURE, PROGRAM, RECORD, THEN, TO, TYPE, VAR, WHILE;
 
-non terminal	source;
+non terminal	source, program_indication;
+non terminal    constant_declarations, type_declarations, variable_declarations, subprogram_declarations, statement;
+non terminal    constants, constant, types, type_declaration, vars, var;
+non terminal    parameters, parameters_list, parms, parm, procedure_head, pf_declarations, function_head;
+non terminal    value, value_list, value_params;
+non terminal    type, table_type, record_type, record_list, ptr_type;
+non terminal    assign_statement, if_statement, multiple_statement, list_statement, list_statement2, while_statement, for_statement;
+
+/* Precedences */
+precedence left OR;
+precedence left AND;
+precedence nonassoc EQU, NEQ, LTH, GTH, LEQ, GEQ;
+precedence left ADD, SUB;
+precedence left MUL, DIV;
+precedence nonassoc NOT;
+precedence nonassoc VAL;
+precedence nonassoc UADD, USUB, MEM;
+precedence left DOT, LBRACKET, RBRACKET;
 
 start with source;
 
-source ::= INT_CONST;
+source ::=  program_indication 
+            constant_declarations 
+            type_declarations 
+            variable_declarations 
+            subprogram_declarations 
+            multiple_statement 
+            DOT; 
+
+program_indication ::= PROGRAM IDENTIFIER SEMIC;
+
+/* CONSTANT DECLARATION */
+
+constant_declarations ::=  | CONST constants;
+
+constants ::= constants constant | constant;
+
+constant ::= IDENTIFIER EQU value SEMIC;
+
+
+/* TYPE DECLARATION */
+
+type_declarations ::= | TYPE types;
+
+types ::= types type_declaration | type_declaration;
+
+type_declaration ::= IDENTIFIER EQU type SEMIC;
+
+/* VARIABLE DECLARATIONS */
+
+variable_declarations ::= | VAR vars;
+
+vars ::= vars var | var;
+
+var ::= IDENTIFIER COLON type SEMIC;
+
+/* SUBPROGRAM DECLARATIONS */
+
+subprogram_declarations ::= subprogram_declarations procedure_head  pf_declarations
+                            |
+                            subprogram_declarations function_head   pf_declarations              
+                            |;
+                            
+pf_declarations ::= constant_declarations 
+                    type_declarations 
+                    variable_declarations 
+                    subprogram_declarations 
+                    multiple_statement
+                    SEMIC;
+
+
+procedure_head ::= PROCEDURE IDENTIFIER parameters SEMIC;
+                            
+function_head ::= FUNCTION IDENTIFIER parameters COLON type SEMIC;
+
+parameters ::= LPARENTHESIS parameters_list RPARENTHESIS;
+
+parameters_list ::= | parms;
+
+parms ::= parms SEMIC parm | parm;
+
+parm ::= IDENTIFIER COLON type;
+
+/* VALUES */
+
+value ::=   INT_CONST | CHAR_CONST | BOOL_CONST | NIL | 
+            PTR value %prec MEM |
+            ADD value %prec UADD |
+            SUB value %prec USUB | 
+            NOT value |
+            value PTR %prec VAL |
+            value MUL value |
+            value DIV value |
+            value ADD value |
+            value SUB value |
+            value EQU value |
+            value NEQ value |
+            value LTH value |
+            value GTH value |
+            value LEQ value |
+            value GEQ value |
+            value AND value |
+            value  OR value |
+            IDENTIFIER |
+            value LBRACKET value RBRACKET | 
+            value DOT value |
+            IDENTIFIER LPARENTHESIS value_list RPARENTHESIS |
+            LBRACKET type RBRACKET | 
+            LPARENTHESIS value RPARENTHESIS
+         ;
+
+value_list ::= | value_params value;
+
+value_params ::= | value_params value COMMA;
+/* TYPES */
+
+type ::= INT | CHAR | BOOL | IDENTIFIER | table_type | record_type | ptr_type | LPARENTHESIS type RPARENTHESIS;
+
+table_type ::= ARRAY LBRACKET value DOTS value RBRACKET OF type; 
+
+record_type ::= RECORD record_list END;
+
+record_list ::= record_list parms | parms;
+
+ptr_type ::= PTR type;
+
+/* STATEMENT */
+
+
+statement ::=   value | 
+                assign_statement |
+                if_statement |
+                multiple_statement | 
+                while_statement |
+                for_statement |
+                SEMIC;
+
+assign_statement ::= value ASSIGN value;
+
+if_statement ::=  IF value THEN statement | IF value THEN statement ELSE statement;
+
+multiple_statement ::= BEGIN list_statement END;
+
+list_statement ::= | list_statement2 statement;         
+ 
+list_statement2 ::= | list_statement2 statement SEMIC;
+
+while_statement ::= WHILE value DO statement;
+
+for_statement ::= FOR IDENTIFIER ASSIGN value TO value DO statement; 

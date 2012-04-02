@@ -1,38 +1,61 @@
-1 
+program HelloWorld; 
 
-{program HelloWorld;
+const
+    a = 3;
+    a = 2;
+    a = 3;
 
-{$EXTENDED}
+type
+    stevilo = integer;
+    seznam = array [3..4] of char;
+    kazalec = ^stevilo;
 
-procedure say_Hello_World();
+var
+    a : integer;
+    b : stevilo;
+    c : array [23..222] of integer;
+    p : ^integer;
+    r : ^seznam;
+
+
+function a(c:char; b: array [3..3] of integer):integer;
 begin
-    write('H');
-    write('e');
-    write('l');
-    write('l');
-    write('o');
-    write(' ');
-    write('W');
-    write('o');
-    write('r');
-    write('l');
-    write('d');
-    write('!');
-    writeln();
 end;
 
-var i,j: integer,
-    c: char, { komentar { ki je {gnezden} } }
-    is_This_A_Weird_Name_That_is_valid: boolean;
-    
+procedure b(a:integer; c:char);
 begin
-    c := 'd';
-    c := ''''; 
-    i := 10;
-    is_This_A_Weird_Name_That_is_valid := true;
+end;
 
-    for j := 1 to i do
+begin
     begin
-        say_Hello_World(i);
+        a.b.c[3] + a(^b^) * [char];
+        if 3 then 
+            while a do
+                if 3 then
+                    a
+                else
+                    b
     end;
-end.}
+    begin
+        a.b.c[3] + a(^b^) * [char];
+        if 3 then 
+            if 3 then 
+                while a do
+                    if 3 then
+                        for a:=2 to 200 do
+                            if b<>^b^ then
+                                c
+    end;
+    begin
+        a.b.c[3] + a(^b^) * [char];
+        if 3 then 
+            if 3 then 
+                while a do
+                    if 3 then
+                        for a:=2 to 200 do
+                            if b<>^b^ then
+                                c
+                            else 
+                                lol
+    end
+end.

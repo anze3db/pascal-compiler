@@ -40,7 +40,7 @@ public class Main {
 		PascalLex lexer = new PascalLex(srcFile);
 		PascalSyn parser = new PascalSyn(lexer);
 		try {
-			parser.debug_parse();
+			parser.debug_parse(xml);
 		}
 		catch (Exception ex) {
 			XML.close("synanal", xml);

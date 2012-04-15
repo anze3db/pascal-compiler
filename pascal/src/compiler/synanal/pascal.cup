@@ -129,8 +129,8 @@ variable_declarations   ::= VAR vars:vs IDENTIFIER:id COLON:c type:te SEMIC:s
 						e.setBeg(id.toString(), idleft, idright);
 						e.setEnd(s.toString(), sleft, sright); 
 						d.decls.add(e); 
-						RESULT = d; :}	    
-					| 
+						RESULT = d; 
+					:} | 
 					{: RESULT = new AbsDecls();	 :}	;
 vars     ::= vars:vs IDENTIFIER:id COLON type:te SEMIC:s
 					{: 	AbsDecls d = (AbsDecls)vs; 
@@ -139,9 +139,9 @@ vars     ::= vars:vs IDENTIFIER:id COLON type:te SEMIC:s
 						AbsVarDecl e = new AbsVarDecl(n, (AbsTypeExpr)te);
 						e.setPos(id.toString(), idleft, idright);
 						d.decls.add(e); 
-						RESULT = d; :}		 
-					| 
-				   {: 	RESULT = new AbsDecls(); :}	;
+						RESULT = d; 
+					:} | 
+				    {: 	RESULT = new AbsDecls(); :}	;
 
 /* SUBPROGRAM DECLARATIONS */
 				   
@@ -169,10 +169,8 @@ subprogram_declarations ::= subprogram_declarations:sd subprogram_head:sh consta
 			AbsDecls d = (AbsDecls)sd;
 			d.decls.add(subp);
 			RESULT = d;
-		
-		:}	
-		| 
-		{: 	RESULT = new AbsDecls(); :}	;
+		:} | 
+		{: 	RESULT = new AbsDecls(); :};
 subprogram_head ::= PROCEDURE:p IDENTIFIER:id LPARENTHESIS:lp param_descr_list:par RPARENTHESIS SEMIC:s
 		{: 	AbsDeclName n = new AbsDeclName(id);
 			n.setBeg(id.toString(), idleft, idright); 
@@ -212,7 +210,7 @@ param_descr_list_r::= param_descr_list_r:par IDENTIFIER:id COLON:c type:te SEMIC
 				d.decls.add(e); 
 				RESULT = d; :}		 
 			| 
-		    {: 	RESULT = new AbsDecls(); :}	;			   
+		    {: 	RESULT = new AbsDecls(); :};			   
 				   
 /* VALUES */
 
@@ -257,12 +255,14 @@ value_list ::= {:   RESULT = new AbsValExprs(); :} | value_params:vp value:v {:
 					e.exprs.add((AbsValExpr)v);	
 					RESULT = e;	
 					RESULT.setBeg("", vpleft, vpright);
-					RESULT.setEnd(v);	:};
+					RESULT.setEnd(v);	
+			   :};
 
 value_params ::= {:	RESULT = new AbsValExprs(); :} | value_params:vp value:v COMMA {: 	
 					AbsValExprs e = (AbsValExprs)vp;
 					e.exprs.add((AbsValExpr)v);	
-					RESULT = e;	:};
+					RESULT = e;	
+				 :};
 /* TYPES */
 
 type ::= 	INT:t  {: RESULT = new AbsAtomType(AbsAtomType.INT); RESULT.setPos(t.toString(), tleft, tright); :}  | 
@@ -293,7 +293,8 @@ table_type ::= ARRAY:a LBRACKET value:lb DOTS value:hb RBRACKET OF type:te
     						d.decls.add(e); 
     						RESULT = new AbsRecordType(d); 
     						RESULT.setBeg(r.toString(), rleft, rright);
-    						RESULT.setEnd(end.toString(), endleft, endright);  :} ;     
+    						RESULT.setEnd(end.toString(), endleft, endright);  
+    					:};     
     comp_descr_list ::= comp_descr_list:cd IDENTIFIER:id COLON:c type:te SEMIC:s 
     					{:	AbsDecls d = (AbsDecls)cd;
     						AbsDeclName dn = new AbsDeclName(id);
@@ -303,8 +304,8 @@ table_type ::= ARRAY:a LBRACKET value:lb DOTS value:hb RBRACKET OF type:te
     						e.setBeg(id.toString(), idleft, idright);
     						e.setEnd(s.toString(), sleft, sright); 
     						d.decls.add(e); 
-    						RESULT = d; 		:}
-    					| 
+    						RESULT = d; 
+    					:} | 
     					{: RESULT = new AbsDecls();	 :} ;  
 
 ptr_type ::= PTR type:t {: RESULT = new AbsPointerType((AbsTypeExpr)t); RESULT.setPos(t); :} ;

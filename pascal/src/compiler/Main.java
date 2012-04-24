@@ -19,13 +19,12 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		System.out.println("This is Pascal compiler:");
-
+		
 		/* Dolocimo ime programa, ki ga prevajamo. */
 		if (args.length < 1) {
 			Report.error("Source file is not specified.", 1);
 		} else
 			prgName = args[0];
-
 		/* Dolocimo zadnjo fazo prevajanja. */
 		String phase = args.length < 2 ? "" : args[1];
 		/* Opravimo izbrano fazo prevajanja (in vse predhodne faze). */
@@ -35,8 +34,10 @@ public class Main {
 			compiler.synanal.Main.exec();
 		else if (phase.equals("abstree"))
 			compiler.abstree.Main.exec();
+		else if (phase.equals("semanal"))
+			compiler.semanal.Main.exec();
 		else
-			compiler.abstree.Main.exec();
+			compiler.semanal.Main.exec();
 
 		System.out.print(":-) Done.\n");
 		System.exit(0);

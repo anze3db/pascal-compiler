@@ -5,6 +5,8 @@ import compiler.abstree.tree.*;
 
 public class AbsEmptyVisitor implements AbsVisitor {
 	
+	public boolean error;
+	
 	@Override
 	public void visit(AbsAlloc acceptor) {
 		Thread.dumpStack();

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <?xml-stylesheet type="text/xsl" href="pascal/xsl/semanal.xsl"?>
 <semanal>
-<absnode pos="(4:1-123:4)" kind="Program">
+<absnode pos="(4:1-35:4)" kind="Program">
 <absnode pos="(4:9-4:16)" kind="DeclName" value="kr_neki">
 </absnode>
-<absnode pos="(4:16-118:43)" kind="Decls">
+<absnode pos="(4:16-30:43)" kind="Decls">
 <absnode pos="(5:7-5:10)" kind="ConstDecl">
-<seminfo kind="DECL" value="658705244"/>
+<seminfo kind="DECL" value="1466604866"/>
 <seminfo kind="SCOPE" value="null"/>
 <seminfo kind="VALUE" value="null"/>
 <absnode pos="(5:7-5:7)" kind="DeclName" value="a">
@@ -16,7 +16,7 @@
 </absnode>
 </absnode>
 <absnode pos="(6:11-6:17)" kind="ConstDecl">
-<seminfo kind="DECL" value="1791140146"/>
+<seminfo kind="DECL" value="329949514"/>
 <seminfo kind="SCOPE" value="null"/>
 <seminfo kind="VALUE" value="null"/>
 <absnode pos="(6:11-6:11)" kind="DeclName" value="n">
@@ -26,7 +26,7 @@
 </absnode>
 </absnode>
 <absnode pos="(7:11-7:16)" kind="ConstDecl">
-<seminfo kind="DECL" value="127276743"/>
+<seminfo kind="DECL" value="580835623"/>
 <seminfo kind="SCOPE" value="null"/>
 <seminfo kind="VALUE" value="null"/>
 <absnode pos="(7:11-7:11)" kind="DeclName" value="k">
@@ -36,7 +36,7 @@
 </absnode>
 </absnode>
 <absnode pos="(8:11-8:18)" kind="ConstDecl">
-<seminfo kind="DECL" value="550370460"/>
+<seminfo kind="DECL" value="266670176"/>
 <seminfo kind="SCOPE" value="null"/>
 <seminfo kind="VALUE" value="null"/>
 <absnode pos="(8:11-8:11)" kind="DeclName" value="j">
@@ -45,1162 +45,233 @@
 <seminfo kind="VALUE" value="null"/>
 </absnode>
 </absnode>
-<absnode pos="(9:11-9:14)" kind="ConstDecl">
+<absnode pos="(10:9-10:21)" kind="TypeDecl">
+<seminfo kind="DECL" value="246507189"/>
+<seminfo kind="SCOPE" value="null"/>
+<absnode pos="(10:9-10:12)" kind="DeclName" value="neki">
+</absnode>
+<absnode pos="(10:14-10:20)" kind="AtomType(INT)">
+</absnode>
+</absnode>
+<absnode pos="(11:9-11:19)" kind="TypeDecl">
 <seminfo kind="DECL" value="2078199276"/>
 <seminfo kind="SCOPE" value="null"/>
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(9:11-9:11)" kind="DeclName" value="t">
+<absnode pos="(11:9-11:13)" kind="DeclName" value="janez">
 </absnode>
-<absnode pos="(9:13-9:13)" kind="ValName" value="a">
+<absnode pos="(11:15-11:18)" kind="AtomType(CHAR)">
 </absnode>
 </absnode>
-<absnode pos="(10:11-10:19)" kind="ConstDecl">
-<seminfo kind="DECL" value="184188532"/>
+<absnode pos="(12:9-12:22)" kind="TypeDecl">
+<seminfo kind="DECL" value="1132721997"/>
 <seminfo kind="SCOPE" value="null"/>
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(10:11-10:13)" kind="DeclName" value="moj">
+<absnode pos="(12:9-12:13)" kind="DeclName" value="janez">
 </absnode>
-<absnode pos="(10:15-10:17)" kind="BinExpr" value="ARRACCESS">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(10:15-10:15)" kind="ValName" value="a">
-</absnode>
-<absnode pos="(10:17-10:17)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
+<absnode pos="(12:15-12:21)" kind="AtomType(BOOL)">
 </absnode>
 </absnode>
-</absnode>
-<absnode pos="(11:11-11:33)" kind="ConstDecl">
+<absnode pos="(13:9-13:38)" kind="TypeDecl">
 <seminfo kind="DECL" value="1075001238"/>
-<seminfo kind="SCOPE" value="null"/>
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(11:11-11:11)" kind="DeclName" value="a">
-</absnode>
-<absnode pos="(11:15-11:32)" kind="CallExpr">
-<absnode pos="(11:15-11:18)" kind="ValName" value="neki">
-</absnode>
-<absnode pos="(11:27-11:30)" kind="ValExprs">
-<absnode pos="(11:20-11:20)" kind="AtomExpr(INT)" value="1">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(11:22-11:22)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(11:24-11:26)" kind="AtomExpr(CHAR)" value="'a'">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(11:28-11:30)" kind="BinExpr" value="ARRACCESS">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(11:28-11:28)" kind="ValName" value="a">
-</absnode>
-<absnode pos="(11:30-11:30)" kind="AtomExpr(INT)" value="1">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(13:9-13:21)" kind="TypeDecl">
-<seminfo kind="DECL" value="522501055"/>
 <seminfo kind="SCOPE" value="null"/>
 <absnode pos="(13:9-13:12)" kind="DeclName" value="neki">
 </absnode>
-<absnode pos="(13:14-13:20)" kind="AtomType(INT)">
+<absnode pos="(13:16-13:37)" kind="ArrayType">
+<absnode pos="(13:22-13:22)" kind="AtomExpr(INT)" value="1">
+<seminfo kind="VALUE" value="null"/>
+</absnode>
+<absnode pos="(13:25-13:25)" kind="AtomExpr(INT)" value="5">
+<seminfo kind="VALUE" value="null"/>
+</absnode>
+<absnode pos="(13:31-13:37)" kind="AtomType(INT)">
 </absnode>
 </absnode>
-<absnode pos="(14:9-14:19)" kind="TypeDecl">
+</absnode>
+<absnode pos="(14:9-14:36)" kind="TypeDecl">
+<seminfo kind="DECL" value="803523524"/>
+<seminfo kind="SCOPE" value="null"/>
+<absnode pos="(14:9-14:12)" kind="DeclName" value="neki">
+</absnode>
+<absnode pos="(14:16-14:35)" kind="ArrayType">
+<absnode pos="(14:22-14:22)" kind="AtomExpr(INT)" value="1">
+<seminfo kind="VALUE" value="null"/>
+</absnode>
+<absnode pos="(14:25-14:25)" kind="AtomExpr(INT)" value="5">
+<seminfo kind="VALUE" value="null"/>
+</absnode>
+<absnode pos="(14:31-14:35)" kind="TypeName" value="janez">
+</absnode>
+</absnode>
+</absnode>
+<absnode pos="(16:5-16:5)" kind="VarDecl">
 <seminfo kind="DECL" value="22591049"/>
 <seminfo kind="SCOPE" value="null"/>
-<absnode pos="(14:9-14:13)" kind="DeclName" value="janez">
+<absnode pos="(16:5-16:5)" kind="DeclName" value="n">
 </absnode>
-<absnode pos="(14:15-14:18)" kind="AtomType(CHAR)">
+<absnode pos="(16:7-16:13)" kind="AtomType(INT)">
 </absnode>
 </absnode>
-<absnode pos="(15:9-15:22)" kind="TypeDecl">
+<absnode pos="(17:9-17:12)" kind="VarDecl">
 <seminfo kind="DECL" value="1843332925"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(15:9-15:13)" kind="DeclName" value="janez">
-</absnode>
-<absnode pos="(15:15-15:21)" kind="AtomType(BOOL)">
-</absnode>
-</absnode>
-<absnode pos="(16:9-16:38)" kind="TypeDecl">
-<seminfo kind="DECL" value="1518996829"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(16:9-16:12)" kind="DeclName" value="neki">
-</absnode>
-<absnode pos="(16:16-16:37)" kind="ArrayType">
-<absnode pos="(16:22-16:22)" kind="AtomExpr(INT)" value="1">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(16:25-16:25)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(16:31-16:37)" kind="AtomType(INT)">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(17:9-17:36)" kind="TypeDecl">
-<seminfo kind="DECL" value="1530703565"/>
 <seminfo kind="SCOPE" value="null"/>
 <absnode pos="(17:9-17:12)" kind="DeclName" value="neki">
 </absnode>
-<absnode pos="(17:16-17:35)" kind="ArrayType">
+<absnode pos="(17:16-17:37)" kind="ArrayType">
 <absnode pos="(17:22-17:22)" kind="AtomExpr(INT)" value="1">
 <seminfo kind="VALUE" value="null"/>
 </absnode>
 <absnode pos="(17:25-17:25)" kind="AtomExpr(INT)" value="5">
 <seminfo kind="VALUE" value="null"/>
 </absnode>
-<absnode pos="(17:31-17:35)" kind="TypeName" value="janez">
+<absnode pos="(17:31-17:37)" kind="AtomType(INT)">
 </absnode>
 </absnode>
 </absnode>
-<absnode pos="(19:5-19:5)" kind="VarDecl">
+<absnode pos="(18:9-18:12)" kind="VarDecl">
+<seminfo kind="DECL" value="837043581"/>
+<seminfo kind="SCOPE" value="null"/>
+<absnode pos="(18:9-18:12)" kind="DeclName" value="neki">
+</absnode>
+<absnode pos="(18:15-26:21)" kind="RecordType">
+<absnode pos="(18:15-22:24)" kind="Decls">
+<absnode pos="(19:25-19:41)" kind="VarDecl">
+<seminfo kind="DECL" value="1530703565"/>
+<seminfo kind="SCOPE" value="null"/>
+<absnode pos="(19:25-19:29)" kind="DeclName" value="neki">
+</absnode>
+<absnode pos="(19:33-19:39)" kind="AtomType(INT)">
+</absnode>
+</absnode>
+<absnode pos="(20:25-20:39)" kind="VarDecl">
+<seminfo kind="DECL" value="895309525"/>
+<seminfo kind="SCOPE" value="null"/>
+<absnode pos="(20:25-20:29)" kind="DeclName" value="pojdi">
+</absnode>
+<absnode pos="(20:32-20:38)" kind="AtomType(BOOL)">
+</absnode>
+</absnode>
+<absnode pos="(21:25-21:54)" kind="VarDecl">
 <seminfo kind="DECL" value="218843951"/>
 <seminfo kind="SCOPE" value="null"/>
-<absnode pos="(19:5-19:5)" kind="DeclName" value="n">
+<absnode pos="(21:25-21:29)" kind="DeclName" value="neki">
 </absnode>
-<absnode pos="(19:7-19:13)" kind="AtomType(INT)">
+<absnode pos="(21:32-21:53)" kind="ArrayType">
+<absnode pos="(21:38-21:38)" kind="AtomExpr(INT)" value="1">
+<seminfo kind="VALUE" value="null"/>
+</absnode>
+<absnode pos="(21:41-21:41)" kind="AtomExpr(INT)" value="5">
+<seminfo kind="VALUE" value="null"/>
+</absnode>
+<absnode pos="(21:47-21:53)" kind="AtomType(INT)">
 </absnode>
 </absnode>
-<absnode pos="(20:9-20:12)" kind="VarDecl">
-<seminfo kind="DECL" value="227180285"/>
+</absnode>
+<absnode pos="(22:25-26:21)" kind="VarDecl">
+<seminfo kind="DECL" value="953019901"/>
 <seminfo kind="SCOPE" value="null"/>
-<absnode pos="(20:9-20:12)" kind="DeclName" value="neki">
+<absnode pos="(18:15-22:29)" kind="DeclName" value="neki">
 </absnode>
-<absnode pos="(20:16-20:37)" kind="ArrayType">
-<absnode pos="(20:22-20:22)" kind="AtomExpr(INT)" value="1">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(20:25-20:25)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(20:31-20:37)" kind="AtomType(INT)">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(21:9-21:12)" kind="VarDecl">
+<absnode pos="(22:32-25:38)" kind="RecordType">
+<absnode pos="(22:32-24:48)" kind="Decls">
+<absnode pos="(23:49-23:63)" kind="VarDecl">
 <seminfo kind="DECL" value="758885650"/>
 <seminfo kind="SCOPE" value="null"/>
-<absnode pos="(21:9-21:12)" kind="DeclName" value="neki">
+<absnode pos="(23:49-23:54)" kind="DeclName" value="testni">
 </absnode>
-<absnode pos="(21:15-29:21)" kind="RecordType">
-<absnode pos="(21:15-25:24)" kind="Decls">
-<absnode pos="(22:25-22:41)" kind="VarDecl">
+<absnode pos="(23:56-23:62)" kind="AtomType(INT)">
+</absnode>
+</absnode>
+<absnode pos="(24:49-25:38)" kind="VarDecl">
 <seminfo kind="DECL" value="166295158"/>
 <seminfo kind="SCOPE" value="null"/>
-<absnode pos="(22:25-22:29)" kind="DeclName" value="neki">
+<absnode pos="(22:32-24:53)" kind="DeclName" value="neki">
 </absnode>
-<absnode pos="(22:33-22:39)" kind="AtomType(INT)">
+<absnode pos="(24:56-24:77)" kind="ArrayType">
+<absnode pos="(24:62-24:62)" kind="AtomExpr(INT)" value="1">
+<seminfo kind="VALUE" value="null"/>
+</absnode>
+<absnode pos="(24:65-24:65)" kind="AtomExpr(INT)" value="5">
+<seminfo kind="VALUE" value="null"/>
+</absnode>
+<absnode pos="(24:71-24:77)" kind="AtomType(INT)">
 </absnode>
 </absnode>
-<absnode pos="(23:25-23:39)" kind="VarDecl">
-<seminfo kind="DECL" value="945030152"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(23:25-23:29)" kind="DeclName" value="pojdi">
-</absnode>
-<absnode pos="(23:32-23:38)" kind="AtomType(BOOL)">
 </absnode>
 </absnode>
-<absnode pos="(24:25-24:54)" kind="VarDecl">
+</absnode>
+</absnode>
+</absnode>
+</absnode>
+</absnode>
+<absnode pos="(27:9-27:23)" kind="VarDecl">
 <seminfo kind="DECL" value="1043636732"/>
 <seminfo kind="SCOPE" value="null"/>
-<absnode pos="(24:25-24:29)" kind="DeclName" value="neki">
+<absnode pos="(27:9-27:15)" kind="DeclName" value="pointer">
 </absnode>
-<absnode pos="(24:32-24:53)" kind="ArrayType">
-<absnode pos="(24:38-24:38)" kind="AtomExpr(INT)" value="1">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(24:41-24:41)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(24:47-24:53)" kind="AtomType(INT)">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(25:25-29:21)" kind="VarDecl">
-<seminfo kind="DECL" value="1419115801"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(21:15-25:29)" kind="DeclName" value="neki">
-</absnode>
-<absnode pos="(25:32-28:38)" kind="RecordType">
-<absnode pos="(25:32-27:48)" kind="Decls">
-<absnode pos="(26:49-26:63)" kind="VarDecl">
-<seminfo kind="DECL" value="100218029"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(26:49-26:54)" kind="DeclName" value="testni">
-</absnode>
-<absnode pos="(26:56-26:62)" kind="AtomType(INT)">
-</absnode>
-</absnode>
-<absnode pos="(27:49-28:38)" kind="VarDecl">
-<seminfo kind="DECL" value="198204545"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(25:32-27:53)" kind="DeclName" value="neki">
-</absnode>
-<absnode pos="(27:56-27:77)" kind="ArrayType">
-<absnode pos="(27:62-27:62)" kind="AtomExpr(INT)" value="1">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(27:65-27:65)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(27:71-27:77)" kind="AtomType(INT)">
+<absnode pos="(27:19-27:22)" kind="PointerType">
+<absnode pos="(27:19-27:22)" kind="TypeName" value="neki">
 </absnode>
 </absnode>
 </absnode>
 </absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(30:9-30:23)" kind="VarDecl">
-<seminfo kind="DECL" value="1932154105"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(30:9-30:15)" kind="DeclName" value="pointer">
-</absnode>
-<absnode pos="(30:19-30:22)" kind="PointerType">
-<absnode pos="(30:19-30:22)" kind="TypeName" value="neki">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(33:1-33:47)" kind="FunDecl">
-<seminfo kind="DECL" value="332181545"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(33:10-33:14)" kind="DeclName" value="neki">
-</absnode>
-<absnode pos="(0:0-0:0)" kind="Decls">
-<absnode pos="(33:15-33:24)" kind="VarDecl">
-<seminfo kind="DECL" value="1484511730"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(0:0-33:18)" kind="DeclName" value="test">
-</absnode>
-<absnode pos="(33:20-33:23)" kind="TypeName" value="neki">
-</absnode>
-</absnode>
-<absnode pos="(33:25-33:33)" kind="VarDecl">
-<seminfo kind="DECL" value="105132582"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(0:0-33:27)" kind="DeclName" value="ups">
-</absnode>
-<absnode pos="(33:29-33:32)" kind="TypeName" value="test">
-</absnode>
-</absnode>
-<absnode pos="(33:34-33:37)" kind="VarDecl">
-<seminfo kind="DECL" value="1063661000"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(0:0-33:37)" kind="DeclName" value="neki">
-</absnode>
-<absnode pos="(33:39-33:40)" kind="TypeName" value="kk">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(33:43-33:46)" kind="TypeName" value="neki">
-</absnode>
-<absnode pos="(0:0-0:0)" kind="Decls">
-<absnode pos="(35:9-35:60)" kind="FunDecl">
-<seminfo kind="DECL" value="2086984721"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(35:18-35:27)" kind="DeclName" value="vkljucena">
-</absnode>
-<absnode pos="(0:0-0:0)" kind="Decls">
-<absnode pos="(35:28-35:37)" kind="VarDecl">
-<seminfo kind="DECL" value="190960491"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(0:0-35:31)" kind="DeclName" value="test">
-</absnode>
-<absnode pos="(35:33-35:36)" kind="TypeName" value="neki">
-</absnode>
-</absnode>
-<absnode pos="(35:38-35:46)" kind="VarDecl">
-<seminfo kind="DECL" value="705613182"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(0:0-35:40)" kind="DeclName" value="ups">
-</absnode>
-<absnode pos="(35:42-35:45)" kind="TypeName" value="test">
-</absnode>
-</absnode>
-<absnode pos="(35:47-35:50)" kind="VarDecl">
-<seminfo kind="DECL" value="1568033761"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(0:0-35:50)" kind="DeclName" value="neki">
-</absnode>
-<absnode pos="(35:52-35:53)" kind="TypeName" value="kk">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(35:56-35:59)" kind="TypeName" value="neki">
-</absnode>
-<absnode pos="(0:0-0:0)" kind="Decls">
-</absnode>
-<absnode pos="(36:9-38:11)" kind="BlockStmt">
+<absnode pos="(30:1-35:3)" kind="BlockStmt">
 <absnode pos="(0:0-0:0)" kind="Stmts">
+<absnode pos="(32:9-32:38)" kind="AssignStmt">
+<absnode pos="(32:9-32:12)" kind="ValName" value="neki">
 </absnode>
-</absnode>
-</absnode>
-<absnode pos="(40:9-40:67)" kind="FunDecl">
-<seminfo kind="DECL" value="736742261"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(40:18-40:21)" kind="DeclName" value="arr">
-</absnode>
-<absnode pos="(0:0-0:0)" kind="Decls">
-<absnode pos="(40:22-40:32)" kind="VarDecl">
-<seminfo kind="DECL" value="952484780"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(0:0-40:23)" kind="DeclName" value="n1">
-</absnode>
-<absnode pos="(40:25-40:31)" kind="AtomType(INT)">
-</absnode>
-</absnode>
-<absnode pos="(40:33-40:34)" kind="VarDecl">
-<seminfo kind="DECL" value="166999797"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(0:0-40:34)" kind="DeclName" value="n2">
-</absnode>
-<absnode pos="(40:36-40:42)" kind="AtomType(INT)">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(40:45-40:66)" kind="ArrayType">
-<absnode pos="(40:51-40:51)" kind="AtomExpr(INT)" value="1">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(40:54-40:54)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(40:60-40:66)" kind="AtomType(INT)">
-</absnode>
-</absnode>
-<absnode pos="(0:0-0:0)" kind="Decls">
-<absnode pos="(41:17-41:38)" kind="FunDecl">
-<seminfo kind="DECL" value="768288241"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(41:26-41:28)" kind="DeclName" value="mm">
-</absnode>
-<absnode pos="(0:0-0:0)" kind="Decls">
-</absnode>
-<absnode pos="(41:31-41:37)" kind="AtomType(BOOL)">
-</absnode>
-<absnode pos="(0:0-0:0)" kind="Decls">
-</absnode>
-<absnode pos="(42:25-44:27)" kind="BlockStmt">
-<absnode pos="(0:0-0:0)" kind="Stmts">
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(45:9-47:11)" kind="BlockStmt">
-<absnode pos="(0:0-0:0)" kind="Stmts">
-<absnode pos="(46:17-46:27)" kind="AssignStmt">
-<absnode pos="(46:17-46:22)" kind="ValName" value="result">
-</absnode>
-<absnode pos="(46:25-46:27)" kind="NilConst">
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(50:9-50:24)" kind="ProcDecl">
-<seminfo kind="DECL" value="1489977589"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(50:19-50:22)" kind="DeclName" value="hop">
-</absnode>
-<absnode pos="(0:0-0:0)" kind="Decls">
-</absnode>
-<absnode pos="(0:0-0:0)" kind="Decls">
-</absnode>
-<absnode pos="(51:9-53:11)" kind="BlockStmt">
-<absnode pos="(0:0-0:0)" kind="Stmts">
-<absnode pos="(52:17-52:58)" kind="AssignStmt">
-<absnode pos="(52:17-52:17)" kind="ValName" value="a">
-</absnode>
-<absnode pos="(52:22-52:58)" kind="BinExpr" value="ADD">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(52:22-52:39)" kind="BinExpr" value="ADD">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(52:22-52:22)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(52:26-52:39)" kind="BinExpr" value="DIV">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(52:26-52:31)" kind="BinExpr" value="MUL">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(52:26-52:26)" kind="AtomExpr(INT)" value="3">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(52:30-52:31)" kind="AtomExpr(INT)" value="23">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-<absnode pos="(52:38-52:39)" kind="UnExpr" value="SUB">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(52:38-52:39)" kind="AtomExpr(INT)" value="45">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(52:44-52:58)" kind="BinExpr" value="MUL">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(52:44-52:49)" kind="BinExpr" value="MUL">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(52:44-52:45)" kind="AtomExpr(INT)" value="12">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(52:49-52:49)" kind="AtomExpr(INT)" value="8">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-<absnode pos="(52:54-52:58)" kind="BinExpr" value="ADD">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(52:54-52:54)" kind="AtomExpr(INT)" value="1">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(52:58-52:58)" kind="AtomExpr(INT)" value="8">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(54:1-55:3)" kind="BlockStmt">
-<absnode pos="(0:0-0:0)" kind="Stmts">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(57:1-57:40)" kind="ProcDecl">
-<seminfo kind="DECL" value="1925529038"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(57:11-57:15)" kind="DeclName" value="test">
-</absnode>
-<absnode pos="(0:0-0:0)" kind="Decls">
-<absnode pos="(57:16-57:29)" kind="VarDecl">
-<seminfo kind="DECL" value="1425840452"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(0:0-57:24)" kind="DeclName" value="parameter">
-</absnode>
-<absnode pos="(57:26-57:28)" kind="TypeName" value="nne">
-</absnode>
-</absnode>
-<absnode pos="(57:30-57:30)" kind="VarDecl">
-<seminfo kind="DECL" value="283836798"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(0:0-57:30)" kind="DeclName" value="j">
-</absnode>
-<absnode pos="(57:32-57:38)" kind="AtomType(INT)">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(0:0-0:0)" kind="Decls">
-<absnode pos="(58:5-58:5)" kind="VarDecl">
-<seminfo kind="DECL" value="437220289"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(58:5-58:5)" kind="DeclName" value="m">
-</absnode>
-<absnode pos="(58:7-58:13)" kind="AtomType(INT)">
-</absnode>
-</absnode>
-<absnode pos="(59:9-59:18)" kind="VarDecl">
-<seminfo kind="DECL" value="730252978"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(59:9-59:9)" kind="DeclName" value="i">
-</absnode>
-<absnode pos="(59:11-59:17)" kind="AtomType(INT)">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(60:1-70:3)" kind="BlockStmt">
-<absnode pos="(0:0-0:0)" kind="Stmts">
-<absnode pos="(61:9-69:35)" kind="ForStmt">
-<absnode pos="(61:13-61:13)" kind="ValName" value="i">
-</absnode>
-<absnode pos="(61:16-61:16)" kind="AtomExpr(INT)" value="0">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(61:21-61:22)" kind="AtomExpr(INT)" value="10">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(62:17-69:35)" kind="WhileStmt">
-<absnode pos="(62:23-62:27)" kind="BinExpr" value="LTH">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(62:23-62:23)" kind="ValName" value="j">
-</absnode>
-<absnode pos="(62:27-62:27)" kind="ValName" value="i">
-</absnode>
-</absnode>
-<absnode pos="(63:25-69:35)" kind="IfStmt">
-<absnode pos="(63:28-63:32)" kind="BinExpr" value="GTH">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(63:28-63:28)" kind="ValName" value="j">
-</absnode>
-<absnode pos="(63:32-63:32)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-<absnode pos="(64:33-69:35)" kind="BlockStmt">
-<absnode pos="(0:0-0:0)" kind="Stmts">
-<absnode pos="(65:41-68:51)" kind="IfStmt">
-<absnode pos="(65:46-65:91)" kind="BinExpr" value="GTH">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(65:46-65:86)" kind="BinExpr" value="SUB">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(65:46-65:63)" kind="BinExpr" value="DIV">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(65:46-65:55)" kind="BinExpr" value="MUL">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(65:46-65:50)" kind="BinExpr" value="ADD">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(65:46-65:46)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(65:50-65:50)" kind="AtomExpr(INT)" value="3">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-<absnode pos="(65:54-65:55)" kind="AtomExpr(INT)" value="23">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-<absnode pos="(65:62-65:63)" kind="UnExpr" value="SUB">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(65:62-65:63)" kind="AtomExpr(INT)" value="45">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(65:68-65:86)" kind="BinExpr" value="MUL">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(65:68-65:82)" kind="BinExpr" value="MUL">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(65:68-65:73)" kind="BinExpr" value="MUL">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(65:68-65:69)" kind="AtomExpr(INT)" value="12">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(65:73-65:73)" kind="AtomExpr(INT)" value="8">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-<absnode pos="(65:78-65:82)" kind="BinExpr" value="ADD">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(65:78-65:78)" kind="AtomExpr(INT)" value="1">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(65:82-65:82)" kind="AtomExpr(INT)" value="8">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(65:86-65:86)" kind="ValName" value="i">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(65:91-65:91)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-<absnode pos="(66:49-68:51)" kind="BlockStmt">
-<absnode pos="(0:0-0:0)" kind="Stmts">
-<absnode pos="(67:57-67:75)" kind="ExprStmt">
-<absnode pos="(67:57-67:75)" kind="CallExpr">
-<absnode pos="(67:57-67:60)" kind="ValName" value="test">
-</absnode>
-<absnode pos="(67:71-67:74)" kind="ValExprs">
-<absnode pos="(67:62-67:70)" kind="ValName" value="parameter">
-</absnode>
-<absnode pos="(67:72-67:74)" kind="BinExpr" value="ADD">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(67:72-67:72)" kind="ValName" value="i">
-</absnode>
-<absnode pos="(67:74-67:74)" kind="AtomExpr(INT)" value="1">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(0:0-0:0)" kind="BlockStmt">
-<absnode pos="(0:0-0:0)" kind="Stmts">
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(0:0-0:0)" kind="BlockStmt">
-<absnode pos="(0:0-0:0)" kind="Stmts">
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(72:1-72:19)" kind="ProcDecl">
-<seminfo kind="DECL" value="205238968"/>
-<seminfo kind="SCOPE" value="null"/>
-<absnode pos="(72:11-72:17)" kind="DeclName" value="prazen">
-</absnode>
-<absnode pos="(0:0-0:0)" kind="Decls">
-</absnode>
-<absnode pos="(0:0-0:0)" kind="Decls">
-</absnode>
-<absnode pos="(73:1-116:3)" kind="BlockStmt">
-<absnode pos="(0:0-0:0)" kind="Stmts">
-<absnode pos="(74:9-76:11)" kind="WhileStmt">
-<absnode pos="(74:15-74:18)" kind="ValName" value="neki">
-</absnode>
-<absnode pos="(75:9-76:11)" kind="BlockStmt">
-<absnode pos="(0:0-0:0)" kind="Stmts">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(78:9-80:11)" kind="BlockStmt">
-<absnode pos="(0:0-0:0)" kind="Stmts">
-<absnode pos="(79:23-79:28)" kind="AssignStmt">
-<absnode pos="(79:17-79:22)" kind="BinExpr" value="ARRACCESS">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(79:17-79:20)" kind="ValName" value="neki">
-</absnode>
-<absnode pos="(79:22-79:22)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-<absnode pos="(79:28-79:28)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(82:9-83:23)" kind="WhileStmt">
-<absnode pos="(82:15-82:15)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(83:20-83:23)" kind="AssignStmt">
-<absnode pos="(83:17-83:19)" kind="BinExpr" value="ARRACCESS">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(83:17-83:17)" kind="ValName" value="a">
-</absnode>
-<absnode pos="(83:19-83:19)" kind="AtomExpr(INT)" value="6">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-<absnode pos="(83:23-83:23)" kind="AtomExpr(INT)" value="1">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(84:9-84:12)" kind="AssignStmt">
-<absnode pos="(84:9-84:9)" kind="ValName" value="m">
-</absnode>
-<absnode pos="(84:12-84:12)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-<absnode pos="(85:9-86:20)" kind="ForStmt">
-<absnode pos="(85:13-85:13)" kind="ValName" value="i">
-</absnode>
-<absnode pos="(85:16-85:16)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(85:21-85:21)" kind="AtomExpr(INT)" value="6">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(86:17-86:20)" kind="AssignStmt">
-<absnode pos="(86:17-86:17)" kind="ValName" value="k">
-</absnode>
-<absnode pos="(86:20-86:20)" kind="AtomExpr(INT)" value="1">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(87:9-90:11)" kind="ForStmt">
-<absnode pos="(87:13-87:13)" kind="ValName" value="i">
-</absnode>
-<absnode pos="(87:16-87:16)" kind="AtomExpr(INT)" value="0">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(87:21-87:21)" kind="AtomExpr(INT)" value="6">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(88:9-90:11)" kind="BlockStmt">
-<absnode pos="(0:0-0:0)" kind="Stmts">
-<absnode pos="(89:17-89:20)" kind="AssignStmt">
-<absnode pos="(89:17-89:17)" kind="ValName" value="k">
-</absnode>
-<absnode pos="(89:20-89:20)" kind="AtomExpr(INT)" value="1">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(91:9-92:20)" kind="IfStmt">
-<absnode pos="(91:12-91:18)" kind="BinExpr" value="AND">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(91:12-91:12)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(91:18-91:18)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-<absnode pos="(92:17-92:20)" kind="AssignStmt">
-<absnode pos="(92:17-92:17)" kind="ValName" value="k">
-</absnode>
-<absnode pos="(92:20-92:20)" kind="AtomExpr(INT)" value="1">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-<absnode pos="(0:0-0:0)" kind="BlockStmt">
-<absnode pos="(0:0-0:0)" kind="Stmts">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(93:10-93:12)" kind="ExprStmt">
-<absnode pos="(93:10-93:12)" kind="BinExpr" value="EQU">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(93:10-93:10)" kind="AtomExpr(INT)" value="3">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(93:12-93:12)" kind="AtomExpr(INT)" value="3">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(94:10-94:13)" kind="ExprStmt">
-<absnode pos="(94:10-94:13)" kind="BinExpr" value="NEQ">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(94:10-94:10)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(94:13-94:13)" kind="AtomExpr(INT)" value="6">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(95:10-95:13)" kind="ExprStmt">
-<absnode pos="(95:10-95:13)" kind="BinExpr" value="LEQ">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(95:10-95:10)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(95:13-95:13)" kind="AtomExpr(INT)" value="6">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(96:10-96:13)" kind="ExprStmt">
-<absnode pos="(96:10-96:13)" kind="BinExpr" value="GEQ">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(96:10-96:10)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(96:13-96:13)" kind="AtomExpr(INT)" value="6">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(97:10-97:14)" kind="ExprStmt">
-<absnode pos="(97:10-97:14)" kind="BinExpr" value="LTH">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(97:10-97:10)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(97:14-97:14)" kind="AtomExpr(INT)" value="6">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(98:10-98:14)" kind="ExprStmt">
-<absnode pos="(98:10-98:14)" kind="BinExpr" value="GTH">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(98:10-98:10)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(98:14-98:14)" kind="AtomExpr(INT)" value="6">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(99:10-99:25)" kind="ExprStmt">
-<absnode pos="(99:10-99:25)" kind="BinExpr" value="OR">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(99:10-99:18)" kind="BinExpr" value="AND">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(99:10-99:12)" kind="BinExpr" value="GTH">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(99:10-99:10)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(99:12-99:12)" kind="AtomExpr(INT)" value="6">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-<absnode pos="(99:18-99:18)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-<absnode pos="(99:23-99:25)" kind="BinExpr" value="LTH">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(99:23-99:23)" kind="AtomExpr(INT)" value="4">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(99:25-99:25)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(100:10-100:12)" kind="ExprStmt">
-<absnode pos="(100:10-100:12)" kind="BinExpr" value="ADD">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(100:10-100:10)" kind="AtomExpr(INT)" value="4">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(100:12-100:12)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(101:10-101:12)" kind="ExprStmt">
-<absnode pos="(101:10-101:12)" kind="BinExpr" value="SUB">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(101:10-101:10)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(101:12-101:12)" kind="AtomExpr(INT)" value="4">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(102:10-102:20)" kind="ExprStmt">
-<absnode pos="(102:10-102:20)" kind="BinExpr" value="SUB">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(102:10-102:12)" kind="BinExpr" value="MUL">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(102:10-102:10)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(102:12-102:12)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-<absnode pos="(102:14-102:20)" kind="BinExpr" value="DIV">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(102:14-102:14)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(102:20-102:20)" kind="AtomExpr(INT)" value="2">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(103:9-104:23)" kind="IfStmt">
-<absnode pos="(103:20-103:25)" kind="UnExpr" value="NOT">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(103:20-103:25)" kind="BinExpr" value="GTH">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(103:20-103:20)" kind="UnExpr" value="SUB">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(103:20-103:20)" kind="UnExpr" value="MEM">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(103:20-103:20)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(103:25-103:25)" kind="AtomExpr(INT)" value="4">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(104:17-104:23)" kind="AssignStmt">
-<absnode pos="(104:17-104:19)" kind="ValName" value="bej">
-</absnode>
-<absnode pos="(104:23-104:23)" kind="UnExpr" value="SUB">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(104:23-104:23)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(0:0-0:0)" kind="BlockStmt">
-<absnode pos="(0:0-0:0)" kind="Stmts">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(105:9-105:13)" kind="AssignStmt">
-<absnode pos="(105:9-105:9)" kind="ValName" value="i">
-</absnode>
-<absnode pos="(105:13-105:13)" kind="UnExpr" value="ADD">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(105:13-105:13)" kind="AtomExpr(INT)" value="1">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(106:9-106:15)" kind="AssignStmt">
-<absnode pos="(106:9-106:9)" kind="ValName" value="k">
-</absnode>
-<absnode pos="(106:12-106:15)" kind="UnExpr" value="VAL">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(106:12-106:15)" kind="ValName" value="neki">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(107:10-107:17)" kind="ExprStmt">
-<absnode pos="(107:10-107:17)" kind="BinExpr" value="RECACCESS">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(107:10-107:10)" kind="UnExpr" value="VAL">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(107:10-107:10)" kind="ValName" value="a">
-</absnode>
-</absnode>
-<absnode pos="(107:14-107:17)" kind="ValName" value="neki">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(108:9-108:22)" kind="ExprStmt">
-<absnode pos="(108:9-108:22)" kind="BinExpr" value="RECACCESS">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(108:9-108:17)" kind="UnExpr" value="VAL">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(108:9-108:17)" kind="BinExpr" value="RECACCESS">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(108:9-108:15)" kind="BinExpr" value="RECACCESS">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(108:9-108:9)" kind="UnExpr" value="VAL">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(108:9-108:9)" kind="ValName" value="a">
-</absnode>
-</absnode>
-<absnode pos="(108:12-108:15)" kind="ValName" value="neki">
-</absnode>
-</absnode>
-<absnode pos="(108:17-108:17)" kind="ValName" value="k">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(108:20-108:22)" kind="ValName" value="let">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(109:9-109:19)" kind="ExprStmt">
-<absnode pos="(109:9-109:19)" kind="BinExpr" value="RECACCESS">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(109:9-109:14)" kind="CallExpr">
-<absnode pos="(109:9-109:11)" kind="ValName" value="moj">
-</absnode>
-<absnode pos="(109:12-109:13)" kind="ValExprs">
-<absnode pos="(109:13-109:13)" kind="ValName" value="a">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(109:16-109:19)" kind="ValName" value="neki">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(110:9-110:17)" kind="ExprStmt">
-<absnode pos="(110:9-110:17)" kind="BinExpr" value="RECACCESS">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(110:9-110:15)" kind="BinExpr" value="RECACCESS">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(110:9-110:13)" kind="BinExpr" value="RECACCESS">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(110:9-110:11)" kind="BinExpr" value="RECACCESS">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(110:9-110:9)" kind="ValName" value="a">
-</absnode>
-<absnode pos="(110:11-110:11)" kind="ValName" value="a">
-</absnode>
-</absnode>
-<absnode pos="(110:13-110:13)" kind="ValName" value="a">
-</absnode>
-</absnode>
-<absnode pos="(110:15-110:15)" kind="ValName" value="c">
-</absnode>
-</absnode>
-<absnode pos="(110:17-110:17)" kind="ValName" value="n">
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(0:0-0:0)" kind="ExprStmt">
-<absnode pos="(0:0-0:0)" kind="Alloc">
-<absnode pos="(111:10-111:31)" kind="ArrayType">
-<absnode pos="(111:16-111:16)" kind="AtomExpr(INT)" value="1">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(111:19-111:19)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(111:25-111:31)" kind="AtomType(INT)">
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(112:9-112:50)" kind="AssignStmt">
-<absnode pos="(112:9-112:9)" kind="ValName" value="a">
-</absnode>
-<absnode pos="(112:14-112:50)" kind="BinExpr" value="ADD">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(112:14-112:31)" kind="BinExpr" value="ADD">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(112:14-112:14)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(112:18-112:31)" kind="BinExpr" value="DIV">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(112:18-112:23)" kind="BinExpr" value="MUL">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(112:18-112:18)" kind="AtomExpr(INT)" value="3">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(112:22-112:23)" kind="AtomExpr(INT)" value="23">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-<absnode pos="(112:30-112:31)" kind="UnExpr" value="SUB">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(112:30-112:31)" kind="AtomExpr(INT)" value="45">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(112:36-112:50)" kind="BinExpr" value="MUL">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(112:36-112:41)" kind="BinExpr" value="MUL">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(112:36-112:37)" kind="AtomExpr(INT)" value="12">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(112:41-112:41)" kind="AtomExpr(INT)" value="8">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-<absnode pos="(112:46-112:50)" kind="BinExpr" value="ADD">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(112:46-112:46)" kind="AtomExpr(INT)" value="1">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(112:50-112:50)" kind="AtomExpr(INT)" value="8">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(113:5-113:18)" kind="AssignStmt">
-<absnode pos="(113:5-113:5)" kind="ValName" value="b">
-</absnode>
-<absnode pos="(113:10-113:18)" kind="BinExpr" value="ADD">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(113:10-113:14)" kind="BinExpr" value="MUL">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(113:10-113:10)" kind="AtomExpr(INT)" value="3">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(113:14-113:14)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-<absnode pos="(113:18-113:18)" kind="AtomExpr(INT)" value="3">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(114:5-114:18)" kind="AssignStmt">
-<absnode pos="(114:5-114:5)" kind="ValName" value="c">
-</absnode>
-<absnode pos="(114:10-114:18)" kind="BinExpr" value="ADD">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(114:10-114:10)" kind="AtomExpr(INT)" value="3">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(114:14-114:18)" kind="BinExpr" value="MUL">
-<seminfo kind="VALUE" value="null"/>
-<absnode pos="(114:14-114:14)" kind="AtomExpr(INT)" value="3">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-<absnode pos="(114:18-114:18)" kind="AtomExpr(INT)" value="5">
-<seminfo kind="VALUE" value="null"/>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-</absnode>
-<absnode pos="(118:1-123:3)" kind="BlockStmt">
-<absnode pos="(0:0-0:0)" kind="Stmts">
-<absnode pos="(120:9-120:38)" kind="AssignStmt">
-<absnode pos="(120:9-120:12)" kind="ValName" value="neki">
-</absnode>
-<absnode pos="(120:15-120:38)" kind="BinExpr" value="ADD">
+<absnode pos="(32:15-32:38)" kind="BinExpr" value="ADD">
 <seminfo kind="VALUE" value="null"/>
-<absnode pos="(120:15-120:36)" kind="BinExpr" value="ADD">
+<absnode pos="(32:15-32:36)" kind="BinExpr" value="ADD">
 <seminfo kind="VALUE" value="null"/>
-<absnode pos="(120:15-120:17)" kind="BinExpr" value="ADD">
+<absnode pos="(32:15-32:17)" kind="BinExpr" value="ADD">
 <seminfo kind="VALUE" value="null"/>
-<absnode pos="(120:15-120:15)" kind="AtomExpr(INT)" value="5">
+<absnode pos="(32:15-32:15)" kind="AtomExpr(INT)" value="5">
 <seminfo kind="VALUE" value="null"/>
 </absnode>
-<absnode pos="(120:17-120:17)" kind="AtomExpr(INT)" value="6">
+<absnode pos="(32:17-32:17)" kind="AtomExpr(INT)" value="6">
 <seminfo kind="VALUE" value="null"/>
 </absnode>
 </absnode>
-<absnode pos="(120:19-120:36)" kind="BinExpr" value="MUL">
+<absnode pos="(32:19-32:36)" kind="BinExpr" value="MUL">
 <seminfo kind="VALUE" value="null"/>
-<absnode pos="(120:19-120:34)" kind="CallExpr">
-<absnode pos="(120:19-120:28)" kind="ValName" value="generacija">
+<absnode pos="(32:19-32:34)" kind="CallExpr">
+<absnode pos="(32:19-32:28)" kind="ValName" value="generacija">
 </absnode>
-<absnode pos="(120:29-120:33)" kind="ValExprs">
-<absnode pos="(120:30-120:33)" kind="AtomExpr(INT)" value="1988">
+<absnode pos="(32:29-32:33)" kind="ValExprs">
+<absnode pos="(32:30-32:33)" kind="AtomExpr(INT)" value="1988">
 <seminfo kind="VALUE" value="null"/>
 </absnode>
 </absnode>
 </absnode>
-<absnode pos="(120:36-120:36)" kind="AtomExpr(INT)" value="6">
+<absnode pos="(32:36-32:36)" kind="AtomExpr(INT)" value="6">
 <seminfo kind="VALUE" value="null"/>
 </absnode>
 </absnode>
 </absnode>
-<absnode pos="(120:38-120:38)" kind="AtomExpr(INT)" value="5">
+<absnode pos="(32:38-32:38)" kind="AtomExpr(INT)" value="5">
 <seminfo kind="VALUE" value="null"/>
 </absnode>
 </absnode>
 </absnode>
-<absnode pos="(121:18-121:24)" kind="AssignStmt">
-<absnode pos="(121:9-121:21)" kind="BinExpr" value="RECACCESS">
+<absnode pos="(33:18-33:24)" kind="AssignStmt">
+<absnode pos="(33:9-33:21)" kind="BinExpr" value="RECACCESS">
 <seminfo kind="VALUE" value="null"/>
-<absnode pos="(121:9-121:15)" kind="UnExpr" value="VAL">
+<absnode pos="(33:9-33:15)" kind="UnExpr" value="VAL">
 <seminfo kind="VALUE" value="null"/>
-<absnode pos="(121:9-121:15)" kind="BinExpr" value="ADD">
+<absnode pos="(33:9-33:15)" kind="BinExpr" value="ADD">
 <seminfo kind="VALUE" value="null"/>
-<absnode pos="(121:9-121:12)" kind="ValName" value="neki">
+<absnode pos="(33:9-33:12)" kind="ValName" value="neki">
 </absnode>
-<absnode pos="(121:15-121:15)" kind="UnExpr" value="SUB">
+<absnode pos="(33:15-33:15)" kind="UnExpr" value="SUB">
 <seminfo kind="VALUE" value="null"/>
-<absnode pos="(121:15-121:15)" kind="AtomExpr(INT)" value="1">
+<absnode pos="(33:15-33:15)" kind="AtomExpr(INT)" value="1">
 <seminfo kind="VALUE" value="null"/>
 </absnode>
 </absnode>
 </absnode>
 </absnode>
-<absnode pos="(121:18-121:21)" kind="ValName" value="neki">
+<absnode pos="(33:18-33:21)" kind="ValName" value="neki">
 </absnode>
 </absnode>
-<absnode pos="(121:24-121:24)" kind="AtomExpr(INT)" value="1">
+<absnode pos="(33:24-33:24)" kind="AtomExpr(INT)" value="1">
 <seminfo kind="VALUE" value="null"/>
 </absnode>
 </absnode>

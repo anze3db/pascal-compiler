@@ -152,10 +152,6 @@ public class SemNameResolver implements AbsVisitor  {
 	public void visit(AbsProgram acceptor) {
 		acceptor.name.accept(this);
 		acceptor.decls.accept(this);
-		System.out.println(SemTable.fnd("kr_neki"));
-		System.out.println(SemTable.fnd("n"));
-		System.out.println(SemTable.fnd("k"));
-		System.out.println(SemTable.fnd("moj"));
 	}
 
 	@Override

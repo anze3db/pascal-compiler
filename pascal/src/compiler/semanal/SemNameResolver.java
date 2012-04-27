@@ -92,7 +92,6 @@ public class SemNameResolver implements AbsVisitor  {
 	@Override
 	public void visit(AbsDeclName acceptor) {
 		try {
-			System.out.println("AbsDecl " + acceptor.name + " " + acceptor.toString());
 			SemTable.ins(acceptor.name, acceptor);
 		} catch (SemIllegalInsertException e) {
 			e.printStackTrace();

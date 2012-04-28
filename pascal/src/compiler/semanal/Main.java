@@ -36,8 +36,10 @@ public class Main {
 			Report.error("Uncaught syntax error.", 1);
 		}
 		
+//		SemNameResolver1 nameResolver = new SemNameResolver1();
 		SemNameResolver nameResolver = new SemNameResolver();
 		SemTypeChecker typeChecker = new SemTypeChecker();
+//		SemTypeChecker1 typeChecker = new SemTypeChecker1();
 		
 		program.accept(nameResolver);
 		program.accept(typeChecker);

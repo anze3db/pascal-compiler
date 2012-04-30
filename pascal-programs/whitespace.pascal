@@ -1,16 +1,25 @@
-{
-        Testna datoteka s čimveč kombinacijami za testiranje
-}
-program kr_neki;
-const 	  a='a';
-          b=1+5;
-          c=1-b;
-          d=1 div 6;
-          g=1 and 5;
-          g=6>1;
-          k=true;
-          j=false;
+program HelloWorld;
+
+var
+    a:boolean;
+    b:^char;
+
+procedure p();
+var
+    a:integer;
 begin
-	al := 2
-        {komentar...}
+    a := 6
+end;
+function f():boolean;
+var
+    a:char;
+begin
+    a := 'd'
+end;
+
+begin
+    a := true and f();
+    b := nil;
+    ^b := nil;
+    b^ := 'f'
 end.

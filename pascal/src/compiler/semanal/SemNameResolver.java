@@ -22,10 +22,12 @@ import compiler.abstree.tree.AbsPointerType;
 import compiler.abstree.tree.AbsProcDecl;
 import compiler.abstree.tree.AbsProgram;
 import compiler.abstree.tree.AbsRecordType;
+import compiler.abstree.tree.AbsStmt;
 import compiler.abstree.tree.AbsStmts;
 import compiler.abstree.tree.AbsTypeDecl;
 import compiler.abstree.tree.AbsTypeName;
 import compiler.abstree.tree.AbsUnExpr;
+import compiler.abstree.tree.AbsValExpr;
 import compiler.abstree.tree.AbsValExprs;
 import compiler.abstree.tree.AbsValName;
 import compiler.abstree.tree.AbsVarDecl;
@@ -38,19 +40,18 @@ public class SemNameResolver implements AbsVisitor {
 
 	@Override
 	public void visit(AbsAlloc acceptor) {
-		// TODO Auto-generated method stub
 	}
 
 	@Override
 	public void visit(AbsArrayType acceptor) {
-		// TODO Auto-generated method stub
-
+		acceptor.loBound.accept(this);
+		acceptor.hiBound.accept(this);
 	}
 
 	@Override
 	public void visit(AbsAssignStmt acceptor) {
-		// TODO Auto-generated method stub
-
+		acceptor.dstExpr.accept(this);
+		acceptor.srcExpr.accept(this);
 	}
 
 	@Override
@@ -72,6 +73,7 @@ public class SemNameResolver implements AbsVisitor {
 				break;
 			}
 		} catch (Exception e) {
+			error = true;
 			Report.warning(String.format("Set actual const error at (%d, %d)",
 					acceptor.begLine, acceptor.endLine));
 		}
@@ -79,7 +81,6 @@ public class SemNameResolver implements AbsVisitor {
 
 	@Override
 	public void visit(AbsAtomType acceptor) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -90,7 +91,14 @@ public class SemNameResolver implements AbsVisitor {
 
 		Integer fst = SemDesc.getActualConst(acceptor.fstExpr);
 		Integer snd = SemDesc.getActualConst(acceptor.sndExpr);
-		System.out.println(snd);
+
+		if (fst == null || snd == null) {
+			// error=true; Report.warning("Value not declared",
+			// acceptor.begLine,
+			// acceptor.begColumn);
+			return;
+		}
+
 		switch (acceptor.oper) {
 		case AbsBinExpr.ADD:
 			SemDesc.setActualConst(acceptor, fst + snd);
@@ -98,8 +106,11 @@ public class SemNameResolver implements AbsVisitor {
 		case AbsBinExpr.SUB:
 			SemDesc.setActualConst(acceptor, fst - snd);
 			break;
+		case AbsBinExpr.MUL:
+			SemDesc.setActualConst(acceptor, fst * snd);
+			break;
 		case AbsBinExpr.DIV:
-			SemDesc.setActualConst(acceptor, fst / snd);
+			SemDesc.setActualConst(acceptor, snd != 0 ? fst / snd : 0);
 			break;
 		case AbsBinExpr.NEQ:
 			SemDesc.setActualConst(acceptor, fst != snd ? 1 : 0);
@@ -122,11 +133,10 @@ public class SemNameResolver implements AbsVisitor {
 		case AbsBinExpr.OR:
 			SemDesc.setActualConst(acceptor, fst | snd);
 			break;
+		// TODO: arraccess, recaccess
 		case AbsBinExpr.ARRACCESS:
-			SemDesc.setActualConst(acceptor, fst - snd);
 			break;
 		case AbsBinExpr.RECACCESS:
-			SemDesc.setActualConst(acceptor, fst - snd);
 			break;
 		}
 
@@ -134,14 +144,19 @@ public class SemNameResolver implements AbsVisitor {
 
 	@Override
 	public void visit(AbsBlockStmt acceptor) {
-		// TODO Auto-generated method stub
-
+		acceptor.stmts.accept(this);
 	}
 
 	@Override
 	public void visit(AbsCallExpr acceptor) {
-		// TODO Auto-generated method stub
-
+		acceptor.name.accept(this);
+		acceptor.args.accept(this);
+		AbsDecl a = SemTable.fnd(acceptor.name.name);
+		if (a == null) {
+			error = true;
+			Report.warning(String.format("Subprogram %s not defined",
+					acceptor.name.name), acceptor.begLine, acceptor.begColumn);
+		}
 	}
 
 	@Override
@@ -150,7 +165,7 @@ public class SemNameResolver implements AbsVisitor {
 		try {
 			SemTable.ins(acceptor.name.name, acceptor);
 		} catch (Exception e) {
-			// TODO: handle exception
+			// TODO: could be doing something wrong here...
 		}
 		acceptor.value.accept(this);
 		Integer ac = SemDesc.getActualConst(acceptor.value);
@@ -158,8 +173,9 @@ public class SemNameResolver implements AbsVisitor {
 		if (ac != null) {
 			SemDesc.setActualConst(acceptor, ac);
 		} else {
-			Report.warning(String.format("'%s' is null at (%d, %d)",
-					acceptor.name.name, acceptor.begLine, acceptor.begColumn));
+			error = true;
+			Report.warning(String.format("'%s' is null", acceptor.name.name),
+					acceptor.begLine, acceptor.begColumn);
 		}
 	}
 
@@ -169,7 +185,6 @@ public class SemNameResolver implements AbsVisitor {
 
 	@Override
 	public void visit(AbsDecls acceptor) {
-
 		for (AbsDecl decl : acceptor.decls) {
 			decl.accept(this);
 		}
@@ -177,107 +192,188 @@ public class SemNameResolver implements AbsVisitor {
 
 	@Override
 	public void visit(AbsExprStmt acceptor) {
-		// TODO Auto-generated method stub
+		acceptor.expr.accept(this);
 	}
 
 	@Override
 	public void visit(AbsForStmt acceptor) {
-		// TODO Auto-generated method stub
-
+		acceptor.loBound.accept(this);
+		acceptor.hiBound.accept(this);
+		acceptor.stmt.accept(this);
 	}
 
 	@Override
 	public void visit(AbsFunDecl acceptor) {
-		// TODO Auto-generated method stub
-
+		try {
+			SemTable.ins(acceptor.name.name, acceptor);
+		} catch (SemIllegalInsertException e) {
+			error = true;
+			Report.warning(String.format("Function '%s' already declared",
+					acceptor.name.name), acceptor.begLine, acceptor.begColumn);
+		}
+		SemTable.newScope();
+		acceptor.pars.accept(this);
+		acceptor.type.accept(this);
+		acceptor.decls.accept(this);
+		acceptor.stmt.accept(this);
+		SemTable.oldScope();
 	}
 
 	@Override
 	public void visit(AbsIfStmt acceptor) {
-		// TODO Auto-generated method stub
+		acceptor.cond.accept(this);
+		acceptor.thenStmt.accept(this);
+		acceptor.elseStmt.accept(this);
 
 	}
 
 	@Override
 	public void visit(AbsNilConst acceptor) {
-		// TODO Auto-generated method stub
-
+		SemDesc.setActualConst(acceptor, 0);
 	}
 
 	@Override
 	public void visit(AbsPointerType acceptor) {
-		// TODO Auto-generated method stub
+		acceptor.type.accept(this);
 
 	}
 
 	@Override
 	public void visit(AbsProcDecl acceptor) {
-		// TODO Auto-generated method stub
+		try {
+			SemTable.ins(acceptor.name.name, acceptor);
+		} catch (SemIllegalInsertException e) {
+			// TODO Auto-generated catch block
+			error = true;
+			Report.warning(String.format("Function '%s' already declared",
+					acceptor.name.name), acceptor.begLine, acceptor.begColumn);
+		}
+
+		SemTable.newScope();
+		acceptor.pars.accept(this);
+		acceptor.decls.accept(this);
+		acceptor.stmt.accept(this);
+		SemTable.oldScope();
 
 	}
 
 	@Override
 	public void visit(AbsProgram acceptor) {
-		acceptor.name.accept(this);
+
+		try {
+			SemTable.ins(acceptor.name.name, acceptor.name);
+		} catch (Exception ex) {
+		}
+
 		acceptor.decls.accept(this);
-		// acceptor.stmt.accept(this);
+		acceptor.stmt.accept(this);
 	}
 
 	@Override
 	public void visit(AbsRecordType acceptor) {
-		// TODO Auto-generated method stub
+		SemTable.newScope();
+		acceptor.fields.accept(this);
+		SemTable.oldScope();
 
+		for (AbsDecl d : acceptor.fields.decls)
+			SemDesc.setScope(d, 0);
 	}
 
 	@Override
 	public void visit(AbsStmts acceptor) {
-		// TODO Auto-generated method stub
+		for (AbsStmt s : acceptor.stmts) {
+			s.accept(this);
+		}
 
 	}
 
 	@Override
 	public void visit(AbsTypeDecl acceptor) {
-		// TODO Auto-generated method stub
-
+		try {
+			SemTable.ins(acceptor.name.name, acceptor);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		acceptor.type.accept(this);
 	}
 
 	@Override
 	public void visit(AbsTypeName acceptor) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void visit(AbsUnExpr acceptor) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void visit(AbsValExprs acceptor) {
-		// TODO Auto-generated method stub
-	}
-
-	@Override
-	public void visit(AbsValName acceptor) {
 		AbsDecl d = SemTable.fnd(acceptor.name);
 		if (d == null) {
-			Report.warning(acceptor.name + " not declared");
+			error = true;
+			Report.warning(acceptor.name + " type not defined",
+					acceptor.begLine, acceptor.begColumn);
 		} else {
 			SemDesc.setNameDecl(acceptor, d);
 		}
 	}
 
 	@Override
-	public void visit(AbsVarDecl acceptor) {
-		// TODO Auto-generated method stub
+	public void visit(AbsUnExpr acceptor) {
+		acceptor.expr.accept(this);
 
+		Integer una = SemDesc.getActualConst(acceptor.expr);
+		if (una == null)
+			return;
+		switch (acceptor.oper) {
+		case AbsUnExpr.ADD:
+			SemDesc.setActualConst(acceptor, una);
+			break;
+		case AbsUnExpr.SUB:
+			SemDesc.setActualConst(acceptor, -una);
+			break;
+		case AbsUnExpr.NOT:
+			SemDesc.setActualConst(acceptor, ~una);
+			break;
+		case AbsUnExpr.MEM:
+			// TODO: MEM
+			break;
+		case AbsUnExpr.VAL:
+			// TODO: CAL
+			break;
+		}
+	}
+
+	@Override
+	public void visit(AbsValExprs acceptor) {
+		for (AbsValExpr e : acceptor.exprs) {
+			e.accept(this);
+		}
+	}
+
+	@Override
+	public void visit(AbsValName acceptor) {
+		AbsDecl d = SemTable.fnd(acceptor.name);
+		if (d == null) {
+			error = true;
+			Report.warning(acceptor.name + " not declared");
+		} else {
+			SemDesc.setNameDecl(acceptor, d);
+			Integer v = SemDesc.getActualConst(d);
+			if (v != null) {
+				SemDesc.setActualConst(acceptor, v);
+			}
+		}
+	}
+
+	@Override
+	public void visit(AbsVarDecl acceptor) {
+		// TODO: RECORD?
+		try {
+			SemTable.ins(acceptor.name.name, acceptor);
+		} catch (SemIllegalInsertException e) {
+			error = true;
+			Report.warning(String.format("Var '%s' already declared",
+					acceptor.name.name), acceptor.begLine, acceptor.begColumn);
+		}
+		acceptor.type.accept(this);
 	}
 
 	@Override
 	public void visit(AbsWhileStmt acceptor) {
-		// TODO Auto-generated method stub
-
+		acceptor.cond.accept(this);
+		acceptor.stmt.accept(this);
 	}
 
 }

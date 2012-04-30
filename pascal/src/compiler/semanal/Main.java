@@ -5,7 +5,6 @@ import java.io.*;
 import compiler.report.*;
 import compiler.lexanal.*;
 import compiler.synanal.*;
-import compiler.abstree.AbsEmptyVisitor;
 import compiler.abstree.tree.*;
 
 public class Main {
@@ -35,12 +34,8 @@ public class Main {
 		} catch (Exception ex) {
 			Report.error("Uncaught syntax error.", 1);
 		}
-		
-//		SemNameResolver1 nameResolver = new SemNameResolver1();
 		SemNameResolver nameResolver = new SemNameResolver();
 		SemTypeChecker typeChecker = new SemTypeChecker();
-//		SemTypeChecker1 typeChecker = new SemTypeChecker1();
-		
 		program.accept(nameResolver);
 		program.accept(typeChecker);
 		program.accept(new SemPrintXML(xml));

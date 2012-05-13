@@ -32,9 +32,14 @@ import compiler.abstree.tree.AbsValExprs;
 import compiler.abstree.tree.AbsValName;
 import compiler.abstree.tree.AbsVarDecl;
 import compiler.abstree.tree.AbsWhileStmt;
+import compiler.report.Report;
 import compiler.semanal.SemDesc;
+import compiler.semanal.type.SemType;
 
 public class FrmEvaluator implements AbsVisitor {
+
+	private int sizeArgs;
+	private boolean isAnyCall;
 
 	@Override
 	public void visit(AbsAtomType acceptor) {
@@ -64,7 +69,12 @@ public class FrmEvaluator implements AbsVisitor {
 			}
 			decl.accept(this);
 		}
-		frame.sizeArgs = SemDesc.getActualType(acceptor.type).size();
+		sizeArgs = 0;
+		isAnyCall = false;
+		acceptor.stmt.accept(this);
+		frame.sizeArgs = sizeArgs;
+		if (isAnyCall)
+			frame.sizeArgs += 4;
 		FrmDesc.setFrame(acceptor, frame);
 	}
 
@@ -103,10 +113,16 @@ public class FrmEvaluator implements AbsVisitor {
 			}
 			decl.accept(this);
 		}
-		frame.sizeArgs = 0;
+		sizeArgs = 0;
+		isAnyCall = false;
+		acceptor.stmt.accept(this);
+		frame.sizeArgs = sizeArgs;
+		if (isAnyCall)
+			frame.sizeArgs += 4;
 		FrmDesc.setFrame(acceptor, frame);
 	}
 
+	@Override
 	public void visit(AbsRecordType acceptor) {
 		int offset = 0;
 		for (AbsDecl decl : acceptor.fields.decls)
@@ -164,6 +180,18 @@ public class FrmEvaluator implements AbsVisitor {
 
 	@Override
 	public void visit(AbsCallExpr acceptor) {
+		isAnyCall = true;
+		int arSize = 0;
+		for (AbsValExpr e : acceptor.args.exprs) {
+			SemType st = SemDesc.getActualType(e);
+			if (st == null)
+				Report.warning("SemType is null");
+			else {
+				arSize += st.size();
+			}
+		}
+		if (arSize > sizeArgs)
+			sizeArgs = arSize;
 	}
 
 	@Override

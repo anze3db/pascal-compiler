@@ -1,31 +1,16 @@
-program HelloWorld;
-
-var
-    a:boolean;
-    b:^char;
-    da:integer;
-
-procedure p();
-var
-    a:integer;
+program a; 
+  var i: integer;
+  procedure b(); 
+    var j: integer;
+    function c(absdf:integer):integer;
+      var k: integer;
+    begin
+      i:=j;
+      j:=k {ali so tukaj lokalne j in k, ali samo k?}
+    end;
+  begin
+    i:=j {i = globalna, j = lokalna}
+  end;
 begin
-    a := 6
-end;
-function f(t:integer):boolean;
-var
-    a:char;
-begin
-    a := 'd';
-    f(4);
-    f(4)
-end;
-function f2():integer;
-begin
-end;
-begin
-
-    a := true and f(3);
-    da := f2;
-    f(da);
-    b^ := 'f'
+  {nimamo lokalnih spremenljivk}
 end.

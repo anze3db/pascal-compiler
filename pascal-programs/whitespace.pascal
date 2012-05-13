@@ -3,6 +3,7 @@ program HelloWorld;
 var
     a:boolean;
     b:^char;
+    da:integer;
 
 procedure p();
 var
@@ -10,16 +11,21 @@ var
 begin
     a := 6
 end;
-function f():boolean;
+function f(t:integer):boolean;
 var
     a:char;
 begin
-    a := 'd'
+    a := 'd';
+    f(4);
+    f(4)
 end;
-
+function f2():integer;
 begin
-    a := true and f();
-    b := nil;
-    ^b := nil;
+end;
+begin
+
+    a := true and f(3);
+    da := f2;
+    f(da);
     b^ := 'f'
 end.

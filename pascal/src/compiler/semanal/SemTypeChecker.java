@@ -43,7 +43,6 @@ import compiler.semanal.type.SemType;
 public class SemTypeChecker implements AbsVisitor {
 
 	public boolean error;
-	private AbsDecl currentFunDecl = null;
 
 	@Override
 	public void visit(AbsAlloc acceptor) {
@@ -311,7 +310,6 @@ public class SemTypeChecker implements AbsVisitor {
 			spt.addParType(pt);
 		}
 		SemDesc.setActualType(acceptor, spt);
-		currentFunDecl = acceptor;
 		acceptor.stmt.accept(this);
 
 	}

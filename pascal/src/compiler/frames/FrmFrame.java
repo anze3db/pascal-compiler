@@ -10,7 +10,7 @@ import compiler.abstree.tree.*;
 public class FrmFrame implements XMLable {
 
 	/** Opis podprograma.  */
-	public AbsTree subp;
+	public AbsDecl subp;
 
 	/** Staticni nivo podprograma.  */
 	public int level;
@@ -44,21 +44,6 @@ public class FrmFrame implements XMLable {
 
 	/** Spremenljivka z rezultatom funkcije.  */
 	public FrmTemp RV;
-
-	public FrmFrame(AbsProgram prg, int level) {
-		this.subp = prg;
-		this.level = level;
-		this.label = FrmLabel.newLabel("main");
-		this.numArgs = 0;
-		this.locVars = new LinkedList<FrmLocAccess> ();
-		this.sizeLocs = 0;
-		this.sizeFPRA = 8;
-		this.sizeTmps = 0;
-		this.sizeRegs = 0;
-		this.sizeArgs = 0;
-		FP = new FrmTemp();
-		RV = null;
-	}
 
 	public FrmFrame(AbsProcDecl prc, int level) {
 		this.subp = prc;

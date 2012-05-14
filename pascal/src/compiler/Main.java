@@ -39,10 +39,8 @@ public class Main {
 			compiler.semanal.Main.exec();
 		else if (phase.equals("frames"))
 			compiler.frames.Main.exec();
-		else if (phase.equals("imcode"))
-			compiler.imcode.Main.exec();
 		else
-			compiler.imcode.Main.exec();
+			compiler.frames.Main.exec();
 
 		System.out.print(":-) Done.\n");
 		System.exit(0);

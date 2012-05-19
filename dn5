@@ -1,0 +1,19 @@
+p(i:integer; a:array[1..10] of integer; p:^boolean);
+{   po vrednosti (4B), po referenci (4B); po vrednosti (4B) }
+
+
+    |-----------|
+    | p         |
+    |-----------|
+    | addr a    |
+    |-----------|
+    | i         |
+    |-----------|
+    | sl        |
+    |-----------|
+    |           |
+    |           |
+ p  |           |
+    |           |
+    |           |
+    |-----------| 

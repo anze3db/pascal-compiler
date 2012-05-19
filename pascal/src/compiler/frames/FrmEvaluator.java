@@ -80,16 +80,25 @@ public class FrmEvaluator implements AbsVisitor {
 
 	@Override
 	public void visit(AbsProgram acceptor) {
-
+		FrmFrame frame = new FrmFrame(acceptor, -1);
 		for (AbsDecl decl : acceptor.decls.decls) {
 			if (decl instanceof AbsVarDecl) {
 				// Setting global var access:
 				AbsVarDecl varDecl = (AbsVarDecl) decl;
 				FrmVarAccess access = new FrmVarAccess(varDecl);
+				//FrmArgAccess access = new FrmArgAccess(varDecl, frame);
 				FrmDesc.setAccess(varDecl, access);
 			}
 			decl.accept(this);
 		}
+		sizeArgs = 0;
+		isAnyCall = false;
+		acceptor.stmt.accept(this);
+		frame.sizeArgs = sizeArgs;
+		if(isAnyCall)
+			frame.sizeArgs += 4;  //za stat. povezavo/result klcane proc./f.		
+		
+		FrmDesc.setFrame(acceptor, frame);
 	}
 
 	@Override

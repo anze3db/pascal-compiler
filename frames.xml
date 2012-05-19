@@ -27,7 +27,7 @@
 <frm kind="level" value="0"/>
 <frm kind="label" value="L0"/>
 <frm kind="size" value="12"/>
-<frm kind="FP" value="T0"/>
+<frm kind="FP" value="T1"/>
 </frmnode>
 <absnode pos="(3:13-3:14)" kind="DeclName" value="b">
 </absnode>
@@ -58,8 +58,8 @@
 <frm kind="level" value="1"/>
 <frm kind="label" value="_c"/>
 <frm kind="size" value="12"/>
-<frm kind="FP" value="T1"/>
-<frm kind="RV" value="T2"/>
+<frm kind="FP" value="T2"/>
+<frm kind="RV" value="T3"/>
 </frmnode>
 <absnode pos="(5:14-5:15)" kind="DeclName" value="c">
 </absnode>

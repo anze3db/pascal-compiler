@@ -98,6 +98,8 @@ public class FrmEvaluator implements AbsVisitor {
 		if(isAnyCall)
 			frame.sizeArgs += 4;  //za stat. povezavo/result klcane proc./f.		
 		
+		
+		
 		FrmDesc.setFrame(acceptor, frame);
 	}
 

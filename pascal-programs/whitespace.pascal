@@ -1,16 +1,14 @@
 program a; 
-  var i: integer;
-  procedure b(); 
-    var j: integer;
-    function c(absdf:integer):integer;
-      var k: integer;
-    begin
-      i:=j;
-      j:=k {ali so tukaj lokalne j in k, ali samo k?}
-    end;
-  begin
-    i:=j {i = globalna, j = lokalna}
-  end;
+var i : integer;
+    arr : array[1..10] of integer;
+function j(neki : integer; kkk : integer; bbb : integer) : integer;
 begin
-  {nimamo lokalnih spremenljivk}
+    j()
+end;
+procedure aaa();
+begin
+end;
+begin
+  j(21, 312);
+  aaa()
 end.

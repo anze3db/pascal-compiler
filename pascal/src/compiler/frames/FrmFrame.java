@@ -102,6 +102,10 @@ public class FrmFrame implements XMLable {
 		xml.print("<frm kind=\"label\" value=\"" + label.name() + "\"/>\n");
 		xml.print("<frm kind=\"size\" value=\"" + size() + "\"/>\n");
 		xml.print("<frm kind=\"FP\" value=\"" + FP.name() + "\"/>\n");
+		/*
+		xml.print("<frm kind=\"sizeArgs\" value=\"" + sizeArgs + "\"/>\n");
+		xml.print("<frm kind=\"sizeLocs\" value=\"" + sizeLocs + "\"/>\n");
+		*/
 		if (RV != null) xml.print("<frm kind=\"RV\" value=\"" + RV.name() + "\"/>\n");
 		xml.print("</frmnode>\n");
 	}

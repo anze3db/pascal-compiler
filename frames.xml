@@ -7,8 +7,6 @@
 <frm kind="label" value="_main"/>
 <frm kind="size" value="20"/>
 <frm kind="FP" value="T0"/>
-<frm kind="sizeArgs" value="12"/>
-<frm kind="sizeLocs" value="0"/>
 </frmnode>
 <absnode pos="(1:9-1:10)" kind="DeclName" value="a">
 </absnode>
@@ -68,8 +66,6 @@
 <frm kind="label" value="L0"/>
 <frm kind="size" value="12"/>
 <frm kind="FP" value="T1"/>
-<frm kind="sizeArgs" value="4"/>
-<frm kind="sizeLocs" value="0"/>
 <frm kind="RV" value="T2"/>
 </frmnode>
 <absnode pos="(4:10-4:11)" kind="DeclName" value="j">
@@ -151,8 +147,6 @@
 <frm kind="label" value="L1"/>
 <frm kind="size" value="8"/>
 <frm kind="FP" value="T3"/>
-<frm kind="sizeArgs" value="0"/>
-<frm kind="sizeLocs" value="0"/>
 </frmnode>
 <absnode pos="(8:11-8:14)" kind="DeclName" value="aaa">
 </absnode>

@@ -308,9 +308,9 @@ public class FrmPrintXML implements AbsVisitor {
 	public void visit(AbsProgram acceptor) {
 		if (acceptor.error) { xml.print("<abserror kind=\"Program\"/>\n"); return; }
 		xml.print("<absnode " + printPos(acceptor) + " kind=\"Program\">\n");
-		// Print xml for program:
-		FrmFrame frame = FrmDesc.getFrame(acceptor);
-		frame.toXML(xml);
+		{
+			FrmDesc.getFrame(acceptor).toXML(xml);
+		}
 		acceptor.name.accept(this);
 		acceptor.decls.accept(this);
 		acceptor.stmt.accept(this);

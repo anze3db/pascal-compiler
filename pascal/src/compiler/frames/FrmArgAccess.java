@@ -24,7 +24,10 @@ public class FrmArgAccess extends FrmAccess {
 		
 		SemType type = SemDesc.getActualType(var);
 		this.offset = 4 + frame.sizeArgs;
-		frame.sizeArgs = frame.sizeArgs + type.size();
+		if(type != null)
+			frame.sizeArgs = frame.sizeArgs + type.size();
+		else
+			frame.sizeArgs = frame.sizeArgs;
 		frame.numArgs++;
 	}
 

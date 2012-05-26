@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="pascal/xsl/imcode.xsl"?>
+<imcode>
+<datachunk label="_i" size="4"/>
+<datachunk label="_arr" size="40"/>
+</imcode>

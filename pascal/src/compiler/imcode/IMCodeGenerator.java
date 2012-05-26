@@ -12,6 +12,7 @@ import compiler.abstree.tree.AbsBinExpr;
 import compiler.abstree.tree.AbsBlockStmt;
 import compiler.abstree.tree.AbsCallExpr;
 import compiler.abstree.tree.AbsConstDecl;
+import compiler.abstree.tree.AbsDecl;
 import compiler.abstree.tree.AbsDeclName;
 import compiler.abstree.tree.AbsDecls;
 import compiler.abstree.tree.AbsExprStmt;
@@ -31,6 +32,10 @@ import compiler.abstree.tree.AbsValExprs;
 import compiler.abstree.tree.AbsValName;
 import compiler.abstree.tree.AbsVarDecl;
 import compiler.abstree.tree.AbsWhileStmt;
+import compiler.frames.FrmDesc;
+import compiler.frames.FrmVarAccess;
+import compiler.semanal.SemDesc;
+import compiler.semanal.type.SemType;
 
 public class IMCodeGenerator implements AbsVisitor {
 /**
@@ -54,6 +59,10 @@ public class IMCodeGenerator implements AbsVisitor {
 	 * 
 	 */
 	public LinkedList<ImcChunk> chunks;
+	
+	public IMCodeGenerator() {
+		chunks = new LinkedList<ImcChunk>();
+	}
 	
 	@Override
 	public void visit(AbsAlloc acceptor) {
@@ -117,7 +126,9 @@ public class IMCodeGenerator implements AbsVisitor {
 
 	@Override
 	public void visit(AbsDecls acceptor) {
-		// TODO Auto-generated method stub
+		for (AbsDecl decl : acceptor.decls) {
+			decl.accept(this);
+		}
 		
 	}
 
@@ -165,7 +176,8 @@ public class IMCodeGenerator implements AbsVisitor {
 
 	@Override
 	public void visit(AbsProgram acceptor) {
-		// TODO Auto-generated method stub
+		
+		acceptor.decls.accept(this);
 		
 	}
 
@@ -213,8 +225,10 @@ public class IMCodeGenerator implements AbsVisitor {
 
 	@Override
 	public void visit(AbsVarDecl acceptor) {
-		// TODO Auto-generated method stub
-		
+		FrmVarAccess varAccess = (FrmVarAccess)FrmDesc.getAccess(acceptor);
+		SemType type = SemDesc.getActualType(acceptor.type);
+		ImcDataChunk dataChunk = new ImcDataChunk(varAccess.label, type.size());
+		chunks.add(dataChunk);
 	}
 
 	@Override

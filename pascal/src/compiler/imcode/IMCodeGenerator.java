@@ -82,6 +82,8 @@ public class IMCodeGenerator implements AbsVisitor {
 		ImcCALL call = new ImcCALL(FrmLabel.newLabel("malloc"));
 		call.args.add(new ImcCONST(size));
 		call.args.add(new ImcCONST(size));
+		call.size.add(4);
+		call.size.add(4);
 		code = call;
 	}
 
@@ -182,10 +184,7 @@ public class IMCodeGenerator implements AbsVisitor {
 		LinkedList<ImcExpr> args = new LinkedList<ImcExpr>();
 		LinkedList<Integer> sizes = new LinkedList<Integer>();
 		FrmFrame frame = FrmDesc.getFrame(SemDesc.getNameDecl(acceptor.name));
-		
-
 		sizes.add(4);
-
 		for (AbsValExpr arg : acceptor.args.exprs) {
 			arg.accept(this);
 			args.add((ImcExpr) code);
@@ -193,6 +192,7 @@ public class IMCodeGenerator implements AbsVisitor {
 		}
 		ImcCALL call = new ImcCALL(frame.label);
 		call.args = args;
+		call.size = sizes;
 		code = call;
 	}
 
@@ -225,7 +225,6 @@ public class IMCodeGenerator implements AbsVisitor {
 				procDecl.decls.accept(this);
 			}
 		}
-
 	}
 
 	@Override

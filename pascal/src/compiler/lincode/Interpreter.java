@@ -8,7 +8,7 @@ import compiler.imcode.*;
 
 public class Interpreter {
 
-	int debug = 0;
+	int debug = 1;
 
 	/** Pomnilnik.  */
 	public HashMap<Integer,Integer> memory = new HashMap<Integer,Integer>();
@@ -75,6 +75,7 @@ public class Interpreter {
 			return 0;
 		}
 		if (label.equals("_putint")) {
+			System.out.println(SP);
 			System.out.print(LD(SP + 4));
 			return 0;
 		}

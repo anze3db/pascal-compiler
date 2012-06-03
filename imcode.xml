@@ -5,64 +5,80 @@
 <frmnode>
 <frm kind="level" value="-1"/>
 <frm kind="label" value="_main"/>
-<frm kind="size" value="20"/>
-<frm kind="FP" value="T0"/>
+<frm kind="size" value="16"/>
+<frm kind="FP" value="T11"/>
 </frmnode>
 <imcnode kind="SEQ">
-<imcnode kind="EXP">
-<imcnode kind="CALL" value="L0">
-<imcnode kind="CONST" value="21"/>
-<imcnode kind="CONST" value="312"/>
-</imcnode>
-</imcnode>
-<imcnode kind="EXP">
-<imcnode kind="CALL" value="L1">
-</imcnode>
-</imcnode>
-</imcnode>
-</codechunk>
-<datachunk label="_i" size="4"/>
-<datachunk label="_arr" size="40"/>
-<codechunk value="L0">
-<frmnode>
-<frm kind="level" value="0"/>
-<frm kind="label" value="L0"/>
-<frm kind="size" value="12"/>
-<frm kind="FP" value="T1"/>
-<frm kind="RV" value="T2"/>
-</frmnode>
-<imcnode kind="SEQ">
-<imcnode kind="EXP">
-<imcnode kind="CALL" value="L0">
-</imcnode>
-</imcnode>
 <imcnode kind="EXP">
 <imcnode kind="BINOP" value="==">
 <imcnode kind="MEM">
-<imcnode kind="BINOP" value="+">
-<imcnode kind="NAME" value="_arr"/>
-<imcnode kind="BINOP" value="*">
-<imcnode kind="BINOP" value="-">
-<imcnode kind="CONST" value="3"/>
-<imcnode kind="CONST" value="1"/>
+<imcnode kind="NAME" value="_test"/>
 </imcnode>
+<imcnode kind="BINOP" value="+">
+<imcnode kind="BINOP" value="+">
+<imcnode kind="CONST" value="3"/>
+<imcnode kind="CONST" value="4"/>
+</imcnode>
+<imcnode kind="CONST" value="5"/>
+</imcnode>
+</imcnode>
+</imcnode>
+<imcnode kind="EXP">
+<imcnode kind="CALL" value="_putint">
+<imcnode kind="MEM">
+<imcnode kind="NAME" value="_test"/>
+</imcnode>
+</imcnode>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="MEM">
+<imcnode kind="BINOP" value="+">
+<imcnode kind="NAME" value="_empty_chessboard"/>
+<imcnode kind="CONST" value="0"/>
+</imcnode>
+</imcnode>
+<imcnode kind="CONST" value="10"/>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="MEM">
+<imcnode kind="BINOP" value="+">
+<imcnode kind="NAME" value="_empty_chessboard"/>
 <imcnode kind="CONST" value="4"/>
 </imcnode>
 </imcnode>
+<imcnode kind="CONST" value="20"/>
 </imcnode>
-<imcnode kind="CONST" value="32"/>
+<imcnode kind="MOVE">
+<imcnode kind="MEM">
+<imcnode kind="BINOP" value="+">
+<imcnode kind="NAME" value="_empty_chessboard"/>
+<imcnode kind="CONST" value="8"/>
+</imcnode>
+</imcnode>
+<imcnode kind="CONST" value="120"/>
+</imcnode>
+<imcnode kind="EXP">
+<imcnode kind="CALL" value="_putch">
+<imcnode kind="MEM">
+<imcnode kind="BINOP" value="+">
+<imcnode kind="NAME" value="_empty_chessboard"/>
+<imcnode kind="CONST" value="8"/>
+</imcnode>
+</imcnode>
+</imcnode>
+</imcnode>
+<imcnode kind="EXP">
+<imcnode kind="CALL" value="_putint">
+<imcnode kind="MEM">
+<imcnode kind="BINOP" value="+">
+<imcnode kind="NAME" value="_empty_chessboard"/>
+<imcnode kind="CONST" value="0"/>
+</imcnode>
+</imcnode>
 </imcnode>
 </imcnode>
 </imcnode>
 </codechunk>
-<codechunk value="L1">
-<frmnode>
-<frm kind="level" value="0"/>
-<frm kind="label" value="L1"/>
-<frm kind="size" value="8"/>
-<frm kind="FP" value="T3"/>
-</frmnode>
-<imcnode kind="SEQ">
-</imcnode>
-</codechunk>
+<datachunk label="_test" size="4"/>
+<datachunk label="_empty_chessboard" size="12"/>
 </imcode>

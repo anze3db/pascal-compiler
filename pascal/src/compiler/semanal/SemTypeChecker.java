@@ -145,9 +145,9 @@ public class SemTypeChecker implements AbsVisitor {
 	@Override
 	public void visit(AbsBinExpr acceptor) {
 		SemType ltype = null, rtype = null;
-
 		switch (acceptor.oper) {
 		case AbsBinExpr.ARRACCESS:
+			
 			acceptor.fstExpr.accept(this);
 			acceptor.sndExpr.accept(this);
 			ltype = SemDesc.getActualType(acceptor.fstExpr);
@@ -164,9 +164,18 @@ public class SemTypeChecker implements AbsVisitor {
 			break;
 		case AbsBinExpr.RECACCESS:
 			acceptor.fstExpr.accept(this);
-
+			String fieldName = null;
+			
+			if(acceptor.sndExpr instanceof AbsValName)
+				fieldName = ((AbsValName)acceptor.sndExpr).name;
+			
 			ltype = SemDesc.getActualType(acceptor.fstExpr);
-
+			if(ltype != null && ltype instanceof SemRecordType){	
+				
+				SemRecordType rt = (SemRecordType)ltype;
+				rtype = rt.getFieldType(fieldName);
+			}			
+							
 			SemDesc.setActualType(acceptor.sndExpr, rtype);
 			SemDesc.setActualType(acceptor, rtype);
 			break;

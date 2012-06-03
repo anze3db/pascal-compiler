@@ -52,6 +52,52 @@ public class SemRecordType extends SemType {
 		} else
 			return false;
 	}
+	
+	public SemType getFieldType(String fieldName){
+		
+		for(int i = 0; i < fieldNames.size(); i++){
+			if(fieldNames.get(i).name.equals(fieldName)){
+				return  fieldTypes.get(i);
+			}
+		}
+		return null;
+	}
+	
+	public SemType getFieldName(String fieldName){
+		
+		for(int i = 0; i < fieldNames.size(); i++){
+			if(fieldNames.get(i).name.equals(fieldName)){
+				return  fieldTypes.get(i);
+			}
+		}
+		return null;
+	}
+	
+	public AbsDeclName getFieldNameDecl(String fieldName){
+
+		for(int i = 0; i < getNumFields(); i++){
+			if(getFieldName(i).name.equals(fieldName)){
+				return getFieldName(i);
+			}
+		}
+		return null;
+	
+	}
+	
+	public boolean containsField(String fieldName){
+		
+		for(int i = 0; i < fieldNames.size(); i++){
+			if(fieldNames.get(i).name.equals(fieldName)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+public boolean containsType(SemType type){
+		
+		return fieldTypes.contains(type);
+	}
 
 	@Override
 	public int size() {

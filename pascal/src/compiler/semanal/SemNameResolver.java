@@ -37,6 +37,7 @@ import compiler.report.Report;
 public class SemNameResolver implements AbsVisitor {
 
 	public boolean error;
+	private int record;
 
 	@Override
 	public void visit(AbsAlloc acceptor) {
@@ -81,15 +82,22 @@ public class SemNameResolver implements AbsVisitor {
 
 	@Override
 	public void visit(AbsAtomType acceptor) {
-
 	}
 
 	@Override
 	public void visit(AbsBinExpr acceptor) {
 		acceptor.fstExpr.accept(this);
+
+		if (acceptor.oper == AbsBinExpr.RECACCESS)
+			record++;
+
 		acceptor.sndExpr.accept(this);
 
+		if (acceptor.oper == AbsBinExpr.RECACCESS)
+			record--;
+
 		Integer fst = SemDesc.getActualConst(acceptor.fstExpr);
+
 		Integer snd = SemDesc.getActualConst(acceptor.sndExpr);
 
 		if (fst == null || snd == null) {
@@ -289,6 +297,7 @@ public class SemNameResolver implements AbsVisitor {
 
 	@Override
 	public void visit(AbsTypeDecl acceptor) {
+		if(record != 0) return;
 		try {
 			SemTable.ins(acceptor.name.name, acceptor);
 		} catch (Exception e) {
@@ -344,7 +353,12 @@ public class SemNameResolver implements AbsVisitor {
 
 	@Override
 	public void visit(AbsValName acceptor) {
+
+		if (record != 0)
+			return;
+
 		AbsDecl d = SemTable.fnd(acceptor.name);
+
 		if (d == null) {
 			error = true;
 			Report.warning(acceptor.name + " not declared");
@@ -359,7 +373,6 @@ public class SemNameResolver implements AbsVisitor {
 
 	@Override
 	public void visit(AbsVarDecl acceptor) {
-		// TODO: RECORD?
 		try {
 			SemTable.ins(acceptor.name.name, acceptor);
 		} catch (SemIllegalInsertException e) {

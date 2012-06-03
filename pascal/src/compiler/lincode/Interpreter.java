@@ -75,7 +75,6 @@ public class Interpreter {
 			return 0;
 		}
 		if (label.equals("_putint")) {
-			System.out.println(SP);
 			System.out.print(LD(SP + 4));
 			return 0;
 		}

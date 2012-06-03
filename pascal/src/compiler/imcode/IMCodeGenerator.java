@@ -36,6 +36,7 @@ import compiler.abstree.tree.AbsVarDecl;
 import compiler.abstree.tree.AbsWhileStmt;
 import compiler.frames.FrmAccess;
 import compiler.frames.FrmArgAccess;
+import compiler.frames.FrmCmpAccess;
 import compiler.frames.FrmDesc;
 import compiler.frames.FrmFrame;
 import compiler.frames.FrmLabel;
@@ -75,6 +76,7 @@ public class IMCodeGenerator implements AbsVisitor {
 	 */
 	public LinkedList<ImcChunk> chunks = new LinkedList<ImcChunk>();
 	private ImcCode code = null;
+	private FrmFrame currFrame;
 
 	@Override
 	public void visit(AbsAlloc acceptor) {
@@ -132,8 +134,9 @@ public class IMCodeGenerator implements AbsVisitor {
 		fstExpr = (ImcExpr) code;
 
 		acceptor.sndExpr.accept(this);
-		sndExpr = (ImcExpr) code;
-
+		if(code instanceof ImcExpr)	
+			sndExpr = (ImcExpr)code;
+		
 		if (acceptor.oper == AbsBinExpr.ARRACCESS) {
 			// AbsDecl adecl = SemDesc.getNameDecl(acceptor.fstExpr);
 			SemArrayType atype = (SemArrayType) SemDesc
@@ -149,26 +152,17 @@ public class IMCodeGenerator implements AbsVisitor {
 
 			code = new ImcBINOP(ImcBINOP.ADD, fstExpr, (ImcExpr) code);
 			code = new ImcMEM((ImcExpr) code);
-		} else if (acceptor.oper == AbsBinExpr.RECACCESS) {
-			// TODO: AAAA
-			SemRecordType atype = (SemRecordType) SemDesc
-					.getActualType(acceptor.fstExpr);
-			String fieldName = ((AbsValName) acceptor.sndExpr).name;
+		}
+		else if (acceptor.oper == AbsBinExpr.RECACCESS) { 
+			SemRecordType atype = (SemRecordType)SemDesc.getActualType(acceptor.fstExpr);
+			String fieldName = ((AbsValName)acceptor.sndExpr).name;
+			AbsDeclName declName = atype.getFieldNameDecl(fieldName);
+			FrmCmpAccess cacc = (FrmCmpAccess)FrmDesc.getAccess(SemDesc.getNameDecl(declName));
 
-			SemType sndType = null;
-			int offset = 0;
-			for (int i = 0; i < atype.getNumFields(); i++) {
-				if (fieldName.equals(atype.getFieldName(i).name)) {
-					sndType = atype.getFieldType(i);
-					break;
-				}
-				offset += atype.getFieldType(i).size();
-			}
-
-			fstExpr = (ImcExpr) (((ImcMEM) fstExpr).expr);
-			code = new ImcMEM(new ImcBINOP(ImcBINOP.ADD, fstExpr, new ImcCONST(
-					offset)));
-		} else {
+			fstExpr = (ImcExpr)(((ImcMEM)fstExpr).expr);
+			code = new ImcMEM(new ImcBINOP(ImcBINOP.ADD,fstExpr,new ImcCONST(cacc.offset))); 
+		}    
+		else {
 			code = new ImcBINOP(acceptor.oper, fstExpr, sndExpr);
 		}
 	}
@@ -184,6 +178,15 @@ public class IMCodeGenerator implements AbsVisitor {
 		LinkedList<ImcExpr> args = new LinkedList<ImcExpr>();
 		LinkedList<Integer> sizes = new LinkedList<Integer>();
 		FrmFrame frame = FrmDesc.getFrame(SemDesc.getNameDecl(acceptor.name));
+		
+		int diff = currFrame.level - frame.level;
+		ImcExpr link = null;
+
+		link = new ImcTEMP(currFrame.FP);
+		for(int i = 0; i <= diff; i++) 
+			link = new ImcMEM(link);
+
+		args.add(link);
 		sizes.add(4);
 		for (AbsValExpr arg : acceptor.args.exprs) {
 			arg.accept(this);
@@ -212,6 +215,7 @@ public class IMCodeGenerator implements AbsVisitor {
 			if (decl instanceof AbsFunDecl) {
 				AbsFunDecl funDecl = (AbsFunDecl) decl;
 				FrmFrame frame = FrmDesc.getFrame(decl);
+				currFrame = frame;
 				funDecl.stmt.accept(this);
 				ImcCodeChunk codeChunk = new ImcCodeChunk(frame, (ImcStmt) code);
 				chunks.add(codeChunk);
@@ -219,6 +223,7 @@ public class IMCodeGenerator implements AbsVisitor {
 			} else if (decl instanceof AbsProcDecl) {
 				AbsProcDecl procDecl = (AbsProcDecl) decl;
 				FrmFrame frame = FrmDesc.getFrame(decl);
+				currFrame = frame;
 				procDecl.stmt.accept(this);
 				ImcCodeChunk codeChunk = new ImcCodeChunk(frame, (ImcStmt) code);
 				chunks.add(codeChunk);
@@ -277,7 +282,8 @@ public class IMCodeGenerator implements AbsVisitor {
 		acceptor.decls.accept(this);
 		acceptor.stmt.accept(this);
 		FrmFrame frame = FrmDesc.getFrame(acceptor);
-		ImcCodeChunk codeChunk = new ImcCodeChunk(frame, (ImcStmt) code);
+		currFrame = frame;
+		ImcCodeChunk codeChunk = new ImcCodeChunk(frame, (ImcStmt)code);
 		chunks.add(codeChunk);
 
 	}
@@ -321,13 +327,15 @@ public class IMCodeGenerator implements AbsVisitor {
 		acceptor.decls.accept(this);
 		acceptor.stmt.accept(this);
 		FrmFrame frame = FrmDesc.getFrame(acceptor);
-		ImcCodeChunk codeChunk = new ImcCodeChunk(frame, (ImcStmt) code);
-		chunks.add(codeChunk);
+		currFrame = frame;
+		ImcCodeChunk codeChunk = new ImcCodeChunk(frame, (ImcStmt)code);
+		chunks.add(codeChunk);  
 	}
 
 	@Override
 	public void visit(AbsProgram acceptor) {
 		FrmFrame frame = FrmDesc.getFrame(acceptor);
+		currFrame = frame;
 		acceptor.stmt.accept(this);
 		ImcCodeChunk codeChunk = new ImcCodeChunk(frame, (ImcStmt) code);
 		chunks.add(codeChunk);
@@ -414,16 +422,22 @@ public class IMCodeGenerator implements AbsVisitor {
 
 		if (access instanceof FrmArgAccess) {
 			FrmArgAccess argAccess = (FrmArgAccess) access;
+			code = new ImcTEMP(currFrame.FP);
 			code = new ImcBINOP(ImcBINOP.ADD, (ImcExpr) code, new ImcCONST(
 					argAccess.offset));
 			code = new ImcMEM((ImcExpr) code);
 		} else if (access instanceof FrmLocAccess) {
 			FrmLocAccess laccess = (FrmLocAccess) access;
 			label = laccess.frame.label;
-
+			
+			int diff = currFrame.level - laccess.frame.level;
 			ImcExpr limc = null;
-
-			ImcCONST rimc = new ImcCONST(laccess.offset);
+			
+			limc = new ImcTEMP(currFrame.FP);
+			for(int i = 0; i < diff; i++) 
+				limc = new ImcMEM(limc);
+				
+			ImcCONST rimc = new ImcCONST(laccess.offset); 
 			ImcBINOP expr = new ImcBINOP(ImcBINOP.ADD, limc, rimc);
 			code = new ImcMEM(expr);
 		} else if (access instanceof FrmVarAccess) {

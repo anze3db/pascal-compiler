@@ -1,5 +1,6 @@
 program queens;
-    
+    var i : integer;
 begin
-    putint(1)
+    i := 4000;
+    putint(i)
 end.

@@ -45,6 +45,7 @@ import compiler.frames.FrmVarAccess;
 import compiler.semanal.SemDesc;
 import compiler.semanal.type.SemArrayType;
 import compiler.semanal.type.SemRecordType;
+import compiler.semanal.type.SemSubprogramType;
 import compiler.semanal.type.SemType;
 
 public class IMCodeGenerator implements AbsVisitor {
@@ -100,6 +101,13 @@ public class IMCodeGenerator implements AbsVisitor {
 		ImcExpr srcExpr = (ImcExpr) code;
 		acceptor.dstExpr.accept(this);
 		ImcExpr dstExpr = (ImcExpr) code;
+		SemType ltype = SemDesc.getActualType(acceptor.dstExpr);
+		
+		if(ltype instanceof SemSubprogramType){ //return value
+			AbsDecl fd = SemDesc.getNameDecl(acceptor.dstExpr);
+			FrmFrame ff = FrmDesc.getFrame(fd);
+			dstExpr = (ImcExpr)(new ImcTEMP(ff.RV));		
+		}
 
 		code = new ImcMOVE(dstExpr, srcExpr);
 	}

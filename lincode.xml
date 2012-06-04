@@ -5,7 +5,7 @@
 <frmnode>
 <frm kind="level" value="-1"/>
 <frm kind="label" value="_main"/>
-<frm kind="size" value="48"/>
+<frm kind="size" value="16"/>
 <frm kind="FP" value="T11"/>
 </frmnode>
 <imcnode kind="SEQ">
@@ -22,7 +22,7 @@
 </imcnode>
 </imcnode>
 </imcnode>
-<imcnode kind="CONST" value="1"/>
+<imcnode kind="CONST" value="13"/>
 </imcnode>
 <imcnode kind="MOVE">
 <imcnode kind="TEMP" value="T12"/>
@@ -31,7 +31,16 @@
 <imcnode kind="MOVE">
 <imcnode kind="TEMP" value="T13"/>
 <imcnode kind="MEM">
+<imcnode kind="BINOP" value="+">
 <imcnode kind="NAME" value="_used_cols"/>
+<imcnode kind="BINOP" value="*">
+<imcnode kind="BINOP" value="-">
+<imcnode kind="CONST" value="1"/>
+<imcnode kind="CONST" value="1"/>
+</imcnode>
+<imcnode kind="CONST" value="4"/>
+</imcnode>
+</imcnode>
 </imcnode>
 </imcnode>
 <imcnode kind="MOVE">

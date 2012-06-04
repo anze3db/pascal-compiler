@@ -73,6 +73,7 @@ public class SemTypeChecker implements AbsVisitor {
 		try {
 			int lb = SemDesc.getActualConst(acceptor.loBound);
 			int hb = SemDesc.getActualConst(acceptor.hiBound);
+			
 			if (lb <= 0 || hb <= 0){
 				error = true;
 				Report.warning("Negative array bound", acceptor.begLine,
@@ -86,8 +87,6 @@ public class SemTypeChecker implements AbsVisitor {
 			SemType rt = new SemArrayType(semType, lb, hb);
 			SemDesc.setActualType(acceptor, rt);
 		} catch (Exception e) {
-			error = true; Report.warning("Array bounds not integers", acceptor.begLine,
-					acceptor.endLine);
 		}
 	}
 
@@ -122,6 +121,7 @@ public class SemTypeChecker implements AbsVisitor {
 			break;
 		case AbsAtomConst.INT:
 			SemDesc.setActualType(acceptor, new SemAtomType(SemAtomType.INT));
+			SemDesc.setActualConst(acceptor, Integer.parseInt(acceptor.value));
 			break;
 		}
 	}

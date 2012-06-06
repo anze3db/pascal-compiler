@@ -219,6 +219,7 @@ value ::=   INT_CONST:c     {: RESULT = new AbsAtomConst(c, AbsAtomConst.INT);  
             BOOL_CONST:c    {: RESULT = new AbsAtomConst(c, AbsAtomConst.BOOL); RESULT.setPos(c.toString(), cleft, cright); :} | 
             NIL:c           {: RESULT = new AbsNilConst(); RESULT.setPos(c.toString(), cleft, cright); :} | 
             PTR:c value:v   {: RESULT = new AbsUnExpr(AbsUnExpr.MEM, (AbsValExpr)v); RESULT.setBeg(v); RESULT.setEnd(v); :} %prec MEM |
+            value:v PTR:c   {: RESULT = new AbsUnExpr(AbsUnExpr.VAL, (AbsValExpr)v); RESULT.setBeg(v); RESULT.setEnd(v); :} %prec VAL  |
             ADD:c value:v   {: RESULT = new AbsUnExpr(AbsUnExpr.ADD, (AbsValExpr)v); RESULT.setBeg(v); RESULT.setEnd(v); :} %prec UADD |
             SUB:c value:v   {: RESULT = new AbsUnExpr(AbsUnExpr.SUB, (AbsValExpr)v); RESULT.setBeg(v); RESULT.setEnd(v); :} %prec USUB | 
             NOT:c value:v   {: RESULT = new AbsUnExpr(AbsUnExpr.NOT, (AbsValExpr)v); RESULT.setBeg(v); RESULT.setEnd(v); :} |

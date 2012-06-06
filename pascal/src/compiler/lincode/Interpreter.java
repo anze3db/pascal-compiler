@@ -8,7 +8,7 @@ import compiler.imcode.*;
 
 public class Interpreter {
 
-	int debug = 1;
+	int debug = 0;
 
 	/** Pomnilnik.  */
 	public HashMap<Integer,Integer> memory = new HashMap<Integer,Integer>();

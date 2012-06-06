@@ -44,21 +44,14 @@ public class SemNameResolver implements AbsVisitor {
 
 	@Override
 	public void visit(AbsArrayType acceptor) {
-		if (acceptor.error) {
-			return;
-		}
-
 		acceptor.loBound.accept(this);
+		System.out.println(acceptor.hiBound);
 		acceptor.hiBound.accept(this);
 
 	}
 
 	@Override
 	public void visit(AbsAssignStmt acceptor) {
-		if (acceptor.error) {
-			return;
-		}
-
 		acceptor.dstExpr.accept(this);
 		acceptor.srcExpr.accept(this);
 
@@ -95,12 +88,12 @@ public class SemNameResolver implements AbsVisitor {
 	public void visit(AbsConstDecl acceptor) {
 		acceptor.name.accept(this);
 		acceptor.value.accept(this);
+		System.out.println(acceptor.name + " " + acceptor.value);
 	}
 
 	@Override
 	public void visit(AbsDeclName acceptor) {
 		AbsDecl decl = SemTable.fnd(acceptor.name);
-
 		if (decl != null) {
 			SemDesc.setNameDecl(acceptor, decl);
 		}
@@ -254,6 +247,7 @@ public class SemNameResolver implements AbsVisitor {
 
 		if (decl != null) {
 			SemDesc.setNameDecl(acceptor, decl);
+			
 		}
 	}
 

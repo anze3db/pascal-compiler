@@ -64,7 +64,7 @@ public class SemTypeChecker implements AbsVisitor {
 		acceptor.hiBound.accept(this);
 		acceptor.loBound.accept(this);
 		SemType semType = SemDesc.getActualType(acceptor.type);
-
+		
 		if (semType == null) {
 			error = true; Report.warning("Array type failed", acceptor.begLine,
 					acceptor.endLine);
@@ -72,6 +72,7 @@ public class SemTypeChecker implements AbsVisitor {
 		}
 		try {
 			int lb = SemDesc.getActualConst(acceptor.loBound);
+			System.out.println((acceptor.hiBound) + " AA S");
 			int hb = SemDesc.getActualConst(acceptor.hiBound);
 			
 			if (lb <= 0 || hb <= 0){
@@ -87,6 +88,7 @@ public class SemTypeChecker implements AbsVisitor {
 			SemType rt = new SemArrayType(semType, lb, hb);
 			SemDesc.setActualType(acceptor, rt);
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -267,6 +269,9 @@ public class SemTypeChecker implements AbsVisitor {
 		acceptor.value.accept(this);
 		SemType st = SemDesc.getActualType(acceptor.value);
 		SemDesc.setActualType(acceptor, st);
+		System.out.println(acceptor.name + " CONST DECL");
+		SemDesc.setActualConst(acceptor.name, SemDesc.getActualConst(acceptor.value));
+		//SemDesc.setActualConst(acceptor, );
 
 	}
 

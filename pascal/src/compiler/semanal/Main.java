@@ -1,11 +1,16 @@
 package compiler.semanal;
 
-import java.io.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintStream;
 
-import compiler.report.*;
-import compiler.lexanal.*;
-import compiler.synanal.*;
-import compiler.abstree.tree.*;
+import compiler.abstree.tree.AbsProgram;
+import compiler.abstree.tree.AbsTree;
+import compiler.lexanal.PascalLex;
+import compiler.report.Report;
+import compiler.report.XML;
+import compiler.synanal.PascalSyn;
 
 public class Main {
 
@@ -36,7 +41,9 @@ public class Main {
 		}
 		SemNameResolver nameResolver = new SemNameResolver();
 		SemTypeChecker typeChecker = new SemTypeChecker();
+		ConstEvaluator constEvaluator = new ConstEvaluator();
 		program.accept(nameResolver);
+		program.accept(constEvaluator);
 		program.accept(typeChecker);
 		program.accept(new SemPrintXML(xml));
 

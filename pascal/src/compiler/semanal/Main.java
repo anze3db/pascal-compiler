@@ -41,9 +41,7 @@ public class Main {
 		}
 		SemNameResolver nameResolver = new SemNameResolver();
 		SemTypeChecker typeChecker = new SemTypeChecker();
-		ConstEvaluator constEvaluator = new ConstEvaluator();
 		program.accept(nameResolver);
-		program.accept(constEvaluator);
 		program.accept(typeChecker);
 		program.accept(new SemPrintXML(xml));
 

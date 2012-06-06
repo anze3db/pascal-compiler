@@ -5,7 +5,7 @@ import compiler.abstree.*;
 import compiler.abstree.tree.*;
 import compiler.report.Report;
 
-public class ConstEvaluator implements AbsVisitor{
+public class SemConstEvaluator implements AbsVisitor{
 
 	public boolean error;
 	
@@ -95,7 +95,7 @@ public class ConstEvaluator implements AbsVisitor{
 		}
 		int val = 0;
 		
-		if(fst == null || snd == null)  //�e kak �len ni konstanta
+		if(fst == null || snd == null)
 			return;
 		
 		switch (acceptor.oper) {
@@ -186,9 +186,9 @@ public class ConstEvaluator implements AbsVisitor{
 			return; 
 				
 		Integer val = SemDesc.getActualConst(acceptor.value);
-		if(val == null){   //�e konstanta �e ni izra�unana => izra�unaj				
+		if(val == null){			
 			if(currentCrossReferencedConsts.contains(acceptor))
-				Report.warning("Napaka! Kro�no sklicevanje na konstanto: " + acceptor.name.name);	
+				Report.warning(acceptor.name.name);	
 			else					
 				currentCrossReferencedConsts.add(acceptor);
 			
@@ -361,7 +361,7 @@ public class ConstEvaluator implements AbsVisitor{
 		}
 		int val = 0;
 		
-		if(fst == null)  //�e �len ni konstanta
+		if(fst == null)
 			return;
 		
 		switch (acceptor.oper) {

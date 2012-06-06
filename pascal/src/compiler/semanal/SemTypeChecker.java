@@ -72,7 +72,6 @@ public class SemTypeChecker implements AbsVisitor {
 		}
 		try {
 			int lb = SemDesc.getActualConst(acceptor.loBound);
-			System.out.println((acceptor.hiBound) + " AA S");
 			int hb = SemDesc.getActualConst(acceptor.hiBound);
 			
 			if (lb <= 0 || hb <= 0){
@@ -123,7 +122,6 @@ public class SemTypeChecker implements AbsVisitor {
 			break;
 		case AbsAtomConst.INT:
 			SemDesc.setActualType(acceptor, new SemAtomType(SemAtomType.INT));
-			SemDesc.setActualConst(acceptor, Integer.parseInt(acceptor.value));
 			break;
 		}
 	}
@@ -269,9 +267,6 @@ public class SemTypeChecker implements AbsVisitor {
 		acceptor.value.accept(this);
 		SemType st = SemDesc.getActualType(acceptor.value);
 		SemDesc.setActualType(acceptor, st);
-		System.out.println(acceptor.name + " CONST DECL");
-		SemDesc.setActualConst(acceptor.name, SemDesc.getActualConst(acceptor.value));
-		//SemDesc.setActualConst(acceptor, );
 
 	}
 
@@ -374,6 +369,8 @@ public class SemTypeChecker implements AbsVisitor {
 
 	@Override
 	public void visit(AbsProgram acceptor) {
+		SemConstEvaluator constVisitor = new SemConstEvaluator();
+		acceptor.accept(constVisitor);
 		acceptor.decls.accept(this);
 		acceptor.stmt.accept(this);
 	}

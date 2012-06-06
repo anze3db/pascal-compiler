@@ -45,7 +45,6 @@ public class SemNameResolver implements AbsVisitor {
 	@Override
 	public void visit(AbsArrayType acceptor) {
 		acceptor.loBound.accept(this);
-		System.out.println(acceptor.hiBound);
 		acceptor.hiBound.accept(this);
 
 	}
@@ -88,7 +87,6 @@ public class SemNameResolver implements AbsVisitor {
 	public void visit(AbsConstDecl acceptor) {
 		acceptor.name.accept(this);
 		acceptor.value.accept(this);
-		System.out.println(acceptor.name + " " + acceptor.value);
 	}
 
 	@Override

@@ -49,7 +49,6 @@ public class Main {
 
 		/* Zapremo obe datoteki.  */
         XML.close("synanal", xml);
-        System.out.println("AAA");
         try { srcFile.close(); }
 		catch (IOException _) { Report.error("Source file '" + srcName + "' cannot be opened.", 1); }
 	}

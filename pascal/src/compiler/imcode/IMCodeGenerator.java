@@ -300,22 +300,28 @@ public class IMCodeGenerator implements AbsVisitor {
 	public void visit(AbsIfStmt acceptor) {
 
 		ImcSEQ seq = new ImcSEQ();
+		
 		ImcLABEL trueL = new ImcLABEL(FrmLabel.newLabel());
 		ImcLABEL falseL = new ImcLABEL(FrmLabel.newLabel());
+		ImcLABEL elseL = new ImcLABEL(FrmLabel.newLabel());
 
 		acceptor.cond.accept(this);
+		
 		ImcExpr condExpr = (ImcExpr) code;
 
 		code = new ImcCJUMP(condExpr, trueL.label, falseL.label);
 		seq.stmts.add((ImcStmt) code);
-
 		seq.stmts.add((ImcStmt) trueL);
-		acceptor.thenStmt.accept(this);
+		
+		acceptor.thenStmt.accept(this);		
 		seq.stmts.add((ImcStmt) code);
-
-		seq.stmts.add((ImcStmt) falseL);
+		seq.stmts.add(new ImcJUMP(elseL.label));
+		seq.stmts.add(falseL);
+		
 		acceptor.elseStmt.accept(this);
+		
 		seq.stmts.add((ImcStmt) code);
+		seq.stmts.add(elseL);
 
 		code = seq;
 	}

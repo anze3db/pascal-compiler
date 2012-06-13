@@ -25,8 +25,7 @@ public class SemConstEvaluator implements AbsVisitor{
 	@Override
 	public void visit(AbsAssignStmt acceptor) {
 		if (acceptor.error)
-			return; 
-		
+			return;
 		acceptor.dstExpr.accept(this);
 		acceptor.srcExpr.accept(this);
 		
@@ -36,7 +35,6 @@ public class SemConstEvaluator implements AbsVisitor{
 	public void visit(AbsAtomConst acceptor) {
 		if (acceptor.error)
 			return; 
-		
 		switch (acceptor.type) {
 		case AbsAtomConst.BOOL:
 			int value = 0;
@@ -45,7 +43,8 @@ public class SemConstEvaluator implements AbsVisitor{
 			SemDesc.setActualConst(acceptor, value);
 			break;
 		case AbsAtomConst.CHAR:
-			SemDesc.setActualConst(acceptor, (int)acceptor.value.charAt(0));
+			System.out.println("AAAAA AAA A");
+			SemDesc.setActualConst(acceptor, 999);
 			break;
 		case AbsAtomConst.INT:
 			SemDesc.setActualConst(acceptor, Integer.parseInt(acceptor.value));
@@ -277,7 +276,6 @@ public class SemConstEvaluator implements AbsVisitor{
 	public void visit(AbsProgram acceptor) {
 		if (acceptor.error)
 			return; 
-		
 		//acceptor.name.accept(this);
 		acceptor.decls.accept(this);
 		//acceptor.stmt.accept(this);

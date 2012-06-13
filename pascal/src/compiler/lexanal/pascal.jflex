@@ -1,12 +1,14 @@
 package compiler.lexanal;
 
+import java.io.*;
+
 import compiler.report.*;
 import compiler.synanal.*;
 
 %%
 
 
-%class	  PascalLex
+%class      PascalLex
 %public
 
 %line
@@ -16,12 +18,12 @@ import compiler.synanal.*;
  * To bi lahko naredili tudi z ukazom %cup,
  * a v tem primeru ne bi mogli uporabiti razreda compiler.lexanal.PascalSym
  * namesto razreda java_cup.runtime.Symbol za opis osnovnih simbolov. */
-%cupsym	 compiler.synanal.PascalTok
+%cupsym     compiler.synanal.PascalTok
 %implements java_cup.runtime.Scanner
 %function   next_token
-%type	   PascalSym
+%type       PascalSym
 %eofval{
-	return new PascalSym(PascalTok.EOF);
+    return new PascalSym(PascalTok.EOF);
 %eofval}
 %eofclose
 
@@ -30,9 +32,9 @@ import compiler.synanal.*;
 %{
 	int nesting = 0, lbracketStartLine = 0, lbracketStartColumn = 0;
 	
-	private PascalSym sym(int type) {
-		return new PascalSym(type, yyline + 1, yycolumn + 1, yytext());
-	}
+    private PascalSym sym(int type) {
+        return new PascalSym(type, yyline + 1, yycolumn + 1, yytext());
+    }
 %}
 
 %eof{
@@ -101,20 +103,20 @@ import compiler.synanal.*;
 	"boolean"						{ return sym(PascalTok.BOOL); }
 	"char"							{ return sym(PascalTok.CHAR); }
 	
-	// konstante atomarnih podatkovnih tipov:
-	"true"|"false"					{ return sym(PascalTok.BOOL_CONST); }
-	\'([^\']|\'\')\'				{ return sym(PascalTok.CHAR_CONST); } //System.out.println(yytext());  
-	[0-9]+							{ return sym(PascalTok.INT_CONST); }  
+    // konstante atomarnih podatkovnih tipov:
+    "true"|"false"                      { return sym(PascalTok.BOOL_CONST); }
+    \'([^\']|\'\'|([0-9]|[0-9][0-9])(d|h))\'                { return sym(PascalTok.CHAR_CONST); } //System.out.println(yytext());  
+    [0-9]+                          { return sym(PascalTok.INT_CONST); }  
 	
 	// imena programov, konstant, tipov, spremenljivk in podprogramov:
 	
-	[A-Za-z_][A-Za-z_0-9]*			{ return sym(PascalTok.IDENTIFIER); }
+	[A-Za-z_][A-Za-z_0-9]*					{ return sym(PascalTok.IDENTIFIER); }
 	
-	.								{ Report.warning("Unknown character: "+yytext(), yyline + 1, yycolumn + 1); }
+	.							{ Report.warning("Unknown character: "+yytext(), yyline + 1, yycolumn + 1); }
 }
 
 <COMMENT> {
 	"{"							{ nesting++; }
 	"}"							{ nesting--; if (nesting == 0) yybegin(YYINITIAL); }
-	.|\n						{ }
+	.|\n							{}
 }

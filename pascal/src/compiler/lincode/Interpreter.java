@@ -82,6 +82,7 @@ public class Interpreter {
 			return (LD(SP + 4));
 		}
 		if (label.equals("_chr")) {
+			
 			return (LD(SP + 4));
 		}
 

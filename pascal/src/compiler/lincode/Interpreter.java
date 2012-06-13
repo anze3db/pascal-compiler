@@ -65,7 +65,7 @@ public class Interpreter {
 			return 0;
 		}
 		if (label.equals("_getch")) {
-			return (new Scanner(System.in)).nextInt();
+			return (int)(new Scanner(System.in)).next().charAt(0);
 		}
 		if (label.equals("_getint")) {
 			return (new Scanner(System.in)).nextInt();

@@ -7,9 +7,6 @@ import compiler.abstree.AbsVisitor;
  */
 public class AbsProcDecl extends AbsDecl {
 
-	/** Ime. */
-	public AbsDeclName name;
-	
 	/** Parametri. */
 	public AbsDecls pars;
 	

@@ -7,9 +7,6 @@ import compiler.abstree.AbsVisitor;
  */
 public class AbsTypeDecl extends AbsDecl {
 
-	/** Ime tipa. */
-	public AbsDeclName name;
-	
 	/** Tip tipa. */
 	public AbsTypeExpr type;
 	

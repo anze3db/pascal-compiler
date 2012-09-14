@@ -261,19 +261,7 @@ public class SemNameResolver implements AbsVisitor {
 		acceptor.stmt.accept(this);
 	}
 	private String getDeclName(AbsDecl d) {
-
-		if (d instanceof AbsConstDecl)
-			return ((AbsConstDecl) d).name.name;
-		else if (d instanceof AbsFunDecl)
-			return ((AbsFunDecl) d).name.name;
-		else if (d instanceof AbsProcDecl)
-			return ((AbsProcDecl) d).name.name;
-		else if (d instanceof AbsTypeDecl)
-			return ((AbsTypeDecl) d).name.name;
-		else if (d instanceof AbsVarDecl)
-			return ((AbsVarDecl) d).name.name;
-		else
-			return "?";
+		return d.name.name;
 	}
 
 }

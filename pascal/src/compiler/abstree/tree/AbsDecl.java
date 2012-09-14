@@ -11,4 +11,5 @@ package compiler.abstree.tree;
  * @see AbsVarDecl
  */
 public abstract class AbsDecl extends AbsTree {
+	public AbsDeclName name;
 }

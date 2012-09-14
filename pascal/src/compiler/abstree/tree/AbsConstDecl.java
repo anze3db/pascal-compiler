@@ -7,9 +7,6 @@ import compiler.abstree.AbsVisitor;
  */
 public class AbsConstDecl extends AbsDecl {
 
-	/** Ime konstante. */
-	public AbsDeclName name;
-	
 	/** Vrednost konstante. */
 	public AbsValExpr value;
 	

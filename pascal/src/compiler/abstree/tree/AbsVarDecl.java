@@ -7,9 +7,6 @@ import compiler.abstree.AbsVisitor;
  */
 public class AbsVarDecl extends AbsDecl {
 
-	/** Ime spremenljivke. */
-	public AbsDeclName name;
-	
 	/** Tip spremenljivke. */
 	public AbsTypeExpr type;
 	

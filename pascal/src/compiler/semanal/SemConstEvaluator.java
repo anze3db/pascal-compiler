@@ -1,5 +1,4 @@
 package compiler.semanal;
-import java.util.LinkedList;
 
 import compiler.abstree.*;
 import compiler.abstree.tree.*;
@@ -9,12 +8,8 @@ public class SemConstEvaluator implements AbsVisitor{
 
 	public boolean error;
 	
-	private static LinkedList<AbsTree> currentCrossReferencedConsts = new LinkedList<AbsTree>();
-
 	@Override
 	public void visit(AbsAlloc acceptor) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -187,11 +182,6 @@ public class SemConstEvaluator implements AbsVisitor{
 				
 		Integer val = SemDesc.getActualConst(acceptor.value);
 		if(val == null){			
-			if(currentCrossReferencedConsts.contains(acceptor))
-				Report.warning(acceptor.name.name);	
-			else					
-				currentCrossReferencedConsts.add(acceptor);
-			
 			acceptor.value.accept(this);
 			val = SemDesc.getActualConst(acceptor.value);
 		}			
@@ -405,7 +395,6 @@ public class SemConstEvaluator implements AbsVisitor{
 		if(cd == null)
 			Report.warning("Napaka pri evaluaciji izraza!");
 		else if(val == null){
-			currentCrossReferencedConsts.add(acceptor);
 			cd.accept(this);
 			val = SemDesc.getActualConst(cd);
 		}

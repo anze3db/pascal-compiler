@@ -2,6 +2,8 @@ package compiler.imcode;
 
 import java.io.*;
 
+import compiler.report.Report;
+
 public class ImcMOVE extends ImcStmt {
 
 	/** Ponor.  */
@@ -11,6 +13,7 @@ public class ImcMOVE extends ImcStmt {
 	public ImcExpr src;
 
 	public boolean single;
+	public boolean accessed = false;
 	
 	public ImcMOVE(ImcExpr dst, ImcExpr src) {
 		this.dst = dst;
@@ -26,7 +29,11 @@ public class ImcMOVE extends ImcStmt {
 
 	@Override
 	public void toXML(PrintStream xml) {
-		xml.print("<imcnode kind=\"MOVE\">\n");
+		String single = "";
+		if(this.single){
+			single = " TRUE";
+		}
+		xml.print("<imcnode kind=\"MOVE "+single+"\">\n");
 		dst.toXML(xml);
 		src.toXML(xml);
 		xml.print("</imcnode>\n");
@@ -39,6 +46,10 @@ public class ImcMOVE extends ImcStmt {
 		ImcESEQ src = this.src.linear();
 		lin.stmts.addAll(((ImcSEQ)dst.stmt).stmts);
 		lin.stmts.addAll(((ImcSEQ)src.stmt).stmts);
+		if(this.single && this.accessed){
+			Report.error("Variable assigned twice", 1);
+		}
+		this.accessed = true;
 		lin.stmts.add(new ImcMOVE(dst.expr, src.expr));
 		return lin;
 	}

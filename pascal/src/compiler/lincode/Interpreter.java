@@ -146,6 +146,7 @@ public class Interpreter {
 		}
 		if (stmt instanceof ImcMOVE) {
 			ImcMOVE move = (ImcMOVE)stmt;
+			
 			if (move.dst instanceof ImcTEMP) {
 				ImcTEMP dst = (ImcTEMP)move.dst;
 				Integer src = execExpr(move.src);
@@ -153,9 +154,6 @@ public class Interpreter {
 				return null;
 			}
 			if (move.dst instanceof ImcMEM) {
-				if(move.single){
-					Report.error("Single can't be redefined", 1);
-				}
 				Integer dst = execExpr(((ImcMEM)move.dst).expr);
 				Integer src = execExpr(move.src);
 				ST(dst, src);

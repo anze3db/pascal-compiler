@@ -9,8 +9,9 @@ program queens;
             n : single integer;
             s : integer;
         begin
-            num := 2;
-            num := 1
+            n := 2;
+            if n = 2 then 
+            putch('*')
         end;
     
 begin

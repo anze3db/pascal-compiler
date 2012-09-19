@@ -31,7 +31,7 @@ non terminal AbsTree source;
 non terminal AbsDeclName program_indication;
 non terminal AbsDecls comp_descr_list, param_descr_list_r, param_descr_list, constant_declarations, type_declarations, variable_declarations, subprogram_declarations, types, constants, vars;
 non terminal AbsDecl subprogram_head;
-non terminal AbsStmt statement, if_statement, while_statement, for_statement, assign_statement;
+non terminal AbsStmt statement, if_statement, while_statement, repeatuntil_statement, for_statement, assign_statement;
 non terminal AbsConstDecl constant;
 non terminal AbsTypeDecl type_declaration; /*, var;*/
 non terminal AbsValExpr value;
@@ -344,6 +344,7 @@ statement ::=   value:ve 				{: RESULT = new AbsExprStmt(ve); RESULT.setPos(ve);
                 if_statement:is 		{: RESULT = is; :} |
                 multiple_statement:ms 	{: RESULT = ms; :} |
                 while_statement:ws 		{: RESULT = ws; :} |
+                repeatuntil_statement:ru{: RESULT = ru; :} |
                 for_statement:fs 		{: RESULT = fs; :} |
                 SEMIC;
 
@@ -395,7 +396,11 @@ while_statement ::=
 			RESULT.setBeg("", wleft, wright);  
 			RESULT.setEnd(s);
 	    :};
-
+repeatuntil_statement ::= 
+        REPEAT:r statement:s UNTIL value:ve
+        {:  RESULT = new AbsRepeatStmt(ve, s);
+        :};
+	    
 for_statement ::= 
         FOR:w IDENTIFIER:id ASSIGN:a value:vlo TO value:vhi DO statement:s
 		{:  AbsValName n = new AbsValName(id);

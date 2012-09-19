@@ -423,4 +423,10 @@ public class SemConstEvaluator implements AbsVisitor{
 		
 	}
 
+	@Override
+	public void visit(AbsRepeatStmt acceptor) {
+		acceptor.cond.accept(this);
+		acceptor.stmt.accept(this);
+	}
+
 }

@@ -24,6 +24,7 @@ import compiler.abstree.tree.AbsPointerType;
 import compiler.abstree.tree.AbsProcDecl;
 import compiler.abstree.tree.AbsProgram;
 import compiler.abstree.tree.AbsRecordType;
+import compiler.abstree.tree.AbsRepeatStmt;
 import compiler.abstree.tree.AbsStmt;
 import compiler.abstree.tree.AbsStmts;
 import compiler.abstree.tree.AbsTypeDecl;
@@ -495,6 +496,29 @@ public class IMCodeGenerator implements AbsVisitor {
 
 		code = seq;
 
+	}
+
+	@Override
+	public void visit(AbsRepeatStmt acceptor) {
+		ImcSEQ seq = new ImcSEQ();
+
+		// pogoj zanke
+		ImcLABEL trueL = new ImcLABEL(FrmLabel.newLabel());
+		ImcLABEL falseL = new ImcLABEL(FrmLabel.newLabel());
+		
+		// cond:
+		acceptor.cond.accept(this);
+		ImcExpr cond = (ImcBINOP) code;
+		
+		seq.stmts.add((ImcStmt) trueL);
+		acceptor.stmt.accept(this);
+		// jedro zanke
+		seq.stmts.add((ImcStmt) code);
+		code = new ImcCJUMP(cond, trueL.label, falseL.label);
+		seq.stmts.add((ImcStmt) code);
+		seq.stmts.add((ImcStmt) falseL);
+		code = seq;
+		
 	}
 
 }

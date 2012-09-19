@@ -114,11 +114,11 @@ public class SemTypeChecker implements AbsVisitor {
 	@Override
 	public void visit(AbsAtomConst acceptor) {
 		switch (acceptor.type) {
-		case AbsAtomConst.BOOL:
-			SemDesc.setActualType(acceptor, new SemAtomType(SemAtomType.BOOL));
-			break;
 		case AbsAtomConst.CHAR:
 			SemDesc.setActualType(acceptor, new SemAtomType(SemAtomType.CHAR));
+			break;
+		case AbsAtomType.BOOL:
+			SemDesc.setActualType(acceptor, new SemAtomType(SemAtomType.BOOL));
 			break;
 		case AbsAtomConst.INT:
 			SemDesc.setActualType(acceptor, new SemAtomType(SemAtomType.INT));

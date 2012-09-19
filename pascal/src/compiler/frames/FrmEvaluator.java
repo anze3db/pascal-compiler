@@ -24,6 +24,7 @@ import compiler.abstree.tree.AbsProgram;
 import compiler.abstree.tree.AbsRecordType;
 import compiler.abstree.tree.AbsStmt;
 import compiler.abstree.tree.AbsStmts;
+import compiler.abstree.tree.AbsTriExpr;
 import compiler.abstree.tree.AbsTypeDecl;
 import compiler.abstree.tree.AbsTypeName;
 import compiler.abstree.tree.AbsUnExpr;
@@ -276,6 +277,13 @@ public class FrmEvaluator implements AbsVisitor {
 	public void visit(AbsWhileStmt acceptor) {
 		acceptor.cond.accept(this);
 		acceptor.stmt.accept(this);
+	}
+
+	@Override
+	public void visit(AbsTriExpr acceptor) {
+		acceptor.condition.accept(this);
+		acceptor.valueFalse.accept(this);
+		acceptor.valueTrue.accept(this);
 	}
 
 }

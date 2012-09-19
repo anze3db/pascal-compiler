@@ -26,6 +26,7 @@ import compiler.abstree.tree.AbsProgram;
 import compiler.abstree.tree.AbsRecordType;
 import compiler.abstree.tree.AbsStmt;
 import compiler.abstree.tree.AbsStmts;
+import compiler.abstree.tree.AbsTriExpr;
 import compiler.abstree.tree.AbsTypeDecl;
 import compiler.abstree.tree.AbsTypeName;
 import compiler.abstree.tree.AbsUnExpr;
@@ -41,6 +42,7 @@ import compiler.frames.FrmDesc;
 import compiler.frames.FrmFrame;
 import compiler.frames.FrmLabel;
 import compiler.frames.FrmLocAccess;
+import compiler.frames.FrmTemp;
 import compiler.frames.FrmVarAccess;
 import compiler.semanal.SemDesc;
 import compiler.semanal.type.SemArrayType;
@@ -495,6 +497,36 @@ public class IMCodeGenerator implements AbsVisitor {
 
 		code = seq;
 
+	}
+
+	@Override
+	public void visit(AbsTriExpr acceptor) {
+		
+		ImcTEMP tmp = new ImcTEMP(new FrmTemp());
+		
+		ImcSEQ s = new ImcSEQ();
+		
+		ImcLABEL tlabel = new ImcLABEL(FrmLabel.newLabel());
+		ImcLABEL flabel = new ImcLABEL(FrmLabel.newLabel());
+		ImcLABEL end 	= new ImcLABEL(FrmLabel.newLabel());
+
+		// CONDITION:
+		acceptor.condition.accept(this);
+		s.stmts.add( new ImcCJUMP((ImcExpr)code, tlabel.label, flabel.label));
+		
+		// TRUE:
+		s.stmts.add(tlabel);
+		acceptor.valueTrue.accept(this);
+		s.stmts.add(new ImcMOVE(tmp, (ImcExpr)code));
+		s.stmts.add(new ImcJUMP(end.label));
+
+		// FALSE:
+		s.stmts.add(flabel);
+		acceptor.valueFalse.accept(this);
+		s.stmts.add(new ImcMOVE(tmp, (ImcExpr)code));
+		s.stmts.add(end);
+		
+		code = new ImcESEQ(s, tmp);
 	}
 
 }

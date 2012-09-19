@@ -22,7 +22,7 @@ terminal String BOOL_CONST, CHAR_CONST, INT_CONST, NIL;
 terminal String IDENTIFIER;
 
 terminal BOOL, CHAR, INT;
-terminal COLON, COMMA, DOT, DOTS, LBRACKET, LPARENTHESIS, RBRACKET, RPARENTHESIS, SEMIC;
+terminal COLON, QUESTION, COMMA, DOT, DOTS, LBRACKET, LPARENTHESIS, RBRACKET, RPARENTHESIS, SEMIC;
 terminal ADD, AND, DIV, EQU, GEQ, GTH, LEQ, LTH, MEM, MUL, NEQ, NOT, OR, PTR, SUB, UADD, USUB, VAL;
 terminal ARRAY, ASSIGN, BEGIN, CONST, DO, ELSE, END, FOR, FUNCTION, IF, OF, PROCEDURE, PROGRAM, RECORD, THEN, TO, TYPE, VAR, WHILE;
 
@@ -40,6 +40,7 @@ non terminal AbsBlockStmt multiple_statement;
 non terminal AbsStmts list_statement, list_statement2;
 
 /* Precedences */
+precedence right QUESTION;
 precedence left OR;
 precedence left AND;
 precedence nonassoc EQU, NEQ, LTH, GTH, LEQ, GEQ;
@@ -257,6 +258,7 @@ value ::=
         IDENTIFIER:id           {: RESULT = new AbsValName(id); RESULT.setPos(id.toString(), idleft, idright); :} |
         value:v1 LBRACKET value:v2 RBRACKET {: RESULT = new AbsBinExpr(AbsBinExpr.ARRACCESS, (AbsValExpr)v1, (AbsValExpr)v2); RESULT.setBeg(v1); RESULT.setEnd(v2);	:} | 
         value:v1 DOT value:v2   {: RESULT = new AbsBinExpr(AbsBinExpr.RECACCESS, v1, v2); RESULT.setBeg(v1); RESULT.setEnd(v2); :} |
+        value:cond QUESTION value:v1 COLON value:v2 {: RESULT = new AbsTriExpr(cond, v1, v2); :} %prec QUESTION |
         IDENTIFIER:id LPARENTHESIS:lp value_list:vl RPARENTHESIS:rp 
         {:  AbsValName n = new AbsValName(id);
     		n.setBeg("", idleft, idright);

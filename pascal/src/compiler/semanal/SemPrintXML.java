@@ -414,4 +414,10 @@ public class SemPrintXML implements AbsVisitor {
 		xml.print("</absnode>\n");
 	}
 
+	@Override
+	public void visit(AbsTriExpr acceptor) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

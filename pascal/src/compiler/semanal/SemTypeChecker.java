@@ -24,6 +24,7 @@ import compiler.abstree.tree.AbsProgram;
 import compiler.abstree.tree.AbsRecordType;
 import compiler.abstree.tree.AbsStmt;
 import compiler.abstree.tree.AbsStmts;
+import compiler.abstree.tree.AbsTriExpr;
 import compiler.abstree.tree.AbsTypeDecl;
 import compiler.abstree.tree.AbsTypeName;
 import compiler.abstree.tree.AbsUnExpr;
@@ -497,5 +498,15 @@ public class SemTypeChecker implements AbsVisitor {
 			return ((AbsVarDecl) d).name;
 		else
 			return null;
+	}
+
+	@Override
+	public void visit(AbsTriExpr acceptor) {
+		acceptor.condition.accept(this);
+		acceptor.valueFalse.accept(this);
+		acceptor.valueTrue.accept(this);
+		if(!SemDesc.getActualType(acceptor.valueFalse).coercesTo(SemDesc.getActualType(acceptor.valueTrue)))
+			Report.error("Types do not match in trinary operator", 1);
+		SemDesc.setActualType(acceptor, SemDesc.getActualType(acceptor.valueFalse));
 	}
 }

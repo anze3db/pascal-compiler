@@ -100,6 +100,7 @@ import compiler.synanal.*;
 	"integer"						{ return sym(PascalTok.INT); }
 	"boolean"						{ return sym(PascalTok.BOOL); }
 	"char"							{ return sym(PascalTok.CHAR); }
+	"?"                             { return sym(PascalTok.QUESTION); }
 	
 	// konstante atomarnih podatkovnih tipov:
 	"true"|"false"					{ return sym(PascalTok.BOOL_CONST); }

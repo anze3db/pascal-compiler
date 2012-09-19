@@ -19,7 +19,7 @@ parser code
 :}
 
 terminal String BOOL_CONST, CHAR_CONST, INT_CONST, NIL;
-terminal String IDENTIFIER;
+terminal String IDENTIFIER, TYPE_IDENTIFIER;
 
 terminal BOOL, CHAR, INT;
 terminal COLON, COMMA, DOT, DOTS, LBRACKET, LPARENTHESIS, RBRACKET, RPARENTHESIS, SEMIC;
@@ -126,7 +126,7 @@ types ::=
 	    {:  AbsDecls a =  new AbsDecls(); a.decls.add(td);  RESULT = a; :};
 
 type_declaration ::= 
-        IDENTIFIER:id EQU:c type:t SEMIC:s
+        TYPE_IDENTIFIER:id EQU:c type:t SEMIC:s
 		{:	AbsDeclName n = new AbsDeclName(id);
 			n.setPos(id.toString(), idleft, idright);
 			AbsTypeDecl e = new AbsTypeDecl(n, t);
@@ -290,7 +290,7 @@ value_params ::=
 type ::= 	INT:t  {: RESULT = new AbsAtomType(AbsAtomType.INT);  RESULT.setPos(t.toString(), tleft, tright); :} | 
 			CHAR:t {: RESULT = new AbsAtomType(AbsAtomType.CHAR); RESULT.setPos(t.toString(), tleft, tright); :} | 
 			BOOL:t {: RESULT = new AbsAtomType(AbsAtomType.BOOL); RESULT.setPos(t.toString(), tleft, tright); :} | 
-			IDENTIFIER:id {: RESULT = new AbsTypeName(id); RESULT.setPos(id.toString(), idleft, idright); :} | 
+			TYPE_IDENTIFIER:id {: RESULT = new AbsTypeName(id); RESULT.setPos(id.toString(), idleft, idright); :} | 
 			table_type:tt {: RESULT = tt; RESULT.setPos(tt); :} | 
 			record_type:rt{: RESULT = rt; RESULT.setPos(rt); :} | 
 			ptr_type: pt  {: RESULT = pt; RESULT.setPos(pt); :} | 

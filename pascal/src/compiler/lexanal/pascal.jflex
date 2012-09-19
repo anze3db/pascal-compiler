@@ -107,7 +107,7 @@ import compiler.synanal.*;
 	[0-9]+							{ return sym(PascalTok.INT_CONST); }  
 	
 	// imena programov, konstant, tipov, spremenljivk in podprogramov:
-	
+	[A-Z][A-Za-z_0-9]*              { return sym(PascalTok.TYPE_IDENTIFIER); }
 	[A-Za-z_][A-Za-z_0-9]*			{ return sym(PascalTok.IDENTIFIER); }
 	
 	.								{ Report.warning("Unknown character: "+yytext(), yyline + 1, yycolumn + 1); }

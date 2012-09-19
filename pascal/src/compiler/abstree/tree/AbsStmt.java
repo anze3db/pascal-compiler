@@ -9,6 +9,7 @@ package compiler.abstree.tree;
  * @see AbsForStmt
  * @see AbsIfStmt
  * @see AbsWhileStmt
+ * @see AbsReturnStmt
  */
 public abstract class AbsStmt extends AbsTree {
 }

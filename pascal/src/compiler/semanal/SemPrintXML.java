@@ -414,4 +414,11 @@ public class SemPrintXML implements AbsVisitor {
 		xml.print("</absnode>\n");
 	}
 
+	@Override
+	public void visit(AbsReturnStmt acceptor) {
+		if (acceptor.error) { xml.print("<abserror kind=\"WhileStmt\"/>\n"); return; }
+		xml.print("<absnode " + printPos(acceptor) + " kind=\"WhileStmt\">\n");
+		
+	}
+
 }

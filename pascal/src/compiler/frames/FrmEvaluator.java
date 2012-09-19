@@ -22,6 +22,7 @@ import compiler.abstree.tree.AbsPointerType;
 import compiler.abstree.tree.AbsProcDecl;
 import compiler.abstree.tree.AbsProgram;
 import compiler.abstree.tree.AbsRecordType;
+import compiler.abstree.tree.AbsReturnStmt;
 import compiler.abstree.tree.AbsStmt;
 import compiler.abstree.tree.AbsStmts;
 import compiler.abstree.tree.AbsTypeDecl;
@@ -276,6 +277,12 @@ public class FrmEvaluator implements AbsVisitor {
 	public void visit(AbsWhileStmt acceptor) {
 		acceptor.cond.accept(this);
 		acceptor.stmt.accept(this);
+	}
+
+	@Override
+	public void visit(AbsReturnStmt absReturnStmt) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

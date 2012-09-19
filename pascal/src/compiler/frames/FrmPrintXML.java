@@ -427,4 +427,10 @@ public class FrmPrintXML implements AbsVisitor {
 		xml.print("</absnode>\n");
 	}
 
+	@Override
+	public void visit(AbsReturnStmt absReturnStmt) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

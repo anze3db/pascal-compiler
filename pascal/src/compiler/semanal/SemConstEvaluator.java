@@ -423,4 +423,10 @@ public class SemConstEvaluator implements AbsVisitor{
 		
 	}
 
+	@Override
+	public void visit(AbsReturnStmt absReturnStmt) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

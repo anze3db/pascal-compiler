@@ -24,7 +24,7 @@ terminal String IDENTIFIER;
 terminal BOOL, CHAR, INT;
 terminal COLON, COMMA, DOT, DOTS, LBRACKET, LPARENTHESIS, RBRACKET, RPARENTHESIS, SEMIC;
 terminal ADD, AND, DIV, EQU, GEQ, GTH, LEQ, LTH, MEM, MUL, NEQ, NOT, OR, PTR, SUB, UADD, USUB, VAL;
-terminal ARRAY, ASSIGN, BEGIN, CONST, DO, ELSE, END, FOR, FUNCTION, IF, OF, PROCEDURE, PROGRAM, RECORD, THEN, TO, TYPE, VAR, WHILE;
+terminal ARRAY, ASSIGN, BEGIN, CONST, DO, ELSE, END, FOR, FUNCTION, IF, OF, PROCEDURE, PROGRAM, RECORD, THEN, TO, TYPE, VAR, WHILE, RETURN;
 
 non terminal AbsTree source;
 non terminal AbsDeclName program_indication;
@@ -344,6 +344,7 @@ statement ::=   value:ve 				{: RESULT = new AbsExprStmt(ve); RESULT.setPos(ve);
                 multiple_statement:ms 	{: RESULT = ms; :} |
                 while_statement:ws 		{: RESULT = ws; :} |
                 for_statement:fs 		{: RESULT = fs; :} |
+                RETURN                  {: RESULT = new AbsReturnStmt(); :} |
                 SEMIC;
 
 assign_statement ::= 

@@ -4,9 +4,9 @@ import compiler.report.*;
 import compiler.abstree.tree.*;
 
 public class AbsEmptyVisitor implements AbsVisitor {
-	
+
 	public boolean error;
-	
+
 	@Override
 	public void visit(AbsAlloc acceptor) {
 		Thread.dumpStack();
@@ -174,5 +174,11 @@ public class AbsEmptyVisitor implements AbsVisitor {
 		Thread.dumpStack();
 		Report.error("Unimplemented visitor method.", 1);
 	}
-	
+
+	@Override
+	public void visit(AbsReturnStmt absReturnStmt) {
+		Thread.dumpStack();
+		Report.error("Unimplemented visitor method.", 1);
+	}
+
 }

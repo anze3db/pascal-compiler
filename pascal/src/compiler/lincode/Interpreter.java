@@ -3,6 +3,9 @@ package compiler.lincode;
 import java.util.*;
 
 import compiler.report.*;
+import compiler.semanal.SemDesc;
+import compiler.abstree.tree.AbsDecl;
+import compiler.abstree.tree.AbsVarDecl;
 import compiler.frames.*;
 import compiler.imcode.*;
 
@@ -150,6 +153,10 @@ public class Interpreter {
 				return null;
 			}
 			if (move.dst instanceof ImcMEM) {
+				System.out.println(move);
+				if(move.single){
+					Report.error("Single can't be redefined", 1);
+				}
 				Integer dst = execExpr(((ImcMEM)move.dst).expr);
 				Integer src = execExpr(move.src);
 				ST(dst, src);

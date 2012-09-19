@@ -10,9 +10,18 @@ public class ImcMOVE extends ImcStmt {
 	/** Izvor.  */
 	public ImcExpr src;
 
+	public boolean single;
+	
 	public ImcMOVE(ImcExpr dst, ImcExpr src) {
 		this.dst = dst;
 		this.src = src;
+		this.single = false;
+	}
+	
+	public ImcMOVE(ImcExpr dst, ImcExpr src, boolean single2) {
+		this.dst = dst;
+		this.src = src;
+		this.single = single2;
 	}
 
 	@Override

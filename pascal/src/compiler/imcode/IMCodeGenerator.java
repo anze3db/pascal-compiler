@@ -101,6 +101,9 @@ public class IMCodeGenerator implements AbsVisitor {
 		ImcExpr srcExpr = (ImcExpr) code;
 		acceptor.dstExpr.accept(this);
 		ImcExpr dstExpr = (ImcExpr) code;
+		
+		
+		
 		SemType ltype = SemDesc.getActualType(acceptor.dstExpr);
 		
 		if(ltype instanceof SemSubprogramType){ //return value
@@ -108,8 +111,15 @@ public class IMCodeGenerator implements AbsVisitor {
 			FrmFrame ff = FrmDesc.getFrame(fd);
 			dstExpr = (ImcExpr)(new ImcTEMP(ff.RV));		
 		}
-
-		code = new ImcMOVE(dstExpr, srcExpr);
+		boolean single = false;
+		if(SemDesc.getNameDecl(acceptor.dstExpr) instanceof AbsVarDecl){
+			AbsVarDecl avd = (AbsVarDecl)SemDesc.getNameDecl(acceptor.dstExpr);
+			single = avd.single;
+		}
+		System.out.println( " " + single);
+		
+		code = new ImcMOVE(dstExpr, srcExpr, single);
+		System.out.println(code);
 	}
 
 	@Override

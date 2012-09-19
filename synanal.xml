@@ -1,0 +1,3373 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="pascal/xsl/synanal.xsl"?>
+<synanal>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="4">
+<terminal token="IDENTIFIER" lexeme="queens" line="1" column="9"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="4">
+<terminal token="IDENTIFIER" lexeme="queens" line="1" column="9"/>
+</state>
+<state num="5">
+<terminal token="SEMIC" line="1" column="15"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="99">
+<terminal token="VAR" line="3" column="9"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="99">
+<terminal token="VAR" line="3" column="9"/>
+</state>
+<state num="172">
+<nonterminal value="vars"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="99">
+<terminal token="VAR" line="3" column="9"/>
+</state>
+<state num="172">
+<nonterminal value="vars"/>
+</state>
+<state num="173">
+<terminal token="IDENTIFIER" lexeme="num_solutions" line="4" column="13"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="99">
+<terminal token="VAR" line="3" column="9"/>
+</state>
+<state num="172">
+<nonterminal value="vars"/>
+</state>
+<state num="173">
+<terminal token="IDENTIFIER" lexeme="num_solutions" line="4" column="13"/>
+</state>
+<state num="174">
+<terminal token="COLON" line="4" column="27"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="99">
+<terminal token="VAR" line="3" column="9"/>
+</state>
+<state num="172">
+<nonterminal value="vars"/>
+</state>
+<state num="173">
+<terminal token="IDENTIFIER" lexeme="num_solutions" line="4" column="13"/>
+</state>
+<state num="174">
+<terminal token="COLON" line="4" column="27"/>
+</state>
+<state num="15">
+<terminal token="INT" line="4" column="29"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="99">
+<terminal token="VAR" line="3" column="9"/>
+</state>
+<state num="172">
+<nonterminal value="vars"/>
+</state>
+<state num="173">
+<terminal token="IDENTIFIER" lexeme="num_solutions" line="4" column="13"/>
+</state>
+<state num="174">
+<terminal token="COLON" line="4" column="27"/>
+</state>
+<state num="175">
+<nonterminal value="type"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="99">
+<terminal token="VAR" line="3" column="9"/>
+</state>
+<state num="172">
+<nonterminal value="vars"/>
+</state>
+<state num="173">
+<terminal token="IDENTIFIER" lexeme="num_solutions" line="4" column="13"/>
+</state>
+<state num="174">
+<terminal token="COLON" line="4" column="27"/>
+</state>
+<state num="175">
+<nonterminal value="type"/>
+</state>
+<state num="176">
+<terminal token="SEMIC" line="4" column="36"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="103">
+<terminal token="PROCEDURE" line="6" column="9"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="103">
+<terminal token="PROCEDURE" line="6" column="9"/>
+</state>
+<state num="152">
+<terminal token="IDENTIFIER" lexeme="solve" line="6" column="19"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="103">
+<terminal token="PROCEDURE" line="6" column="9"/>
+</state>
+<state num="152">
+<terminal token="IDENTIFIER" lexeme="solve" line="6" column="19"/>
+</state>
+<state num="153">
+<terminal token="LPARENTHESIS" line="6" column="24"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="103">
+<terminal token="PROCEDURE" line="6" column="9"/>
+</state>
+<state num="152">
+<terminal token="IDENTIFIER" lexeme="solve" line="6" column="19"/>
+</state>
+<state num="153">
+<terminal token="LPARENTHESIS" line="6" column="24"/>
+</state>
+<state num="154">
+<nonterminal value="param_descr_list"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="103">
+<terminal token="PROCEDURE" line="6" column="9"/>
+</state>
+<state num="152">
+<terminal token="IDENTIFIER" lexeme="solve" line="6" column="19"/>
+</state>
+<state num="153">
+<terminal token="LPARENTHESIS" line="6" column="24"/>
+</state>
+<state num="154">
+<nonterminal value="param_descr_list"/>
+</state>
+<state num="155">
+<terminal token="RPARENTHESIS" line="6" column="25"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="103">
+<terminal token="PROCEDURE" line="6" column="9"/>
+</state>
+<state num="152">
+<terminal token="IDENTIFIER" lexeme="solve" line="6" column="19"/>
+</state>
+<state num="153">
+<terminal token="LPARENTHESIS" line="6" column="24"/>
+</state>
+<state num="154">
+<nonterminal value="param_descr_list"/>
+</state>
+<state num="155">
+<terminal token="RPARENTHESIS" line="6" column="25"/>
+</state>
+<state num="156">
+<terminal token="SEMIC" line="6" column="26"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+<state num="165">
+<terminal token="IDENTIFIER" lexeme="num" line="8" column="13"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+<state num="165">
+<terminal token="IDENTIFIER" lexeme="num" line="8" column="13"/>
+</state>
+<state num="166">
+<terminal token="COLON" line="8" column="17"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+<state num="165">
+<terminal token="IDENTIFIER" lexeme="num" line="8" column="13"/>
+</state>
+<state num="166">
+<terminal token="COLON" line="8" column="17"/>
+</state>
+<state num="168">
+<terminal token="SINGLE" line="8" column="19"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+<state num="165">
+<terminal token="IDENTIFIER" lexeme="num" line="8" column="13"/>
+</state>
+<state num="166">
+<terminal token="COLON" line="8" column="17"/>
+</state>
+<state num="168">
+<terminal token="SINGLE" line="8" column="19"/>
+</state>
+<state num="15">
+<terminal token="INT" line="8" column="26"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+<state num="165">
+<terminal token="IDENTIFIER" lexeme="num" line="8" column="13"/>
+</state>
+<state num="166">
+<terminal token="COLON" line="8" column="17"/>
+</state>
+<state num="168">
+<terminal token="SINGLE" line="8" column="19"/>
+</state>
+<state num="169">
+<nonterminal value="type"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+<state num="165">
+<terminal token="IDENTIFIER" lexeme="num" line="8" column="13"/>
+</state>
+<state num="166">
+<terminal token="COLON" line="8" column="17"/>
+</state>
+<state num="168">
+<terminal token="SINGLE" line="8" column="19"/>
+</state>
+<state num="169">
+<nonterminal value="type"/>
+</state>
+<state num="170">
+<terminal token="SEMIC" line="8" column="33"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+<state num="165">
+<terminal token="IDENTIFIER" lexeme="n" line="9" column="13"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+<state num="165">
+<terminal token="IDENTIFIER" lexeme="n" line="9" column="13"/>
+</state>
+<state num="166">
+<terminal token="COLON" line="9" column="15"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+<state num="165">
+<terminal token="IDENTIFIER" lexeme="n" line="9" column="13"/>
+</state>
+<state num="166">
+<terminal token="COLON" line="9" column="15"/>
+</state>
+<state num="168">
+<terminal token="SINGLE" line="9" column="17"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+<state num="165">
+<terminal token="IDENTIFIER" lexeme="n" line="9" column="13"/>
+</state>
+<state num="166">
+<terminal token="COLON" line="9" column="15"/>
+</state>
+<state num="168">
+<terminal token="SINGLE" line="9" column="17"/>
+</state>
+<state num="15">
+<terminal token="INT" line="9" column="24"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+<state num="165">
+<terminal token="IDENTIFIER" lexeme="n" line="9" column="13"/>
+</state>
+<state num="166">
+<terminal token="COLON" line="9" column="15"/>
+</state>
+<state num="168">
+<terminal token="SINGLE" line="9" column="17"/>
+</state>
+<state num="169">
+<nonterminal value="type"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+<state num="165">
+<terminal token="IDENTIFIER" lexeme="n" line="9" column="13"/>
+</state>
+<state num="166">
+<terminal token="COLON" line="9" column="15"/>
+</state>
+<state num="168">
+<terminal token="SINGLE" line="9" column="17"/>
+</state>
+<state num="169">
+<nonterminal value="type"/>
+</state>
+<state num="170">
+<terminal token="SEMIC" line="9" column="31"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+<state num="165">
+<terminal token="IDENTIFIER" lexeme="s" line="10" column="13"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+<state num="165">
+<terminal token="IDENTIFIER" lexeme="s" line="10" column="13"/>
+</state>
+<state num="166">
+<terminal token="COLON" line="10" column="15"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+<state num="165">
+<terminal token="IDENTIFIER" lexeme="s" line="10" column="13"/>
+</state>
+<state num="166">
+<terminal token="COLON" line="10" column="15"/>
+</state>
+<state num="15">
+<terminal token="INT" line="10" column="17"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+<state num="165">
+<terminal token="IDENTIFIER" lexeme="s" line="10" column="13"/>
+</state>
+<state num="166">
+<terminal token="COLON" line="10" column="15"/>
+</state>
+<state num="167">
+<nonterminal value="type"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="159">
+<terminal token="VAR" line="7" column="9"/>
+</state>
+<state num="164">
+<nonterminal value="sub_vars"/>
+</state>
+<state num="165">
+<terminal token="IDENTIFIER" lexeme="s" line="10" column="13"/>
+</state>
+<state num="166">
+<terminal token="COLON" line="10" column="15"/>
+</state>
+<state num="167">
+<nonterminal value="type"/>
+</state>
+<state num="171">
+<terminal token="SEMIC" line="10" column="24"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="43">
+<terminal token="IDENTIFIER" lexeme="num" line="12" column="13"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="130">
+<nonterminal value="value"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="130">
+<nonterminal value="value"/>
+</state>
+<state num="139">
+<terminal token="ASSIGN" line="12" column="17"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="130">
+<nonterminal value="value"/>
+</state>
+<state num="139">
+<terminal token="ASSIGN" line="12" column="17"/>
+</state>
+<state num="36">
+<terminal token="INT_CONST" lexeme="2" line="12" column="20"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="130">
+<nonterminal value="value"/>
+</state>
+<state num="139">
+<terminal token="ASSIGN" line="12" column="17"/>
+</state>
+<state num="140">
+<nonterminal value="value"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="128">
+<nonterminal value="assign_statement"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="121">
+<nonterminal value="statement"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="121">
+<nonterminal value="statement"/>
+</state>
+<state num="149">
+<terminal token="SEMIC" line="12" column="21"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="43">
+<terminal token="IDENTIFIER" lexeme="num" line="13" column="13"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="130">
+<nonterminal value="value"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="130">
+<nonterminal value="value"/>
+</state>
+<state num="139">
+<terminal token="ASSIGN" line="13" column="17"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="130">
+<nonterminal value="value"/>
+</state>
+<state num="139">
+<terminal token="ASSIGN" line="13" column="17"/>
+</state>
+<state num="36">
+<terminal token="INT_CONST" lexeme="1" line="13" column="20"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="130">
+<nonterminal value="value"/>
+</state>
+<state num="139">
+<terminal token="ASSIGN" line="13" column="17"/>
+</state>
+<state num="140">
+<nonterminal value="value"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="128">
+<nonterminal value="assign_statement"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="121">
+<nonterminal value="statement"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+<state num="119">
+<nonterminal value="list_statement"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="11" column="9"/>
+</state>
+<state num="119">
+<nonterminal value="list_statement"/>
+</state>
+<state num="150">
+<terminal token="END" line="14" column="9"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="162">
+<nonterminal value="multiple_statement"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="102">
+<nonterminal value="subprogram_head"/>
+</state>
+<state num="157">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="158">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="160">
+<nonterminal value="sub_variable_declarations"/>
+</state>
+<state num="161">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="162">
+<nonterminal value="multiple_statement"/>
+</state>
+<state num="163">
+<terminal token="SEMIC" line="14" column="12"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="16" column="1"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="16" column="1"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="16" column="1"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="43">
+<terminal token="IDENTIFIER" lexeme="solve" line="17" column="5"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="16" column="1"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="43">
+<terminal token="IDENTIFIER" lexeme="solve" line="17" column="5"/>
+</state>
+<state num="85">
+<terminal token="LPARENTHESIS" line="17" column="10"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="16" column="1"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="43">
+<terminal token="IDENTIFIER" lexeme="solve" line="17" column="5"/>
+</state>
+<state num="85">
+<terminal token="LPARENTHESIS" line="17" column="10"/>
+</state>
+<state num="87">
+<nonterminal value="value_list"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="16" column="1"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="43">
+<terminal token="IDENTIFIER" lexeme="solve" line="17" column="5"/>
+</state>
+<state num="85">
+<terminal token="LPARENTHESIS" line="17" column="10"/>
+</state>
+<state num="87">
+<nonterminal value="value_list"/>
+</state>
+<state num="88">
+<terminal token="RPARENTHESIS" line="17" column="11"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="16" column="1"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="130">
+<nonterminal value="value"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="16" column="1"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="121">
+<nonterminal value="statement"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="16" column="1"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="121">
+<nonterminal value="statement"/>
+</state>
+<state num="149">
+<terminal token="SEMIC" line="17" column="12"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="16" column="1"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="16" column="1"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="43">
+<terminal token="IDENTIFIER" lexeme="solve" line="18" column="5"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="16" column="1"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="43">
+<terminal token="IDENTIFIER" lexeme="solve" line="18" column="5"/>
+</state>
+<state num="85">
+<terminal token="LPARENTHESIS" line="18" column="10"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="16" column="1"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="43">
+<terminal token="IDENTIFIER" lexeme="solve" line="18" column="5"/>
+</state>
+<state num="85">
+<terminal token="LPARENTHESIS" line="18" column="10"/>
+</state>
+<state num="87">
+<nonterminal value="value_list"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="16" column="1"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="43">
+<terminal token="IDENTIFIER" lexeme="solve" line="18" column="5"/>
+</state>
+<state num="85">
+<terminal token="LPARENTHESIS" line="18" column="10"/>
+</state>
+<state num="87">
+<nonterminal value="value_list"/>
+</state>
+<state num="88">
+<terminal token="RPARENTHESIS" line="18" column="11"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="16" column="1"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="130">
+<nonterminal value="value"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="16" column="1"/>
+</state>
+<state num="120">
+<nonterminal value="list_statement2"/>
+</state>
+<state num="121">
+<nonterminal value="statement"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="16" column="1"/>
+</state>
+<state num="119">
+<nonterminal value="list_statement"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="105">
+<terminal token="BEGIN" line="16" column="1"/>
+</state>
+<state num="119">
+<nonterminal value="list_statement"/>
+</state>
+<state num="150">
+<terminal token="END" line="19" column="1"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="104">
+<nonterminal value="multiple_statement"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="2">
+<terminal token="PROGRAM" line="1" column="1"/>
+</state>
+<state num="3">
+<nonterminal value="program_indication"/>
+</state>
+<state num="7">
+<nonterminal value="constant_declarations"/>
+</state>
+<state num="8">
+<nonterminal value="type_declarations"/>
+</state>
+<state num="100">
+<nonterminal value="variable_declarations"/>
+</state>
+<state num="101">
+<nonterminal value="subprogram_declarations"/>
+</state>
+<state num="104">
+<nonterminal value="multiple_statement"/>
+</state>
+<state num="151">
+<terminal token="DOT" line="19" column="4"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="1">
+<nonterminal value="source"/>
+</state>
+</stack>
+<stack>
+<state num="0">
+<nonterminal value="$"/>
+</state>
+<state num="1">
+<nonterminal value="source"/>
+</state>
+<state num="183">
+<terminal token="EOF" line="-1" column="-1"/>
+</state>
+</stack>
+</synanal>

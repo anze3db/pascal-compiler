@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="pascal/xsl/abstree.xsl"?>
+<abstree>
+<absnode pos="(1:1-18:4)" kind="Program">
+<absnode pos="(1:9-1:15)" kind="DeclName" value="queens"></absnode>
+<absnode pos="(1:15-15:43)" kind="Decls">
+<absnode pos="(4:13-4:36)" kind="VarDecl">
+<absnode pos="(4:13-4:25)" kind="DeclName" value="num_solutions"></absnode>
+<absnode pos="(4:29-4:35)" kind="AtomType(INT)"></absnode>
+</absnode>
+<absnode pos="(6:9-6:26)" kind="ProcDecl">
+<absnode pos="(6:19-6:24)" kind="DeclName" value="solve"></absnode>
+<absnode pos="(0:0-0:0)" kind="Decls">
+</absnode>
+<absnode pos="(0:0-0:0)" kind="Decls">
+<absnode pos="(8:13-8:15)" kind="VarDecl">
+<absnode pos="(8:13-8:15)" kind="DeclName" value="num"></absnode>
+<absnode pos="(8:19-8:25)" kind="AtomType(INT)"></absnode>
+</absnode>
+<absnode pos="(9:13-9:13)" kind="VarDecl">
+<absnode pos="(9:13-9:13)" kind="DeclName" value="n"></absnode>
+<absnode pos="(9:24-9:30)" kind="AtomType(INT)"></absnode>
+</absnode>
+<absnode pos="(10:13-10:24)" kind="VarDecl">
+<absnode pos="(10:13-10:13)" kind="DeclName" value="s"></absnode>
+<absnode pos="(10:17-10:23)" kind="AtomType(INT)"></absnode>
+</absnode>
+</absnode>
+<absnode pos="(11:9-13:11)" kind="BlockStmt"><absnode pos="(0:0-0:0)" kind="Stmts">
+<absnode pos="(12:13-12:22)" kind="ExprStmt">
+<absnode pos="(12:13-12:22)" kind="CallStmt">
+<absnode pos="(12:13-12:17)" kind="ValName" value="putch"></absnode>
+<absnode pos="(12:18-12:21)" kind="ValExprs">
+<absnode pos="(12:19-12:21)" kind="AtomExpr(CHAR)" value="'*'"></absnode>
+</absnode>
+</absnode>
+</absnode>
+</absnode>
+</absnode>
+</absnode>
+</absnode>
+<absnode pos="(15:1-18:3)" kind="BlockStmt"><absnode pos="(0:0-0:0)" kind="Stmts">
+<absnode pos="(16:5-16:11)" kind="ExprStmt">
+<absnode pos="(16:5-16:11)" kind="CallStmt">
+<absnode pos="(16:5-16:9)" kind="ValName" value="solve"></absnode>
+<absnode pos="(0:0-0:0)" kind="ValExprs">
+</absnode>
+</absnode>
+</absnode>
+<absnode pos="(17:5-17:11)" kind="ExprStmt">
+<absnode pos="(17:5-17:11)" kind="CallStmt">
+<absnode pos="(17:5-17:9)" kind="ValName" value="solve"></absnode>
+<absnode pos="(0:0-0:0)" kind="ValExprs">
+</absnode>
+</absnode>
+</absnode>
+</absnode>
+</absnode>
+</absnode>
+</abstree>

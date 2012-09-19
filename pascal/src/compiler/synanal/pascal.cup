@@ -21,14 +21,14 @@ parser code
 terminal String BOOL_CONST, CHAR_CONST, INT_CONST, NIL;
 terminal String IDENTIFIER;
 
-terminal BOOL, CHAR, INT;
+terminal BOOL, CHAR, INT, SINGLE;
 terminal COLON, COMMA, DOT, DOTS, LBRACKET, LPARENTHESIS, RBRACKET, RPARENTHESIS, SEMIC;
 terminal ADD, AND, DIV, EQU, GEQ, GTH, LEQ, LTH, MEM, MUL, NEQ, NOT, OR, PTR, SUB, UADD, USUB, VAL;
 terminal ARRAY, ASSIGN, BEGIN, CONST, DO, ELSE, END, FOR, FUNCTION, IF, OF, PROCEDURE, PROGRAM, RECORD, THEN, TO, TYPE, VAR, WHILE;
 
 non terminal AbsTree source;
 non terminal AbsDeclName program_indication;
-non terminal AbsDecls comp_descr_list, param_descr_list_r, param_descr_list, constant_declarations, type_declarations, variable_declarations, subprogram_declarations, types, constants, vars;
+non terminal AbsDecls comp_descr_list, param_descr_list_r, param_descr_list, constant_declarations, type_declarations, sub_variable_declarations, variable_declarations, subprogram_declarations, types, constants, vars, sub_vars;
 non terminal AbsDecl subprogram_head;
 non terminal AbsStmt statement, if_statement, while_statement, for_statement, assign_statement;
 non terminal AbsConstDecl constant;
@@ -61,6 +61,7 @@ source ::=
         subprogram_declarations:sd 
         multiple_statement:mstmt
         DOT:dot
+        
         {:  AbsDecls d = new AbsDecls();
             d.decls.addAll(cd.decls);
             d.decls.addAll(td.decls);
@@ -137,6 +138,32 @@ type_declaration ::=
 
 /* VARIABLE DECLARATIONS */
 
+sub_variable_declarations ::= 
+        VAR sub_vars:vs IDENTIFIER:id COLON:c type:te SEMIC:s 
+        
+        {:  AbsDecls d = vs; 
+            AbsDeclName n = new AbsDeclName(id);
+            n.setPos(id.toString(), idleft, idright);
+            AbsVarDecl e = new AbsVarDecl(n, te);
+            e.setBeg(id.toString(), idleft, idright);
+            e.setEnd(s.toString(), sleft, sright); 
+            d.decls.add(e); 
+            RESULT = d; 
+        :} 
+    |   VAR sub_vars:vs IDENTIFIER:id COLON:c SINGLE:single type:te SEMIC:s 
+        {:  AbsDecls d = vs; 
+            AbsDeclName n = new AbsDeclName(id);
+            n.setPos(id.toString(), idleft, idright);
+            AbsVarDecl e = new AbsVarDecl(n, te);
+            e.single = true;
+            e.setBeg(id.toString(), idleft, idright);
+            e.setEnd(s.toString(), sleft, sright); 
+            d.decls.add(e); 
+            RESULT = d; 
+        :} 
+    |   {: RESULT = new AbsDecls();  :};
+		
+		
 variable_declarations ::= 
         VAR vars:vs IDENTIFIER:id COLON:c type:te SEMIC:s 
 		{: 	AbsDecls d = vs; 
@@ -149,7 +176,29 @@ variable_declarations ::=
 			RESULT = d; 
 		:} 
     |   {: RESULT = new AbsDecls();	 :};
-   
+
+sub_vars ::= sub_vars:vs IDENTIFIER:id COLON SINGLE:single type:te SEMIC:s
+        {:  AbsDecls d = vs; 
+            AbsDeclName n = new AbsDeclName(id);
+            n.single = true;
+            n.setPos(id.toString(), idleft, idright);
+            AbsVarDecl e = new AbsVarDecl(n, te);
+            e.single = true;
+            e.setPos(id.toString(), idleft, idright);
+            d.decls.add(e); 
+            RESULT = d;
+        :} 
+    |   sub_vars:vs IDENTIFIER:id COLON type:te SEMIC:s
+        {:  AbsDecls d = vs; 
+            AbsDeclName n = new AbsDeclName(id);
+            n.setPos(id.toString(), idleft, idright);
+            AbsVarDecl e = new AbsVarDecl(n, te);
+            e.setPos(id.toString(), idleft, idright);
+            d.decls.add(e); 
+            RESULT = d;
+        :} 
+    |   {:  RESULT = new AbsDecls(); :} ;
+    
 vars ::= vars:vs IDENTIFIER:id COLON type:te SEMIC:s
         {: 	AbsDecls d = vs; 
         	AbsDeclName n = new AbsDeclName(id);
@@ -165,8 +214,8 @@ vars ::= vars:vs IDENTIFIER:id COLON type:te SEMIC:s
 				   
 subprogram_declarations ::= 
         subprogram_declarations:sd subprogram_head:sh constant_declarations:cdr type_declarations:tdr 
-            variable_declarations:vdr subprogram_declarations:sdr multiple_statement:cmpst SEMIC 
-		{:  /* deklaracije spr. funkcije/procedure in gnezdene funkcije/procedure  */    						  						
+            sub_variable_declarations:vdr subprogram_declarations:sdr multiple_statement:cmpst SEMIC 
+		{:  /* deklaracije spr. funkcije/procedure in gnezdene funkcije/procedure  */    	
 			AbsDecls dr = new AbsDecls();
 			dr.decls.addAll(cdr.decls);
 			dr.decls.addAll(tdr.decls);

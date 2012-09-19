@@ -42,6 +42,7 @@ import compiler.frames.FrmFrame;
 import compiler.frames.FrmLabel;
 import compiler.frames.FrmLocAccess;
 import compiler.frames.FrmVarAccess;
+import compiler.report.Report;
 import compiler.semanal.SemDesc;
 import compiler.semanal.type.SemArrayType;
 import compiler.semanal.type.SemRecordType;
@@ -228,6 +229,7 @@ public class IMCodeGenerator implements AbsVisitor {
 				ImcCodeChunk codeChunk = new ImcCodeChunk(frame, (ImcStmt) code);
 				chunks.add(codeChunk);
 				funDecl.decls.accept(this);
+				
 			} else if (decl instanceof AbsProcDecl) {
 				AbsProcDecl procDecl = (AbsProcDecl) decl;
 				FrmFrame frame = FrmDesc.getFrame(decl);
@@ -430,7 +432,6 @@ public class IMCodeGenerator implements AbsVisitor {
 		FrmLabel label = null;
 		AbsDecl decl = SemDesc.getNameDecl(acceptor);
 		FrmAccess access = FrmDesc.getAccess(decl);
-
 		if (access instanceof FrmArgAccess) {
 			FrmArgAccess argAccess = (FrmArgAccess) access;
 			code = new ImcTEMP(currFrame.FP);
@@ -442,6 +443,13 @@ public class IMCodeGenerator implements AbsVisitor {
 			label = laccess.frame.label;
 			
 			int diff = currFrame.level - laccess.frame.level;
+
+			if(decl instanceof AbsVarDecl){
+				if(((AbsVarDecl) decl).priv && diff > 0){
+					Report.error("Dostop do privatne spremenljivke izven funkcije", 1);
+				}
+			}
+			
 			ImcExpr limc = null;
 			
 			limc = new ImcTEMP(currFrame.FP);

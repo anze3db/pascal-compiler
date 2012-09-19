@@ -21,7 +21,7 @@ parser code
 terminal String BOOL_CONST, CHAR_CONST, INT_CONST, NIL;
 terminal String IDENTIFIER;
 
-terminal BOOL, CHAR, INT;
+terminal BOOL, CHAR, INT, PRIVATE;
 terminal COLON, COMMA, DOT, DOTS, LBRACKET, LPARENTHESIS, RBRACKET, RPARENTHESIS, SEMIC;
 terminal ADD, AND, DIV, EQU, GEQ, GTH, LEQ, LTH, MEM, MUL, NEQ, NOT, OR, PTR, SUB, UADD, USUB, VAL;
 terminal ARRAY, ASSIGN, BEGIN, CONST, DO, ELSE, END, FOR, FUNCTION, IF, OF, PROCEDURE, PROGRAM, RECORD, THEN, TO, TYPE, VAR, WHILE;
@@ -148,6 +148,18 @@ variable_declarations ::=
 			d.decls.add(e); 
 			RESULT = d; 
 		:} 
+    |   VAR vars:vs IDENTIFIER:id COLON:c PRIVATE type:te SEMIC:s 
+        {:  AbsDecls d = vs; 
+            AbsDeclName n = new AbsDeclName(id);
+            n.priv = true;
+            n.setPos(id.toString(), idleft, idright);
+            AbsVarDecl e = new AbsVarDecl(n, te);
+            e.priv = true;
+            e.setBeg(id.toString(), idleft, idright);
+            e.setEnd(s.toString(), sleft, sright); 
+            d.decls.add(e); 
+            RESULT = d; 
+        :} 
     |   {: RESULT = new AbsDecls();	 :};
    
 vars ::= vars:vs IDENTIFIER:id COLON type:te SEMIC:s
@@ -158,6 +170,17 @@ vars ::= vars:vs IDENTIFIER:id COLON type:te SEMIC:s
         	e.setPos(id.toString(), idleft, idright);
         	d.decls.add(e); 
         	RESULT = d;
+        :} 
+    |   vars:vs IDENTIFIER:id COLON PRIVATE type:te SEMIC:s
+        {:  AbsDecls d = vs; 
+            AbsDeclName n = new AbsDeclName(id);
+            n.priv = true;
+            n.setPos(id.toString(), idleft, idright);
+            AbsVarDecl e = new AbsVarDecl(n, te);
+            e.priv = true;
+            e.setPos(id.toString(), idleft, idright);
+            d.decls.add(e); 
+            RESULT = d;
         :} 
     |   {: 	RESULT = new AbsDecls(); :}	;
 

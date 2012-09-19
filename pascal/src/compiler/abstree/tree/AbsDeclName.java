@@ -9,6 +9,7 @@ public class AbsDeclName extends AbsDecl {
 
 	/* Ime. */
 	public String name;
+	public boolean priv = false;
 	
 	public AbsDeclName(String name) {
 		this.name = name;

@@ -10,6 +10,8 @@ public class AbsVarDecl extends AbsDecl {
 	/** Tip spremenljivke. */
 	public AbsTypeExpr type;
 	
+	public boolean priv = false;
+	
 	public AbsVarDecl(AbsDeclName name, AbsTypeExpr type) {
 		this.name = name;
 		this.type = type;

@@ -153,7 +153,6 @@ public class Interpreter {
 				return null;
 			}
 			if (move.dst instanceof ImcMEM) {
-				System.out.println(move);
 				if(move.single){
 					Report.error("Single can't be redefined", 1);
 				}

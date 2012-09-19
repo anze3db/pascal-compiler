@@ -116,10 +116,8 @@ public class IMCodeGenerator implements AbsVisitor {
 			AbsVarDecl avd = (AbsVarDecl)SemDesc.getNameDecl(acceptor.dstExpr);
 			single = avd.single;
 		}
-		System.out.println( " " + single);
 		
 		code = new ImcMOVE(dstExpr, srcExpr, single);
-		System.out.println(code);
 	}
 
 	@Override

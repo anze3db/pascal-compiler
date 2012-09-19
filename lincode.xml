@@ -10,48 +10,204 @@
 </frmnode>
 <imcnode kind="SEQ">
 <imcnode kind="MOVE">
-<imcnode kind="TEMP" value="T13"/>
+<imcnode kind="TEMP" value="T18"/>
 <imcnode kind="TEMP" value="T11"/>
 </imcnode>
 <imcnode kind="MOVE">
-<imcnode kind="TEMP" value="T14"/>
-<imcnode kind="CALL" value="_solver">
-<imcnode kind="TEMP" value="T13"/>
+<imcnode kind="TEMP" value="T19"/>
+<imcnode kind="CALL" value="_c">
+<imcnode kind="TEMP" value="T18"/>
 </imcnode>
 </imcnode>
 <imcnode kind="EXP">
-<imcnode kind="TEMP" value="T14"/>
+<imcnode kind="TEMP" value="T19"/>
 </imcnode>
 </imcnode>
 </codechunk>
-<codechunk value="_solver">
+<codechunk value="_a">
 <frmnode>
 <frm kind="level" value="1"/>
-<frm kind="label" value="_solver"/>
-<frm kind="size" value="16"/>
+<frm kind="label" value="_a"/>
+<frm kind="size" value="8"/>
 <frm kind="FP" value="T12"/>
+<frm kind="RV" value="T13"/>
+</frmnode>
+<imcnode kind="SEQ">
+</imcnode>
+</codechunk>
+<codechunk value="L0">
+<frmnode>
+<frm kind="level" value="2"/>
+<frm kind="label" value="L0"/>
+<frm kind="size" value="16"/>
+<frm kind="FP" value="T14"/>
+<frm kind="RV" value="T15"/>
 </frmnode>
 <imcnode kind="SEQ">
 <imcnode kind="MOVE">
-<imcnode kind="TEMP" value="T15"/>
+<imcnode kind="TEMP" value="T20"/>
 <imcnode kind="MEM">
-<imcnode kind="TEMP" value="T12"/>
+<imcnode kind="MEM">
+<imcnode kind="TEMP" value="T14"/>
 </imcnode>
 </imcnode>
-<imcnode kind="MOVE">
-<imcnode kind="TEMP" value="T16"/>
-<imcnode kind="CONST" value="49"/>
 </imcnode>
 <imcnode kind="MOVE">
-<imcnode kind="TEMP" value="T17"/>
+<imcnode kind="TEMP" value="T21"/>
+<imcnode kind="CONST" value="98"/>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T22"/>
 <imcnode kind="CALL" value="_putch">
-<imcnode kind="TEMP" value="T15"/>
-<imcnode kind="TEMP" value="T16"/>
+<imcnode kind="TEMP" value="T20"/>
+<imcnode kind="TEMP" value="T21"/>
 </imcnode>
 </imcnode>
 <imcnode kind="EXP">
-<imcnode kind="TEMP" value="T17"/>
+<imcnode kind="TEMP" value="T22"/>
 </imcnode>
 </imcnode>
 </codechunk>
+<codechunk value="_c">
+<frmnode>
+<frm kind="level" value="1"/>
+<frm kind="label" value="_c"/>
+<frm kind="size" value="16"/>
+<frm kind="FP" value="T16"/>
+</frmnode>
+<imcnode kind="SEQ">
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T23"/>
+<imcnode kind="MEM">
+<imcnode kind="TEMP" value="T16"/>
+</imcnode>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T24"/>
+<imcnode kind="CONST" value="97"/>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T25"/>
+<imcnode kind="CALL" value="_putch">
+<imcnode kind="TEMP" value="T23"/>
+<imcnode kind="TEMP" value="T24"/>
+</imcnode>
+</imcnode>
+<imcnode kind="EXP">
+<imcnode kind="TEMP" value="T25"/>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T26"/>
+<imcnode kind="TEMP" value="T16"/>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T27"/>
+<imcnode kind="CALL" value="L1">
+<imcnode kind="TEMP" value="T26"/>
+</imcnode>
+</imcnode>
+<imcnode kind="EXP">
+<imcnode kind="TEMP" value="T27"/>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T28"/>
+<imcnode kind="MEM">
+<imcnode kind="TEMP" value="T16"/>
+</imcnode>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T29"/>
+<imcnode kind="CONST" value="102"/>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T30"/>
+<imcnode kind="CALL" value="_putch">
+<imcnode kind="TEMP" value="T28"/>
+<imcnode kind="TEMP" value="T29"/>
+</imcnode>
+</imcnode>
+<imcnode kind="EXP">
+<imcnode kind="TEMP" value="T30"/>
+</imcnode>
+<imcnode kind="JUMP" value="_endofproc"/>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T31"/>
+<imcnode kind="MEM">
+<imcnode kind="TEMP" value="T16"/>
+</imcnode>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T32"/>
+<imcnode kind="CONST" value="98"/>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T33"/>
+<imcnode kind="CALL" value="_putch">
+<imcnode kind="TEMP" value="T31"/>
+<imcnode kind="TEMP" value="T32"/>
+</imcnode>
+</imcnode>
+<imcnode kind="EXP">
+<imcnode kind="TEMP" value="T33"/>
+</imcnode>
+<imcnode kind="LABEL" value="_endofproc"/>
+</imcnode>
+</codechunk>
+<codechunk value="L1">
+<frmnode>
+<frm kind="level" value="2"/>
+<frm kind="label" value="L1"/>
+<frm kind="size" value="16"/>
+<frm kind="FP" value="T17"/>
+</frmnode>
+<imcnode kind="SEQ">
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T34"/>
+<imcnode kind="MEM">
+<imcnode kind="MEM">
+<imcnode kind="TEMP" value="T17"/>
+</imcnode>
+</imcnode>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T35"/>
+<imcnode kind="CONST" value="99"/>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T36"/>
+<imcnode kind="CALL" value="_putch">
+<imcnode kind="TEMP" value="T34"/>
+<imcnode kind="TEMP" value="T35"/>
+</imcnode>
+</imcnode>
+<imcnode kind="EXP">
+<imcnode kind="TEMP" value="T36"/>
+</imcnode>
+<imcnode kind="JUMP" value="_endofproc"/>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T37"/>
+<imcnode kind="MEM">
+<imcnode kind="MEM">
+<imcnode kind="TEMP" value="T17"/>
+</imcnode>
+</imcnode>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T38"/>
+<imcnode kind="CONST" value="100"/>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T39"/>
+<imcnode kind="CALL" value="_putch">
+<imcnode kind="TEMP" value="T37"/>
+<imcnode kind="TEMP" value="T38"/>
+</imcnode>
+</imcnode>
+<imcnode kind="EXP">
+<imcnode kind="TEMP" value="T39"/>
+</imcnode>
+<imcnode kind="LABEL" value="_endofproc"/>
+</imcnode>
+</codechunk>
+<datachunk label="_i" size="4"/>
 </lincode>

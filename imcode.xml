@@ -5,16 +5,77 @@
 <frmnode>
 <frm kind="level" value="-1"/>
 <frm kind="label" value="_main"/>
-<frm kind="size" value="16"/>
+<frm kind="size" value="12"/>
 <frm kind="FP" value="T11"/>
 </frmnode>
 <imcnode kind="SEQ">
 <imcnode kind="EXP">
-<imcnode kind="CALL" value="_putch">
+<imcnode kind="CALL" value="_c">
 <imcnode kind="TEMP" value="T11"/>
+</imcnode>
+</imcnode>
+</imcnode>
+</codechunk>
+<codechunk value="_a">
+<frmnode>
+<frm kind="level" value="1"/>
+<frm kind="label" value="_a"/>
+<frm kind="size" value="8"/>
+<frm kind="FP" value="T12"/>
+<frm kind="RV" value="T13"/>
+</frmnode>
+<imcnode kind="SEQ">
+</imcnode>
+</codechunk>
+<codechunk value="L0">
+<frmnode>
+<frm kind="level" value="2"/>
+<frm kind="label" value="L0"/>
+<frm kind="size" value="16"/>
+<frm kind="FP" value="T14"/>
+<frm kind="RV" value="T15"/>
+</frmnode>
+<imcnode kind="SEQ">
+<imcnode kind="EXP">
+<imcnode kind="CALL" value="_putch">
+<imcnode kind="MEM">
+<imcnode kind="MEM">
+<imcnode kind="TEMP" value="T14"/>
+</imcnode>
+</imcnode>
+<imcnode kind="CONST" value="98"/>
+</imcnode>
+</imcnode>
+</imcnode>
+</codechunk>
+<codechunk value="_c">
+<frmnode>
+<frm kind="level" value="1"/>
+<frm kind="label" value="_c"/>
+<frm kind="size" value="16"/>
+<frm kind="FP" value="T16"/>
+</frmnode>
+<imcnode kind="SEQ">
+<imcnode kind="SEQ">
+<imcnode kind="EXP">
+<imcnode kind="CALL" value="_putch">
+<imcnode kind="MEM">
+<imcnode kind="TEMP" value="T16"/>
+</imcnode>
 <imcnode kind="CONST" value="97"/>
 </imcnode>
 </imcnode>
+<imcnode kind="JUMP" value="_endofproc"/>
+<imcnode kind="EXP">
+<imcnode kind="CALL" value="_putch">
+<imcnode kind="MEM">
+<imcnode kind="TEMP" value="T16"/>
+</imcnode>
+<imcnode kind="CONST" value="98"/>
+</imcnode>
+</imcnode>
+</imcnode>
+<imcnode kind="LABEL" value="_endofproc"/>
 </imcnode>
 </codechunk>
 <datachunk label="_i" size="4"/>

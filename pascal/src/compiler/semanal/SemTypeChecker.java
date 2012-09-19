@@ -372,6 +372,8 @@ public class SemTypeChecker implements AbsVisitor {
 	public void visit(AbsProgram acceptor) {
 		SemConstEvaluator constVisitor = new SemConstEvaluator();
 		acceptor.accept(constVisitor);
+		SemReturnChecker retVisitor = new SemReturnChecker();
+		acceptor.accept(retVisitor);
 		acceptor.decls.accept(this);
 		acceptor.stmt.accept(this);
 	}

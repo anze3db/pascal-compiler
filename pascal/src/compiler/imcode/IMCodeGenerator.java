@@ -79,6 +79,7 @@ public class IMCodeGenerator implements AbsVisitor {
 	public LinkedList<ImcChunk> chunks = new LinkedList<ImcChunk>();
 	private ImcCode code = null;
 	private FrmFrame currFrame;
+	private FrmLabel currLabel;
 
 	@Override
 	public void visit(AbsAlloc acceptor) {
@@ -233,8 +234,14 @@ public class IMCodeGenerator implements AbsVisitor {
 				AbsProcDecl procDecl = (AbsProcDecl) decl;
 				FrmFrame frame = FrmDesc.getFrame(decl);
 				currFrame = frame;
+				currLabel = FrmLabel.newLabel("endofproc");
+				ImcLABEL label = new ImcLABEL(currLabel);
 				procDecl.stmt.accept(this);
-				ImcCodeChunk codeChunk = new ImcCodeChunk(frame, (ImcStmt) code);
+				ImcSEQ seq = new ImcSEQ();
+				ImcStmt stmt = (ImcStmt)code;
+				seq.stmts.add(stmt);
+				seq.stmts.add(label);
+				ImcCodeChunk codeChunk = new ImcCodeChunk(frame, seq);
 				chunks.add(codeChunk);
 				procDecl.decls.accept(this);
 			}
@@ -336,12 +343,7 @@ public class IMCodeGenerator implements AbsVisitor {
 
 	@Override
 	public void visit(AbsProcDecl acceptor) {
-		acceptor.decls.accept(this);
-		acceptor.stmt.accept(this);
-		FrmFrame frame = FrmDesc.getFrame(acceptor);
-		currFrame = frame;
-		ImcCodeChunk codeChunk = new ImcCodeChunk(frame, (ImcStmt) code);
-		chunks.add(codeChunk);
+
 	}
 
 	@Override
@@ -352,8 +354,10 @@ public class IMCodeGenerator implements AbsVisitor {
 		ImcCodeChunk codeChunk = new ImcCodeChunk(frame, (ImcStmt) code);
 		chunks.add(codeChunk);
 
+		acceptor.decls.accept(this);
 		for (AbsDecl decl : acceptor.decls.decls) {
 			if (decl instanceof AbsVarDecl) {
+				
 				AbsVarDecl varDecl = (AbsVarDecl) decl;
 				FrmVarAccess access = (FrmVarAccess) FrmDesc.getAccess(varDecl);
 				SemType type = SemDesc.getActualType(varDecl.type);
@@ -362,7 +366,6 @@ public class IMCodeGenerator implements AbsVisitor {
 				chunks.add(dataChunk);
 			}
 		}
-		acceptor.decls.accept(this);
 
 	}
 
@@ -500,7 +503,8 @@ public class IMCodeGenerator implements AbsVisitor {
 
 	@Override
 	public void visit(AbsReturnStmt absReturnStmt) {
-
+		
+		code = new ImcJUMP(currLabel);
 	}
 
 }

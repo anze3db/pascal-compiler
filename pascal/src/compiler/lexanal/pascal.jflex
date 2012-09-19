@@ -96,6 +96,8 @@ import compiler.synanal.*;
 	"begin"							{ return sym(PascalTok.BEGIN); }
 	"array"							{ return sym(PascalTok.ARRAY); }
 	"and"							{ return sym(PascalTok.AND); }
+	"repeat"                        { return sym(PascalTok.REPEAT); }
+	"until"                         { return sym(PascalTok.UNTIL); }
 	
 	"integer"						{ return sym(PascalTok.INT); }
 	"boolean"						{ return sym(PascalTok.BOOL); }

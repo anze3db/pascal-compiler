@@ -7,6 +7,8 @@ import compiler.abstree.AbsVisitor;
  */
 public class AbsDeclName extends AbsDecl {
 
+	public boolean positive = false;
+	
 	/* Ime. */
 	public String name;
 	

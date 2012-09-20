@@ -370,9 +370,11 @@ public class SemTypeChecker implements AbsVisitor {
 	@Override
 	public void visit(AbsProgram acceptor) {
 		SemConstEvaluator constVisitor = new SemConstEvaluator();
+		SemPositiveChecker spc = new SemPositiveChecker();
 		acceptor.accept(constVisitor);
 		acceptor.decls.accept(this);
 		acceptor.stmt.accept(this);
+		acceptor.accept(spc);
 	}
 
 	@Override

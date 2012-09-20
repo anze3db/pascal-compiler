@@ -7,6 +7,8 @@ import compiler.abstree.AbsVisitor;
  */
 public class AbsVarDecl extends AbsDecl {
 
+	public boolean positive = false;
+	
 	/** Tip spremenljivke. */
 	public AbsTypeExpr type;
 	

@@ -125,7 +125,7 @@ public class IMCodeGenerator implements AbsVisitor {
 			seq.stmts.add(new ImcMOVE(dstExpr, srcExpr));
 			seq.stmts.add(new ImcJUMP(el.label));
 			seq.stmts.add(fl);
-			seq.stmts.add(new ImcJUMP(FrmLabel.newLabel("NE OBSTAJA")));
+			seq.stmts.add(new ImcJUMP(FrmLabel.newLabel("ERROR")));
 			seq.stmts.add(el);
 			
 			code = seq;

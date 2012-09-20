@@ -6,8 +6,10 @@ program queens;
         j : char;
     procedure pp();
     var l : positive integer;
+        n : integer;
     begin
-        l := -1
+        l := -1;
+        n := -1
     end;
     
     function pf() : integer;

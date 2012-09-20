@@ -41,6 +41,7 @@ import compiler.frames.FrmDesc;
 import compiler.frames.FrmFrame;
 import compiler.frames.FrmLabel;
 import compiler.frames.FrmLocAccess;
+import compiler.frames.FrmTemp;
 import compiler.frames.FrmVarAccess;
 import compiler.semanal.SemDesc;
 import compiler.semanal.type.SemArrayType;
@@ -108,8 +109,32 @@ public class IMCodeGenerator implements AbsVisitor {
 			FrmFrame ff = FrmDesc.getFrame(fd);
 			dstExpr = (ImcExpr)(new ImcTEMP(ff.RV));		
 		}
+		AbsDecl nameDecl = SemDesc.getNameDecl(acceptor.dstExpr);
+		if(nameDecl instanceof AbsVarDecl){
+			System.out.println(((AbsVarDecl) nameDecl).positive);
+			ImcSEQ seq = new ImcSEQ();
+			
+			
 
-		code = new ImcMOVE(dstExpr, srcExpr);
+			
+			ImcLABEL tl = new ImcLABEL(FrmLabel.newLabel());
+			ImcLABEL fl = new ImcLABEL(FrmLabel.newLabel());
+			ImcLABEL el = new ImcLABEL(FrmLabel.newLabel());
+			ImcBINOP bin = new ImcBINOP(ImcBINOP.LTH, new ImcCONST(0), srcExpr);
+			ImcTEMP tmp = new ImcTEMP(new FrmTemp());
+			
+			seq.stmts.add(new ImcCJUMP(bin, tl.label, fl.label));
+			seq.stmts.add(tl);
+			seq.stmts.add(new ImcMOVE(tmp, srcExpr));
+			seq.stmts.add(new ImcJUMP(el.label));
+			seq.stmts.add(fl);
+			seq.stmts.add(new ImcMOVE(tmp, new ImcCONST(-55)));
+			seq.stmts.add(el);
+			
+			code = new ImcESEQ((ImcStmt)seq, tmp);
+		}
+		else
+			code = new ImcMOVE(dstExpr, srcExpr);
 	}
 
 	@Override

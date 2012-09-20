@@ -330,8 +330,11 @@ public class SemTypeChecker implements AbsVisitor {
 		SemType cType = SemDesc.getActualType(acceptor.cond);
 		if (cType != null
 				&& !cType.coercesTo(new SemAtomType(SemAtomType.BOOL))){
-			error = true; Report.warning("If expression not a bolean.", acceptor.begLine,
-					acceptor.begColumn);
+			if(!cType.coercesTo(new SemAtomType(SemAtomType.INT))){
+				error = true; Report.warning("If expression not a bolean.", acceptor.begLine,
+						acceptor.begColumn);
+				
+			}
 		}
 		acceptor.thenStmt.accept(this);
 		acceptor.elseStmt.accept(this);

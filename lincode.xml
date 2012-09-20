@@ -1,3 +1,111 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <?xml-stylesheet type="text/xsl" href="pascal/xsl/lincode.xsl"?>
 <lincode>
+<codechunk value="_main">
+<frmnode>
+<frm kind="level" value="-1"/>
+<frm kind="label" value="_main"/>
+<frm kind="size" value="12"/>
+<frm kind="FP" value="T11"/>
+</frmnode>
+<imcnode kind="SEQ">
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T16"/>
+<imcnode kind="TEMP" value="T11"/>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T17"/>
+<imcnode kind="CALL" value="_pp">
+<imcnode kind="TEMP" value="T16"/>
+</imcnode>
+</imcnode>
+<imcnode kind="EXP">
+<imcnode kind="TEMP" value="T17"/>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T18"/>
+<imcnode kind="TEMP" value="T11"/>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T19"/>
+<imcnode kind="CALL" value="_pf">
+<imcnode kind="TEMP" value="T18"/>
+</imcnode>
+</imcnode>
+<imcnode kind="EXP">
+<imcnode kind="TEMP" value="T19"/>
+</imcnode>
+</imcnode>
+</codechunk>
+<datachunk label="_i" size="4"/>
+<datachunk label="_k" size="4"/>
+<datachunk label="_j" size="4"/>
+<codechunk value="_pp">
+<frmnode>
+<frm kind="level" value="1"/>
+<frm kind="label" value="_pp"/>
+<frm kind="size" value="24"/>
+<frm kind="FP" value="T12"/>
+</frmnode>
+<imcnode kind="SEQ">
+<imcnode kind="CJUMP" value="L0,L3">
+<imcnode kind="BINOP" value="&#62;=">
+<imcnode kind="CONST" value="1"/>
+<imcnode kind="CONST" value="0"/>
+</imcnode>
+</imcnode>
+<imcnode kind="LABEL" value="L3"/>
+<imcnode kind="JUMP" value="L1"/>
+<imcnode kind="LABEL" value="L0"/>
+<imcnode kind="MOVE">
+<imcnode kind="MEM">
+<imcnode kind="BINOP" value="+">
+<imcnode kind="TEMP" value="T12"/>
+<imcnode kind="CONST" value="-4"/>
+</imcnode>
+</imcnode>
+<imcnode kind="CONST" value="1"/>
+</imcnode>
+<imcnode kind="JUMP" value="L2"/>
+<imcnode kind="LABEL" value="L1"/>
+<imcnode kind="JUMP" value="_NE OBSTAJA"/>
+<imcnode kind="LABEL" value="L2"/>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T20"/>
+<imcnode kind="MEM">
+<imcnode kind="TEMP" value="T12"/>
+</imcnode>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T21"/>
+<imcnode kind="MEM">
+<imcnode kind="BINOP" value="+">
+<imcnode kind="TEMP" value="T12"/>
+<imcnode kind="CONST" value="-4"/>
+</imcnode>
+</imcnode>
+</imcnode>
+<imcnode kind="MOVE">
+<imcnode kind="TEMP" value="T22"/>
+<imcnode kind="CALL" value="_putint">
+<imcnode kind="TEMP" value="T20"/>
+<imcnode kind="TEMP" value="T21"/>
+</imcnode>
+</imcnode>
+<imcnode kind="EXP">
+<imcnode kind="TEMP" value="T22"/>
+</imcnode>
+</imcnode>
+</codechunk>
+<codechunk value="_pf">
+<frmnode>
+<frm kind="level" value="1"/>
+<frm kind="label" value="_pf"/>
+<frm kind="size" value="12"/>
+<frm kind="FP" value="T13"/>
+<frm kind="RV" value="T14"/>
+</frmnode>
+<imcnode kind="SEQ">
+</imcnode>
+</codechunk>
+</lincode>

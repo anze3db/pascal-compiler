@@ -110,28 +110,25 @@ public class IMCodeGenerator implements AbsVisitor {
 			dstExpr = (ImcExpr)(new ImcTEMP(ff.RV));		
 		}
 		AbsDecl nameDecl = SemDesc.getNameDecl(acceptor.dstExpr);
-		if(nameDecl instanceof AbsVarDecl){
-			System.out.println(((AbsVarDecl) nameDecl).positive);
-			ImcSEQ seq = new ImcSEQ();
-			
-			
+		if(nameDecl instanceof AbsVarDecl && ((AbsVarDecl) nameDecl).positive){
 
+			ImcSEQ seq = new ImcSEQ();
 			
 			ImcLABEL tl = new ImcLABEL(FrmLabel.newLabel());
 			ImcLABEL fl = new ImcLABEL(FrmLabel.newLabel());
 			ImcLABEL el = new ImcLABEL(FrmLabel.newLabel());
-			ImcBINOP bin = new ImcBINOP(ImcBINOP.LTH, new ImcCONST(0), srcExpr);
+			ImcBINOP bin = new ImcBINOP(ImcBINOP.GEQ, srcExpr, new ImcCONST(0));
 			ImcTEMP tmp = new ImcTEMP(new FrmTemp());
 			
 			seq.stmts.add(new ImcCJUMP(bin, tl.label, fl.label));
 			seq.stmts.add(tl);
-			seq.stmts.add(new ImcMOVE(tmp, srcExpr));
+			seq.stmts.add(new ImcMOVE(dstExpr, srcExpr));
 			seq.stmts.add(new ImcJUMP(el.label));
 			seq.stmts.add(fl);
-			seq.stmts.add(new ImcMOVE(tmp, new ImcCONST(-55)));
+			seq.stmts.add(new ImcJUMP(FrmLabel.newLabel("NE OBSTAJA")));
 			seq.stmts.add(el);
 			
-			code = new ImcESEQ((ImcStmt)seq, tmp);
+			code = seq;
 		}
 		else
 			code = new ImcMOVE(dstExpr, srcExpr);
